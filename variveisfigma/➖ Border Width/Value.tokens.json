@@ -1,0 +1,51 @@
+{
+  "stroke": {
+    "hairline": {
+      "$type": "number",
+      "$value": 0.5,
+      "$description": "Cards, divisores padrão",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:79",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "thin": {
+      "$type": "number",
+      "$value": 1,
+      "$description": "Inputs em repouso",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:80",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "default": {
+      "$type": "number",
+      "$value": 1.5,
+      "$description": "Botões outline, inputs focused",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:81",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "accent": {
+      "$type": "number",
+      "$value": 3,
+      "$description": "Borda-left de destaque",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:82",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Value"
+  }
+}

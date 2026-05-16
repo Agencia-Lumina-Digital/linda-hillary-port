@@ -1,0 +1,73 @@
+{
+  "radius": {
+    "xs": {
+      "$type": "number",
+      "$value": 2,
+      "$description": "2px",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:72",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "sm": {
+      "$type": "number",
+      "$value": 4,
+      "$description": "4px",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:73",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "md": {
+      "$type": "number",
+      "$value": 6,
+      "$description": "6px",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:74",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "lg": {
+      "$type": "number",
+      "$value": 10,
+      "$description": "10px",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:75",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "xl": {
+      "$type": "number",
+      "$value": 16,
+      "$description": "16px",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:76",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "pill": {
+      "$type": "number",
+      "$value": 999,
+      "$description": "999px",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:77",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Value"
+  }
+}

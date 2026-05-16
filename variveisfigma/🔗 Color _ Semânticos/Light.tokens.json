@@ -1,0 +1,633 @@
+{
+  "background": {
+    "canvas": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9607843160629272,
+          0.9411764740943909,
+          0.9098039269447327
+        ],
+        "alpha": 1,
+        "hex": "#F5F0E8"
+      },
+      "$description": "Fundo principal da página",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:23",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:4950538d3f95654ba2bb6595427960e9113acbd5/-1:-1",
+          "targetVariableName": "neutral/50",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "surface": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.929411768913269,
+          0.9098039269447327,
+          0.8745098114013672
+        ],
+        "alpha": 1,
+        "hex": "#EDE8DF"
+      },
+      "$description": "Cards, seções alternadas",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:24",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:38d68464573511e76c9a616dd74ce06a6066009a/-1:-1",
+          "targetVariableName": "neutral/100",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "elevated": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Cards elevados sobre canvas",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:25",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:db54861b24ca2d4f921fdea8e4ed9d941583464c/-1:-1",
+          "targetVariableName": "neutral/0",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "inverse": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1725490242242813,
+          0.24313725531101227,
+          0.2078431397676468
+        ],
+        "alpha": 1,
+        "hex": "#2C3E35"
+      },
+      "$description": "Seções escuras, nav dark",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:26",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:f2d0cf997b8f5d0d5454fc5a5ab30111670ab718/-1:-1",
+          "targetVariableName": "green/900",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "inverse-soft": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.239215686917305,
+          0.3333333432674408,
+          0.2823529541492462
+        ],
+        "alpha": 1,
+        "hex": "#3D5548"
+      },
+      "$description": "Hover sobre bg-inverse",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:27",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:d718de4a7d103c06bddb5bf605c42135c3ca1c63/-1:-1",
+          "targetVariableName": "green/800",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "brand": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3607843220233917,
+          0.5490196347236633,
+          0.3529411852359772
+        ],
+        "alpha": 1,
+        "hex": "#5C8C5A"
+      },
+      "$description": "CTAs, badges de destaque",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:28",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:2fa84c82635f2900b52d5a2e862cf029a468cf79/-1:-1",
+          "targetVariableName": "green/600",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "brand-subtle": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9176470637321472,
+          0.9529411792755127,
+          0.9098039269447327
+        ],
+        "alpha": 1,
+        "hex": "#EAF3E8"
+      },
+      "$description": "Pills, chips, tags de brand",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:29",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:3c01151d9bb2f67e30c626423248bf7b2dbb7e35/-1:-1",
+          "targetVariableName": "green/50",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "amber-subtle": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9725490212440491,
+          0.9490196108818054,
+          0.886274516582489
+        ],
+        "alpha": 1,
+        "hex": "#F8F2E2"
+      },
+      "$description": "Superfície âmbar",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:30",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:66ed8a0b8a391e2061e258a5a921b32fa66940f4/-1:-1",
+          "targetVariableName": "amber/50",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    }
+  },
+  "text": {
+    "primary": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.10196078568696976,
+          0.12156862765550613,
+          0.10980392247438431
+        ],
+        "alpha": 1,
+        "hex": "#1A1F1C"
+      },
+      "$description": "Títulos, corpo principal",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:31",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:d30067f96cedf408cb398c91a3397a06380b9029/-1:-1",
+          "targetVariableName": "neutral/950",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.41960784792900085,
+          0.43921568989753723,
+          0.40784314274787903
+        ],
+        "alpha": 1,
+        "hex": "#6B7068"
+      },
+      "$description": "Subtítulos, labels, captions",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:32",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:27875a977684c9485bf0be916ce5414b71d796a5/-1:-1",
+          "targetVariableName": "neutral/600",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "brand": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1725490242242813,
+          0.24313725531101227,
+          0.2078431397676468
+        ],
+        "alpha": 1,
+        "hex": "#2C3E35"
+      },
+      "$description": "Nomes, headings sobre canvas",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:33",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:f2d0cf997b8f5d0d5454fc5a5ab30111670ab718/-1:-1",
+          "targetVariableName": "green/900",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "accent": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3607843220233917,
+          0.5490196347236633,
+          0.3529411852359772
+        ],
+        "alpha": 1,
+        "hex": "#5C8C5A"
+      },
+      "$description": "Links, eyebrows, métricas",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:34",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:2fa84c82635f2900b52d5a2e862cf029a468cf79/-1:-1",
+          "targetVariableName": "green/600",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "on-inverse": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9607843160629272,
+          0.9411764740943909,
+          0.9098039269447327
+        ],
+        "alpha": 1,
+        "hex": "#F5F0E8"
+      },
+      "$description": "Texto principal sobre bg-inverse",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:35",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:4950538d3f95654ba2bb6595427960e9113acbd5/-1:-1",
+          "targetVariableName": "neutral/50",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "on-inverse-muted": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9607843160629272,
+          0.9411764740943909,
+          0.9098039269447327
+        ],
+        "alpha": 0.5,
+        "hex": "#F5F0E8"
+      },
+      "$description": "Texto secundário sobre bg-inverse (50%)",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:36",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "on-brand": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Texto sobre bg-brand",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:37",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:db54861b24ca2d4f921fdea8e4ed9d941583464c/-1:-1",
+          "targetVariableName": "neutral/0",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "amber": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.545098066329956,
+          0.4117647111415863,
+          0.0784313753247261
+        ],
+        "alpha": 1,
+        "hex": "#8B6914"
+      },
+      "$description": "Texto em contexto âmbar",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:38",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:990a95045529a81d61066b02187b9edc3347c029/-1:-1",
+          "targetVariableName": "amber/700",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    }
+  },
+  "border": {
+    "default": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1725490242242813,
+          0.24313725531101227,
+          0.2078431397676468
+        ],
+        "alpha": 0.11999999731779099,
+        "hex": "#2C3E35"
+      },
+      "$description": "Bordas padrão — green-900 12%",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:39",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "medium": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1725490242242813,
+          0.24313725531101227,
+          0.2078431397676468
+        ],
+        "alpha": 0.25,
+        "hex": "#2C3E35"
+      },
+      "$description": "Bordas hover — green-900 25%",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:40",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "strong": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1725490242242813,
+          0.24313725531101227,
+          0.2078431397676468
+        ],
+        "alpha": 0.4000000059604645,
+        "hex": "#2C3E35"
+      },
+      "$description": "Bordas focused — green-900 40%",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:41",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "accent": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3607843220233917,
+          0.5490196347236633,
+          0.3529411852359772
+        ],
+        "alpha": 1,
+        "hex": "#5C8C5A"
+      },
+      "$description": "Borda-left destaque, featured cards",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:42",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:2fa84c82635f2900b52d5a2e862cf029a468cf79/-1:-1",
+          "targetVariableName": "green/600",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "inverse": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9607843160629272,
+          0.9411764740943909,
+          0.9098039269447327
+        ],
+        "alpha": 0.15000000596046448,
+        "hex": "#F5F0E8"
+      },
+      "$description": "Divisores sobre bg-inverse — 15%",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:43",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    }
+  },
+  "icon": {
+    "primary": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1725490242242813,
+          0.24313725531101227,
+          0.2078431397676468
+        ],
+        "alpha": 1,
+        "hex": "#2C3E35"
+      },
+      "$description": "Ícones primários",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:44",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:f2d0cf997b8f5d0d5454fc5a5ab30111670ab718/-1:-1",
+          "targetVariableName": "green/900",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.41960784792900085,
+          0.43921568989753723,
+          0.40784314274787903
+        ],
+        "alpha": 1,
+        "hex": "#6B7068"
+      },
+      "$description": "Ícones secundários, inativos",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:45",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:27875a977684c9485bf0be916ce5414b71d796a5/-1:-1",
+          "targetVariableName": "neutral/600",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "accent": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3607843220233917,
+          0.5490196347236633,
+          0.3529411852359772
+        ],
+        "alpha": 1,
+        "hex": "#5C8C5A"
+      },
+      "$description": "Ícones de ação e destaque",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:46",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:2fa84c82635f2900b52d5a2e862cf029a468cf79/-1:-1",
+          "targetVariableName": "green/600",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    },
+    "on-inverse": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9607843160629272,
+          0.9411764740943909,
+          0.9098039269447327
+        ],
+        "alpha": 1,
+        "hex": "#F5F0E8"
+      },
+      "$description": "Ícones sobre bg-inverse",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:47",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:4950538d3f95654ba2bb6595427960e9113acbd5/-1:-1",
+          "targetVariableName": "neutral/50",
+          "targetVariableSetId": "VariableCollectionId:b7693e91c8586a00281bbdce0655c9e27bb6c5d5/-1:-1",
+          "targetVariableSetName": "🎨 Color / Primitivos"
+        }
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Light"
+  }
+}

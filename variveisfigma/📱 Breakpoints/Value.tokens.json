@@ -1,0 +1,86 @@
+{
+  "breakpoint": {
+    "mobile-sm": {
+      "$type": "number",
+      "$value": 375,
+      "$description": "iPhone SE",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:113",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "mobile-lg": {
+      "$type": "number",
+      "$value": 430,
+      "$description": "iPhone 14 Pro Max",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:114",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "tablet": {
+      "$type": "number",
+      "$value": 768,
+      "$description": "iPad portrait",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:115",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "tablet-lg": {
+      "$type": "number",
+      "$value": 1024,
+      "$description": "iPad landscape / laptops",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:116",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "desktop": {
+      "$type": "number",
+      "$value": 1280,
+      "$description": "Desktop padrão",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:117",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    },
+    "desktop-xl": {
+      "$type": "number",
+      "$value": 1440,
+      "$description": "Widescreen",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:118",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    }
+  },
+  "layout": {
+    "max-width": {
+      "$type": "number",
+      "$value": 1080,
+      "$description": "Largura máxima do conteúdo",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:2:119",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ]
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Value"
+  }
+}
