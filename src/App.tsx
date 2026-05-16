@@ -12,12 +12,12 @@ function App() {
         maxWidth={false} 
         sx={{ 
           maxWidth: tokens.layout.maxWidth,
-          pt: 12, // Espaço para a navbar fixa
+          pt: 16, // 16 * 4px = 64px
         }}
       >
         {/* Seções Esqueléticas para Scroll */}
         <Box id="hero" sx={{ height: '80vh', borderBottom: '1px dashed' }}>
-          <Typography variant="h1">Hero Section</Typography>
+          <Typography variant="h1" sx={{ lineHeight: '1.3 !important' }}>Hero Section</Typography>
         </Box>
 
         <Box id="projects" sx={{ height: '100vh', borderBottom: '1px dashed' }}>
