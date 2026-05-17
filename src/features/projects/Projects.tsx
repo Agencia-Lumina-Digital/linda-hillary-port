@@ -1,5 +1,37 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography } from '@mui/material';
 import { tokens } from '../../theme/tokens';
+import { ProjectCard } from './ProjectCard';
+
+const projectsData = [
+  {
+    title: 'Redesign do Login — App Bemol',
+    description: 'Reduzimos a fricção no primeiro acesso de um app financeiro.',
+    tag: 'UX Research',
+    metric: '+67% conclusão',
+    bannerBgColor: '#B6A38B', // Muted brownish beige
+  },
+  {
+    title: 'Fundamentos do Design System — Bemol Varejo',
+    description: 'Estruturação, definição e documentação dos fundamentos visuais do Design System da Bemol.',
+    tag: 'UX Research',
+    metric: '+67% conclusão',
+    bannerBgColor: '#93A993', // Muted sage green
+  },
+  {
+    title: 'Bemol Saúde — Agendamento de Exames',
+    description: 'Criação do fluxo de agendamento de exames laboratoriais domiciliares no app Bemol.',
+    tag: 'UX Research',
+    metric: '+67% conclusão',
+    bannerBgColor: '#B6A38B',
+  },
+  {
+    title: 'Bemol Run — Redesign do Fluxo de Inscrição',
+    description: 'Redesign completo da experiência de inscrição em eventos de corrida no app Bemol.',
+    tag: 'UX Research',
+    metric: '+67% conclusão',
+    bannerBgColor: '#93A993',
+  },
+];
 
 export const Projects = () => {
   return (
@@ -52,6 +84,20 @@ export const Projects = () => {
           Problemas reais, processos honestos e resultados que você pode medir.
         </Typography>
       </Stack>
+
+      {/* Grid de Cards de Projetos */}
+      <Grid 
+        container 
+        columnSpacing={6} // 6 * 4px = 24px (igual ao padding lateral)
+        rowSpacing={6} 
+        sx={{ mt: { xs: '32px', md: '48px' } }}
+      >
+        {projectsData.map((project, index) => (
+          <Grid item xs={12} sm={6} md={3} key={index}>
+            <ProjectCard {...project} />
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
 };
