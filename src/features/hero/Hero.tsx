@@ -3,6 +3,7 @@ import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
 import grafismoHero from '../../theme/assets/grafismo-rios-hero.png';
 import lindaImage from '../../theme/assets/linda-image.png';
+import { BorderBottom } from '@mui/icons-material';
 
 export const Hero = () => {
   return (
@@ -137,7 +138,7 @@ export const Hero = () => {
           px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Restaura padding interno perfeitamente alinhado
         }}
       >
-        <Grid container columnSpacing={4} rowSpacing={{ xs: 4, md: 2 }}>
+        <Grid container columnSpacing={4} rowSpacing={{ xs: 4, md: 2, BorderBottom: '1px solid ' + tokens.colors.border.default }}>
           {/* Feature 1 */}
           <Grid item xs={4}>
             <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: tokens.typography.fontSize[26] }}>01</Typography>
