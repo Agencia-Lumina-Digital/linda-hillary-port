@@ -11,9 +11,11 @@ function App() {
       {/* Container Principal que limita a largura do conteúdo */}
       <Container 
         maxWidth={false} 
+        disableGutters
         sx={{ 
           maxWidth: tokens.layout.maxWidth,
           pt: 16, // 16 * 4px = 64px
+          px: '24px' // Padding horizontal fixo de 24px
         }}
       >
         {/* Seções Esqueléticas para Scroll */}

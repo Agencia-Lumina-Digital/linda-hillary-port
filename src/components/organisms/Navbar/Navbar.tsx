@@ -48,7 +48,14 @@ export const Navbar = () => {
         backgroundColor: tokens.colors.background.canvas,
       }}
     >
-      <Container maxWidth={false} sx={{ maxWidth: tokens.layout.maxWidth }}>
+      <Container 
+        maxWidth={false} 
+        disableGutters 
+        sx={{ 
+          maxWidth: tokens.layout.maxWidth,
+          px: '24px' // Padding horizontal fixo para alinhar com o App
+        }}
+      >
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
           <Box sx={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
             <img
