@@ -7,7 +7,7 @@ import lindaImage from '../../theme/assets/linda-image.png';
 export const Hero = () => {
   return (
     <Box sx={{ position: 'relative', pt: 10 }}>
-      <Grid container columnSpacing={8} rowSpacing={{ xs: 6, md: 8 }} alignItems="center">
+      <Grid container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 6, md: 8 }} alignItems="center">
         {/* Coluna Esquerda: Conteúdo */}
         <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1 }, height: { xs: 'auto', md: '440px' } }}>
           <Stack spacing={5} sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}>
