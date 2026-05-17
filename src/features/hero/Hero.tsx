@@ -102,7 +102,8 @@ export const Hero = () => {
                 width: '150%', // Grafismo vaza para fora do container da imagem
                 maxWidth: 'none',
                 zIndex: 2,
-                pointerEvents: 'none'
+                pointerEvents: 'none',
+                clipPath: { xs: 'none', md: 'inset(0 27% 0 0)' }
               }}
             />
 
