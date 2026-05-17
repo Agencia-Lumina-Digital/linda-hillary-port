@@ -38,6 +38,7 @@ export const Navbar = () => {
       elevation={0} 
       sx={{ 
         backgroundColor: tokens.colors.background.canvas,
+        zIndex: 1
       }}
     >
       <Container maxWidth={false} sx={{ maxWidth: tokens.layout.maxWidth }}>

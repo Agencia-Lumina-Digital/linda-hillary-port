@@ -1,10 +1,11 @@
 import { Box, Container, Typography } from '@mui/material';
 import { Navbar } from './components/organisms/Navbar/Navbar';
+import { Hero } from './features/hero/Hero';
 import { tokens } from './theme/tokens';
 
 function App() {
   return (
-    <Box sx={{ minHeight: '100vh', backgroundColor: tokens.colors.background.canvas }}>
+    <Box sx={{ minHeight: '100vh', backgroundColor: tokens.colors.background.canvas, overflowX: 'hidden' }}>
       <Navbar />
       
       {/* Container Principal que limita a largura do conteúdo */}
@@ -16,8 +17,8 @@ function App() {
         }}
       >
         {/* Seções Esqueléticas para Scroll */}
-        <Box id="hero" sx={{ height: '80vh', borderBottom: '1px dashed' }}>
-          <Typography variant="h1" sx={{ lineHeight: '1.3 !important' }}>Hero Section</Typography>
+        <Box id="hero">
+          <Hero />
         </Box>
 
         <Box id="projects" sx={{ height: '100vh', borderBottom: '1px dashed' }}>
