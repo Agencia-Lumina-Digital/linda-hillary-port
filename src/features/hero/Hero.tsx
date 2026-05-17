@@ -9,8 +9,8 @@ export const Hero = () => {
     <Box sx={{ position: 'relative', pt: 10, pb: 10 }}>
       <Grid container spacing={4} alignItems="center">
         {/* Coluna Esquerda: Conteúdo */}
-        <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1, height: '440px' } }}>
-          <Stack spacing={5} sx={{ display: 'flex', justifyContent: 'center', height: '440px' }}>
+        <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1 }, height: { xs: 'auto', md: '440px' } }}>
+          <Stack spacing={5} sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}>
             {/* Tagline / Eyebrow */}
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
               <Box sx={{ width: 24, height: '1.5px', backgroundColor: tokens.colors.background.brand }} />
@@ -87,7 +87,7 @@ export const Hero = () => {
 
         {/* Coluna Direita: Visual / Apresentação */}
         <Grid item xs={12} md={5} sx={{ position: 'relative', order: { xs: 1, md: 2 } }}>
-          <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', width: '440px' }}>
+          <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', width: { xs: '100%', md: '440px' }, mx: 'auto' }}>
 
             {/* Grafismo de fundo (Posicionamento absoluto para ficar atrás) */}
             <Box
@@ -107,14 +107,15 @@ export const Hero = () => {
             />
 
             {/* Imagem da Profissional */}
-            <Box sx={{ position: 'relative', zIndex: 2, maxWidth: '420px' }}>
+            <Box sx={{ position: 'relative', zIndex: 2, width: { xs: '100%', md: '400px' }, maxWidth: '420px' }}>
               <Box
                 component="img"
                 src={lindaImage}
                 alt="Linda Souza"
                 sx={{
-                  width: '400px',
-                  height: '440px',
+                  width: '100%',
+                  height: { xs: 'auto', md: '440px' },
+                  objectFit: 'cover',
                   display: 'block',
                   borderRadius: `${tokens.borderRadius.md}px`,
                 }}
