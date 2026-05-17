@@ -9,11 +9,11 @@ export const Hero = () => {
     <Box sx={{ position: 'relative', pt: 10, pb: 10 }}>
       <Grid container spacing={4} alignItems="center">
         {/* Coluna Esquerda: Conteúdo */}
-        <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1 } }}>
-          <Stack spacing={5} sx={{ display: 'flex', justifyContent: 'center', height: '100%', py: 4 }}>
+        <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1, height: '440px' } }}>
+          <Stack spacing={5} sx={{ display: 'flex', justifyContent: 'center', height: '440px' }}>
             {/* Tagline / Eyebrow */}
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              <Box sx={{ width: 24, height: 1, backgroundColor: tokens.colors.background.brand }} />
+              <Box sx={{ width: 24, height: '1.5px', backgroundColor: tokens.colors.background.brand }} />
               <Typography
                 sx={{
                   color: tokens.colors.text.accent,
@@ -87,7 +87,7 @@ export const Hero = () => {
 
         {/* Coluna Direita: Visual / Apresentação */}
         <Grid item xs={12} md={5} sx={{ position: 'relative', order: { xs: 1, md: 2 } }}>
-          <Box sx={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', width: '440px' }}>
 
             {/* Grafismo de fundo (Posicionamento absoluto para ficar atrás) */}
             <Box
@@ -96,7 +96,7 @@ export const Hero = () => {
               alt=""
               sx={{
                 position: 'absolute',
-                top: '68%',
+                top: '74%',
                 left: '50%',
                 transform: 'translate(-40%, -50%)', // Ajuste para centralizar visualmente
                 width: '150%', // Grafismo vaza para fora do container da imagem
@@ -107,14 +107,14 @@ export const Hero = () => {
             />
 
             {/* Imagem da Profissional */}
-            <Box sx={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: '420px' }}>
+            <Box sx={{ position: 'relative', zIndex: 2, maxWidth: '420px' }}>
               <Box
                 component="img"
                 src={lindaImage}
                 alt="Linda Souza"
                 sx={{
-                  width: '100%',
-                  height: 'auto',
+                  width: '400px',
+                  height: '440px',
                   display: 'block',
                   borderRadius: `${tokens.borderRadius.md}px`,
                 }}
@@ -123,6 +123,42 @@ export const Hero = () => {
           </Box>
         </Grid>
       </Grid>
+
+      {/* Características / Valores (Bottom Section) */}
+      <Box 
+        sx={{ 
+          mt: { xs: 8, md: '88px' }, 
+          py: 6, 
+          backgroundColor: tokens.colors.background.elevated,
+          borderTop: `1px solid ${tokens.colors.border.default}`,
+          borderBottom: `1px solid ${tokens.colors.border.default}`,
+          mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Quebra o container para full-width
+          px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Restaura padding interno perfeitamente alinhado
+        }}
+      >
+        <Grid container columnSpacing={4} rowSpacing={{ xs: 4, md: 2 }}>
+          {/* Feature 1 */}
+          <Grid item xs={12} md={4}>
+            <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1 }}>01</Typography>
+            <Typography variant="h6" sx={{ color: tokens.colors.text.primary, fontWeight: tokens.typography.fontWeight.semibold, mb: 1, fontSize: tokens.typography.fontSize[16] }}>Problema antes de solução</Typography>
+            <Typography variant="body2" sx={{ color: tokens.colors.text.secondary }}>Não abro o Figma sem entender o contexto.</Typography>
+          </Grid>
+          
+          {/* Feature 2 */}
+          <Grid item xs={12} md={4}>
+            <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1 }}>02</Typography>
+            <Typography variant="h6" sx={{ color: tokens.colors.text.primary, fontWeight: tokens.typography.fontWeight.semibold, mb: 1, fontSize: tokens.typography.fontSize[16] }}>Design é conversa</Typography>
+            <Typography variant="body2" sx={{ color: tokens.colors.text.secondary }}>Trabalho junto com produto e engenharia.</Typography>
+          </Grid>
+
+          {/* Feature 3 */}
+          <Grid item xs={12} md={4}>
+            <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1 }}>03</Typography>
+            <Typography variant="h6" sx={{ color: tokens.colors.text.primary, fontWeight: tokens.typography.fontWeight.semibold, mb: 1, fontSize: tokens.typography.fontSize[16] }}>Entrego, meço, melhoro</Typography>
+            <Typography variant="body2" sx={{ color: tokens.colors.text.secondary }}>Lançamento não é o fim.</Typography>
+          </Grid>
+        </Grid>
+      </Box>
     </Box>
   );
 };
