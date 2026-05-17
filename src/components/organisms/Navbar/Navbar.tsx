@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { AppBar, Box, Button, Container, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Container, Toolbar, Typography, IconButton, Drawer, Stack } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { tokens } from '../../../theme/tokens';
 import logo from '../../../theme/assets/logo-linda-claro.png';
 
@@ -12,9 +14,15 @@ const navItems = [
 
 export const Navbar = () => {
   const [activeItem, setActiveItem] = useState('hero');
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
 
   const handleScroll = (id: string) => {
     setActiveItem(id);
+    setMobileOpen(false); // Fecha o menu mobile se estiver aberto
 
     if (id === 'hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -50,8 +58,8 @@ export const Navbar = () => {
             />
           </Box>
 
-          {/* Centro: Nav Items */}
-          <Box sx={{ display: 'flex', gap: 1 }}>
+          {/* Centro: Nav Items (Desktop) */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
             {navItems.map((item) => {
               const isActive = activeItem === item.id;
 
@@ -84,8 +92,8 @@ export const Navbar = () => {
             })}
           </Box>
 
-          {/* Lado Direito: Botão Default */}
-          <Box sx={{ flexShrink: 0 }}>
+          {/* Lado Direito: Botão Default (Desktop) */}
+          <Box sx={{ flexShrink: 0, display: { xs: 'none', md: 'block' } }}>
             <Button
               variant="contained"
               color="primary"
@@ -102,8 +110,85 @@ export const Navbar = () => {
               Contato
             </Button>
           </Box>
+
+          {/* Menu Mobile (Hamburger) */}
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              aria-label="menu"
+              onClick={handleDrawerToggle}
+              sx={{ color: tokens.colors.text.primary }}
+            >
+              <MenuIcon sx={{ fontSize: 30 }} />
+            </IconButton>
+          </Box>
         </Toolbar>
       </Container>
+
+      {/* Mobile Menu Drawer */}
+      <Drawer
+        anchor="right"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Melhora a performance no mobile
+        }}
+        sx={{
+          display: { xs: 'block', md: 'none' },
+          '& .MuiDrawer-paper': { 
+            boxSizing: 'border-box', 
+            width: '100%', // Tela cheia para um visual moderno e premium
+            backgroundColor: tokens.colors.background.canvas,
+            px: 4,
+            py: 4
+          },
+        }}
+      >
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 8 }}>
+          <IconButton onClick={handleDrawerToggle} sx={{ color: tokens.colors.text.primary }}>
+            <CloseIcon sx={{ fontSize: 30 }} />
+          </IconButton>
+        </Box>
+
+        <Stack spacing={4} alignItems="center">
+          {navItems.map((item) => {
+            const isActive = activeItem === item.id;
+            return (
+              <Button
+                key={item.id}
+                onClick={() => handleScroll(item.id)}
+                sx={{
+                  color: isActive ? tokens.colors.text.amber : tokens.colors.text.primary,
+                  fontSize: tokens.typography.fontSize[26], // Fonte grande para impacto
+                  fontFamily: tokens.typography.fontFamily.display,
+                  textTransform: 'none',
+                  fontWeight: tokens.typography.fontWeight.medium,
+                }}
+              >
+                {item.label}
+              </Button>
+            );
+          })}
+
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => handleScroll('contact')}
+            sx={{
+              mt: 6,
+              width: '100%',
+              maxWidth: '300px',
+              background: tokens.colors.background.inverse,
+              color: tokens.colors.text.onInverse,
+              fontSize: tokens.typography.fontSize[16],
+              borderRadius: '16px',
+              px: '16px',
+              py: '16px' // Um pouco mais alto no mobile para facilidade de clique
+            }}
+          >
+            Contato
+          </Button>
+        </Stack>
+      </Drawer>
     </AppBar>
   );
 };
