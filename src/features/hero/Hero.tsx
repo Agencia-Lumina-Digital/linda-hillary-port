@@ -7,8 +7,8 @@ export const Hero = () => {
   return (
     <Box sx={{ position: 'relative', pt: 10, pb: 10 }}>
       <Grid container spacing={4} alignItems="center">
-        {/* Coluna Esquerda: Conteúdo (Esqueleto por enquanto) */}
-        <Grid item xs={12} md={7}>
+        {/* Coluna Esquerda: Conteúdo */}
+        <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1 } }}>
           <Stack spacing={5} sx={{ display: 'flex', justifyContent: 'center', height: '100%', py: 4 }}>
             {/* Tagline / Eyebrow */}
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -17,7 +17,7 @@ export const Hero = () => {
                 sx={{
                   color: tokens.colors.text.accent,
                   fontWeight: tokens.typography.fontWeight.semibold,
-                  fontSize: tokens.typography.fontSize[14]
+                  fontSize: { xs: tokens.typography.fontSize[11], md: tokens.typography.fontSize[14] }
                 }}
               >
                 Product Designer · Manaus, Brasil
@@ -25,20 +25,21 @@ export const Hero = () => {
             </Box>
 
             {/* Título */}
-            <Typography variant="h1" sx={{ color: tokens.colors.text.brand, whiteSpace: 'pre-line' }}>
+            <Typography variant="h1" sx={{ fontSize: { md: tokens.typography.fontSize[48] }, color: tokens.colors.text.brand, whiteSpace: 'pre-line' }}>
               Olá, sou{'\n'}Linda Souza.
             </Typography>
 
             {/* Descrição */}
-            <Typography variant="body1" sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[16], maxWidth: '500px' }}>
+            <Typography variant="body1" sx={{ color: tokens.colors.text.secondary, fontSize: { xs: tokens.typography.fontSize[16], md: tokens.typography.fontSize[14] }, maxWidth: '500px' }}>
               Começo pelo problema real. Trabalho de perto com times de produto, negócio e tecnologia — e entrego interfaces que as pessoas usam com naturalidade, e que geram resultados mensuráveis.
             </Typography>
 
             {/* Ações */}
-            <Stack direction="row" spacing={3}>
+            <Stack direction="row" spacing={3} sx={{ width: { xs: '100%', md: 'fit-content' } }}>
               <Button
                 variant="outlined"
                 sx={{
+                  flex: { xs: 1, md: 'initial' },
                   border: '2px solid' + tokens.colors.border.accent,
                   color: tokens.colors.text.brand,
                   borderRadius: `${tokens.borderRadius.lg}px`,
@@ -52,6 +53,7 @@ export const Hero = () => {
               <Button
                 variant="contained"
                 sx={{
+                  flex: { xs: 1, md: 'initial' },
                   backgroundColor: tokens.colors.background.inverse,
                   color: tokens.colors.text.onInverse,
                   borderRadius: `${tokens.borderRadius.md}px`,
@@ -94,7 +96,7 @@ export const Hero = () => {
         </Grid>
 
         {/* Coluna Direita: Visual / Apresentação */}
-        <Grid item xs={12} md={5} sx={{ position: 'relative' }}>
+        <Grid item xs={12} md={5} sx={{ position: 'relative', order: { xs: 1, md: 2 } }}>
           <Box sx={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
 
             {/* Grafismo de fundo (Posicionamento absoluto para ficar atrás) */}
