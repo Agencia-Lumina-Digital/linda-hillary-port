@@ -1,4 +1,5 @@
-import { Box, Button, Grid, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography } from '@mui/material';
+import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
 import grafismoHero from '../../theme/assets/grafismo-rios-hero.png';
 import lindaImage from '../../theme/assets/linda-image.png';
@@ -40,25 +41,14 @@ export const Hero = () => {
                 variant="outlined"
                 sx={{
                   flex: { xs: 1, md: 'initial' },
-                  border: '2px solid' + tokens.colors.border.accent,
-                  color: tokens.colors.text.brand,
-                  borderRadius: `${tokens.borderRadius.lg}px`,
-                  fontSize: tokens.typography.fontSize[13],
-                  px: '16px',
-                  py: '12px'
                 }}
               >
                 Ver currículo
               </Button>
               <Button
-                variant="contained"
+                variant="primary"
                 sx={{
                   flex: { xs: 1, md: 'initial' },
-                  backgroundColor: tokens.colors.background.inverse,
-                  color: tokens.colors.text.onInverse,
-                  borderRadius: `${tokens.borderRadius.md}px`,
-                  px: '16px',
-                  py: '12px'
                 }}
               >
                 Ver projetos

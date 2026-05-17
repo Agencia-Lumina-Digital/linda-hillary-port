@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { AppBar, Box, Button, Container, Toolbar, Typography, IconButton, Drawer, Stack } from '@mui/material';
+import { AppBar, Box, Container, Toolbar, Typography, IconButton, Drawer, Stack } from '@mui/material';
+import { Button } from '../../atoms/Button/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { tokens } from '../../../theme/tokens';
@@ -73,19 +74,11 @@ export const Navbar = () => {
               return (
                 <Button
                   key={item.id}
+                  variant="ghost"
                   onClick={() => handleScroll(item.id)}
                   sx={{
                     color: isActive ? tokens.colors.text.amber : tokens.colors.text.secondary,
                     backgroundColor: isActive ? tokens.colors.background.elevated : 'transparent',
-
-                    // Estrutura
-                    borderRadius: `${tokens.borderRadius.xl}px`,
-                    px: 3,
-                    py: 1,
-                    textTransform: 'none',
-                    fontWeight: tokens.typography.fontWeight.medium,
-                    fontSize: tokens.typography.fontSize[16],
-
                     '&:hover': {
                       backgroundColor: isActive
                         ? tokens.colors.background.elevated
@@ -102,17 +95,8 @@ export const Navbar = () => {
           {/* Lado Direito: Botão Default (Desktop) */}
           <Box sx={{ flexShrink: 0, display: { xs: 'none', md: 'block' } }}>
             <Button
-              variant="contained"
-              color="primary"
+              variant="primary"
               onClick={() => handleScroll('contact')}
-              sx={{
-                background: tokens.colors.background.inverse,
-                color: tokens.colors.text.onInverse,
-                fontSize: tokens.typography.fontSize[16],
-                borderRadius: '16px',
-                px: '16px',
-                py: '12px'
-              }}
             >
               Contato
             </Button>
@@ -162,13 +146,12 @@ export const Navbar = () => {
             return (
               <Button
                 key={item.id}
+                variant="ghost"
                 onClick={() => handleScroll(item.id)}
                 sx={{
                   color: isActive ? tokens.colors.text.amber : tokens.colors.text.primary,
                   fontSize: tokens.typography.fontSize[26], // Fonte grande para impacto
                   fontFamily: tokens.typography.fontFamily.display,
-                  textTransform: 'none',
-                  fontWeight: tokens.typography.fontWeight.medium,
                 }}
               >
                 {item.label}
@@ -177,18 +160,12 @@ export const Navbar = () => {
           })}
 
           <Button
-            variant="contained"
-            color="primary"
+            variant="primary"
             onClick={() => handleScroll('contact')}
             sx={{
               mt: 6,
               width: '100%',
               maxWidth: '300px',
-              background: tokens.colors.background.inverse,
-              color: tokens.colors.text.onInverse,
-              fontSize: tokens.typography.fontSize[16],
-              borderRadius: '16px',
-              px: '16px',
               py: '16px' // Um pouco mais alto no mobile para facilidade de clique
             }}
           >
