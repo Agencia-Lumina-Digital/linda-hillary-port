@@ -5,14 +5,14 @@ export const Projects = () => {
   return (
     <Box 
       sx={{ 
-        pt: { xs: 8, md: '88px' },
+        pt: { xs: '40px', md: '88px' },
         pb: { xs: 8, md: 12 },
         backgroundColor: tokens.colors.background.elevated,
         mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Quebra o container para full-width
         px: { xs: '24px', md: 'calc(50vw - 50%)' } // Restaura padding interno perfeitamente alinhado
       }}
     >
-      <Stack spacing="10px">
+      <Stack spacing={{ xs: '8px', md: '10px' }}>
         {/* Tagline / Eyebrow */}
         <Typography
           sx={{
@@ -31,8 +31,8 @@ export const Projects = () => {
           sx={{
             fontFamily: tokens.typography.fontFamily.display,
             color: tokens.colors.text.brand,
-            fontSize: { xs: '32px', md: tokens.typography.fontSize[38] },
-            fontWeight: tokens.typography.fontWeight.light,
+            fontSize: { xs: tokens.typography.fontSize[26], md: tokens.typography.fontSize[38] },
+            fontWeight: tokens.typography.fontWeight.medium,
             lineHeight: 1.2
           }}
         >
@@ -44,7 +44,7 @@ export const Projects = () => {
           variant="body1"
           sx={{
             color: tokens.colors.text.secondary,
-            fontSize: tokens.typography.fontSize[16],
+            fontSize: { xs: tokens.typography.fontSize[14], md: tokens.typography.fontSize[16] },
             maxWidth: '560px',
             lineHeight: 1.6
           }}
