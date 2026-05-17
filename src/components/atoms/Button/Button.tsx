@@ -54,7 +54,7 @@ export const Button = ({ variant = 'primary', sx, children, ...props }: ButtonPr
       sx={{
         textTransform: 'none',
         fontWeight: tokens.typography.fontWeight.medium,
-        fontSize: tokens.typography.fontSize[16],
+        fontSize: tokens.typography.fontSize[13],
         ...variantStyles,
         ...sx,
       }}
