@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import { tokens } from '../../theme/tokens';
 import { ProjectCard } from './ProjectCard';
 
@@ -85,19 +85,33 @@ export const Projects = () => {
         </Typography>
       </Stack>
 
-      {/* Grid de Cards de Projetos */}
-      <Grid 
-        container 
-        columnSpacing={6} // 6 * 4px = 24px (igual ao padding lateral)
-        rowSpacing={6} 
-        sx={{ mt: { xs: '32px', md: '48px' } }}
+      {/* Container de Cards de Projetos */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: { xs: 'wrap', md: 'nowrap' }, // Garante todos na mesma linha no desktop
+          gap: '24px', // Espaçamento igual e consistente entre todos os cards
+          mt: { xs: '32px', md: '40px' } // Espaçamento elegante superior (menor que 56px)
+        }}
       >
         {projectsData.map((project, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
+          <Box
+            key={index}
+            sx={{
+              width: { 
+                xs: '100%', 
+                sm: 'calc(50% - 12px)', 
+                md: 'calc((100% - 72px) / 4)' // Divisão perfeita de 4 colunas com gap de 24px
+              },
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
             <ProjectCard {...project} />
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Box>
     </Box>
   );
 };
