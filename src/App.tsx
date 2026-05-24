@@ -2,6 +2,7 @@ import { Box, Container, Typography } from '@mui/material';
 import { Navbar } from './components/organisms/Navbar/Navbar';
 import { Hero } from './features/hero/Hero';
 import { Projects } from './features/projects/Projects';
+import { About } from './features/about/About';
 import { tokens } from './theme/tokens';
 
 function App() {
@@ -28,8 +29,8 @@ function App() {
           <Projects />
         </Box>
 
-        <Box id="about" sx={{ height: '100vh', borderBottom: '1px dashed' }}>
-          <Typography variant="h2">Sobre</Typography>
+        <Box id="about">
+          <About />
         </Box>
 
         <Box id="resume" sx={{ height: '100vh', borderBottom: '1px dashed' }}>
