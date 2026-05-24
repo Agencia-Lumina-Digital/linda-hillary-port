@@ -47,6 +47,7 @@ export const Navbar = () => {
       elevation={0}
       sx={{
         backgroundColor: tokens.colors.background.canvas,
+        zIndex: 10
       }}
     >
       <Container 

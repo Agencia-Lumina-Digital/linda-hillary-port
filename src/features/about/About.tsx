@@ -11,7 +11,9 @@ export const About = () => {
         backgroundColor: tokens.colors.background.elevated, // Fundo branco (#FFFFFF)
         mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Sangramento lateral total
         px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Alinhamento interno
-        borderBottom: `1px solid ${tokens.colors.border.default}`
+        borderBottom: `1px solid ${tokens.colors.border.default}`,
+        position: 'relative',
+        zIndex: 1,
       }}
     >
       <Box
@@ -41,7 +43,7 @@ export const About = () => {
             alt=""
             sx={{
               position: 'absolute',
-              top: '74%',
+              top: '30%',
               left: '50%',
               transform: 'translate(-50%, -50%) scaleX(-1)', // Inverte horizontalmente e centraliza
               width: '150%',

@@ -43,7 +43,7 @@ export const Projects = () => {
         pb: { xs: 8, md: 12 },
         backgroundColor: tokens.colors.background.elevated,
         mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Quebra o container para full-width
-        px: { xs: '24px', md: 'calc(50vw - 50%)' } // Restaura padding interno perfeitamente alinhado
+        px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Restaura padding interno perfeitamente alinhado
       }}
     >
       <Stack spacing={{ xs: '8px', md: '10px' }}>
@@ -135,6 +135,8 @@ export const Projects = () => {
           overflow: 'hidden',
           borderTop: `1px solid rgba(44, 62, 53, 0.05)`, // Acabamento premium horizontal
           borderBottom: `1px solid rgba(44, 62, 53, 0.05)`,
+          position: 'relative',
+          zIndex: 2,
         }}
       >
         <Stack
@@ -184,7 +186,7 @@ export const Projects = () => {
               letterSpacing: '0.05em',
             }}
           >
-            Giovanna · Product Designer, Bemol Digital
+            Giovanna Chiarion · UX/UI Designer Specialist, VEM Sistemi
           </Typography>
         </Stack>
       </Box>
