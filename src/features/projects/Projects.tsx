@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from '@mui/material';
 import { tokens } from '../../theme/tokens';
 import { ProjectCard } from './ProjectCard';
+import bgTopografico from '../../theme/assets/bg-topografico-claro.png';
 
 const projectsData = [
   {
@@ -112,6 +113,28 @@ export const Projects = () => {
           </Box>
         ))}
       </Box>
+
+      {/* Bloco de Citação / Testemunhal (Sangramento total de ponta a ponta da tela) */}
+      <Box
+        sx={{
+          mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Rompe o container pai e estica até as bordas da janela
+          px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Mantém o futuro conteúdo alinhado à régua geral do site
+          mt: { xs: '48px', md: '80px' },
+          minHeight: { xs: '180px', md: '260px' },
+          borderRadius: 0, // Retangular de ponta a ponta
+          backgroundColor: '#EDE8DF', // Cor creme suave correspondente ao fundo da citação
+          backgroundImage: `url(${bgTopografico})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+          borderTop: `1px solid rgba(44, 62, 53, 0.05)`, // Acabamento premium horizontal
+          borderBottom: `1px solid rgba(44, 62, 53, 0.05)`,
+        }}
+      />
     </Box>
   );
 };
