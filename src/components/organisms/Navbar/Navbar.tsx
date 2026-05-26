@@ -22,8 +22,14 @@ export const Navbar = () => {
   };
 
   const handleScroll = (id: string) => {
-    setActiveItem(id);
     setMobileOpen(false); // Fecha o menu mobile se estiver aberto
+
+    if (id === 'resume') {
+      window.open('/curriculo.pdf', '_blank');
+      return;
+    }
+
+    setActiveItem(id);
 
     if (id === 'hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -161,13 +167,12 @@ export const Navbar = () => {
           })}
 
           <Button
-            variant="primary"
+            variant="ghost"
             onClick={() => handleScroll('contact')}
             sx={{
-              mt: 6,
-              width: '100%',
-              maxWidth: '300px',
-              py: '16px' // Um pouco mais alto no mobile para facilidade de clique
+              color: activeItem === 'contact' ? tokens.colors.text.amber : tokens.colors.text.primary,
+              fontSize: tokens.typography.fontSize[26],
+              fontFamily: tokens.typography.fontFamily.display,
             }}
           >
             Contato
