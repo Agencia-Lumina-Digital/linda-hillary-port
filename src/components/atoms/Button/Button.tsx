@@ -16,8 +16,9 @@ export const Button = ({ variant = 'primary', sx, children, ...props }: ButtonPr
         borderRadius: `${tokens.borderRadius.md}px`,
         px: '16px',
         py: '12px',
+        transition: 'all 0.2s ease-in-out',
         '&:hover': {
-          opacity: 0.9,
+          backgroundColor: tokens.colors.background.inverseSoft,
         }
       };
       break;
@@ -29,6 +30,7 @@ export const Button = ({ variant = 'primary', sx, children, ...props }: ButtonPr
         fontSize: tokens.typography.fontSize[13],
         px: '16px',
         py: '12px',
+        transition: 'all 0.2s ease-in-out',
         '&:hover': {
           backgroundColor: 'rgba(0,0,0,0.04)',
         }
@@ -41,6 +43,7 @@ export const Button = ({ variant = 'primary', sx, children, ...props }: ButtonPr
         borderRadius: `${tokens.borderRadius.xl}px`,
         px: 3,
         py: 1,
+        transition: 'all 0.2s ease-in-out',
         '&:hover': {
           backgroundColor: 'rgba(0,0,0,0.04)',
         }

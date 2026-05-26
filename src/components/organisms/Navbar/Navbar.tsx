@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AppBar, Box, Container, Toolbar, Typography, IconButton, Drawer, Stack } from '@mui/material';
 import { Button } from '../../atoms/Button/Button';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -16,6 +16,42 @@ const navItems = [
 export const Navbar = () => {
   const [activeItem, setActiveItem] = useState('hero');
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const sectionIds = ['hero', 'projects', 'about', 'contact'];
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -40% 0px', // Ativado quando a seção cruza a área de foco central
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveItem(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
