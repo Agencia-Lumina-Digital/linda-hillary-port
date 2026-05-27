@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 import { tokens } from '../../theme/tokens';
 import { ProjectCard } from './ProjectCard';
+import { ProjectModal } from './ProjectModal';
 import bgTopografico from '../../theme/assets/bg-topografico-claro.png';
 import logo from '../../theme/assets/logo-linda-claro.png';
 
@@ -36,6 +38,8 @@ const projectsData = [
 ];
 
 export const Projects = () => {
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
+
   return (
     <Box
       sx={{
@@ -110,7 +114,7 @@ export const Projects = () => {
               flexDirection: 'column'
             }}
           >
-            <ProjectCard {...project} />
+            <ProjectCard {...project} onClick={() => setSelectedProjectIndex(index)} />
           </Box>
         ))}
       </Box>
@@ -190,6 +194,29 @@ export const Projects = () => {
           </Typography>
         </Stack>
       </Box>
+
+      {/* Modal de Detalhes do Projeto */}
+      <ProjectModal
+        open={selectedProjectIndex !== null}
+        onClose={() => setSelectedProjectIndex(null)}
+        project={selectedProjectIndex !== null ? projectsData[selectedProjectIndex] : null}
+        onPrev={() => setSelectedProjectIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : prev))}
+        onNext={() => setSelectedProjectIndex((prev) => (prev !== null && prev < projectsData.length - 1 ? prev + 1 : prev))}
+        hasPrev={selectedProjectIndex !== null && selectedProjectIndex > 0}
+        hasNext={selectedProjectIndex !== null && selectedProjectIndex < projectsData.length - 1}
+        onContactClick={() => {
+          setSelectedProjectIndex(null);
+          const element = document.getElementById('contact');
+          if (element) {
+            const offset = 80;
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: elementPosition - offset,
+              behavior: 'smooth'
+            });
+          }
+        }}
+      />
     </Box>
   );
 };

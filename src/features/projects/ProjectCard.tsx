@@ -7,11 +7,13 @@ export interface ProjectCardProps {
   tag: string;
   metric: string;
   bannerBgColor: string;
+  onClick?: () => void;
 }
 
-export const ProjectCard = ({ title, description, tag, metric, bannerBgColor }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, tag, metric, bannerBgColor, onClick }: ProjectCardProps) => {
   return (
     <Box
+      onClick={onClick}
       sx={{
         backgroundColor: tokens.colors.background.canvas,
         borderRadius: `${tokens.borderRadius.md}px`,
@@ -19,6 +21,7 @@ export const ProjectCard = ({ title, description, tag, metric, bannerBgColor }: 
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
+        cursor: onClick ? 'pointer' : 'default',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease',
         '&:hover': {
           transform: 'translateY(-4px)',
@@ -36,32 +39,7 @@ export const ProjectCard = ({ title, description, tag, metric, bannerBgColor }: 
           alignItems: 'center',
           justifyContent: 'center',
         }}
-      >
-        {/* Tag / Badge no canto superior esquerdo */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: '16px',
-            left: '16px',
-            backgroundColor: tokens.colors.background.elevated,
-            borderRadius: '100px',
-            px: '12px',
-            py: '6px',
-          }}
-        >
-          <Typography
-            sx={{
-              color: tokens.colors.text.primary,
-              fontSize: tokens.typography.fontSize[10],
-              fontWeight: tokens.typography.fontWeight.semibold,
-              lineHeight: 1,
-              letterSpacing: '0.02em',
-            }}
-          >
-            {tag}
-          </Typography>
-        </Box>
-      </Box>
+      />
 
       {/* Conteúdo do Card */}
       <Stack
