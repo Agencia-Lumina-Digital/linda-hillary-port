@@ -2,6 +2,7 @@ import { Dialog, Box, Stack, Typography, IconButton, useTheme, useMediaQuery } f
 import CloseIcon from '@mui/icons-material/Close';
 import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
+import { LoginBemolContent } from './content/LoginBemolContent';
 
 interface Project {
   title: string;
@@ -21,6 +22,15 @@ interface ProjectModalProps {
   hasNext: boolean;
   onContactClick: () => void;
 }
+
+const renderProjectContent = (title: string) => {
+  switch (title) {
+    case 'Redesign do Login — App Bemol':
+      return <LoginBemolContent />;
+    default:
+      return null;
+  }
+};
 
 export const ProjectModal = ({
   open,
@@ -81,25 +91,27 @@ export const ProjectModal = ({
         </IconButton>
       </Box>
 
-      {/* 2. Corpo do Modal (Apenas exibe o título por enquanto) */}
+      {/* 2. Corpo do Modal (Exibe o título e o conteúdo dinâmico do projeto) */}
       <Box
         sx={{
           p: { xs: '32px 24px', md: '56px 40px' },
           minHeight: '200px',
         }}
       >
-        <Typography
-          variant="h2"
-          sx={{
-            fontFamily: tokens.typography.fontFamily.display,
-            color: tokens.colors.text.brand,
-            fontSize: { xs: tokens.typography.fontSize[26], md: tokens.typography.fontSize[38] },
-            fontWeight: tokens.typography.fontWeight.medium,
-            lineHeight: 1.2,
-          }}
-        >
-          {project.title}
-        </Typography>
+        {renderProjectContent(project.title) || (
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: tokens.typography.fontFamily.display,
+              color: tokens.colors.text.brand,
+              fontSize: { xs: tokens.typography.fontSize[26], md: tokens.typography.fontSize[38] },
+              fontWeight: tokens.typography.fontWeight.medium,
+              lineHeight: 1.2,
+            }}
+          >
+            {project.title}
+          </Typography>
+        )}
       </Box>
 
       {/* 3. Rodapé do Modal (Ações de Navegação e Contato) */}
