@@ -5,6 +5,7 @@ import { ProjectCard } from './ProjectCard';
 import { ProjectModal } from './ProjectModal';
 import bgTopografico from '../../theme/assets/bg-topografico-claro.png';
 import logo from '../../theme/assets/logo-linda-claro.png';
+import loginBemolBg from '../../theme/assets/projects/loginBemolContent/background.png';
 
 const projectsData = [
   {
@@ -13,6 +14,7 @@ const projectsData = [
     tag: 'UX Research',
     metric: '+67% conclusão',
     bannerBgColor: '#B6A38B', // Muted brownish beige
+    headerBgImage: loginBemolBg,
   },
   {
     title: 'Fundamentos do Design System — Bemol Varejo',
