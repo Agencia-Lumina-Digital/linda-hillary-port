@@ -3,6 +3,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
 import { LoginBemolContent } from './content/LoginBemolContent';
+import { DesignSystemBemolContent } from './content/DesignSystemBemolContent';
 
 interface Project {
   title: string;
@@ -28,6 +29,8 @@ const renderProjectContent = (title: string) => {
   switch (title) {
     case 'Redesign do Login — App Bemol':
       return <LoginBemolContent />;
+    case 'Fundamentos do Design System — Bemol Varejo':
+      return <DesignSystemBemolContent />;
     default:
       return null;
   }
