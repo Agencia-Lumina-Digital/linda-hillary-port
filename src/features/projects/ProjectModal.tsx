@@ -4,6 +4,7 @@ import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
 import { LoginBemolContent } from './content/LoginBemolContent';
 import { DesignSystemBemolContent } from './content/DesignSystemBemolContent';
+import { SaudeBemolContent } from './content/SaudeBemolContent';
 
 interface Project {
   title: string;
@@ -31,6 +32,8 @@ const renderProjectContent = (title: string) => {
       return <LoginBemolContent />;
     case 'Fundamentos do Design System — Bemol Varejo':
       return <DesignSystemBemolContent />;
+    case 'Bemol Saúde — Agendamento de Exames':
+      return <SaudeBemolContent />;
     default:
       return null;
   }

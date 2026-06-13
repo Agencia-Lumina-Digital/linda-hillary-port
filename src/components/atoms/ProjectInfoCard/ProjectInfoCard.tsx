@@ -29,6 +29,8 @@ export const ProjectInfoCard = ({ title, text }: ProjectInfoCardProps) => {
           fontSize: { xs: '20px', md: '24px' },
           color: tokens.colors.text.brand,
           lineHeight: 1.1,
+          overflowWrap: 'break-word',
+          wordBreak: 'break-word',
         }}
       >
         {title}
@@ -43,6 +45,8 @@ export const ProjectInfoCard = ({ title, text }: ProjectInfoCardProps) => {
           color: tokens.colors.text.secondary,
           mt: '6px',
           lineHeight: 1.4,
+          overflowWrap: 'break-word',
+          wordBreak: 'break-word',
         }}
       >
         {text}

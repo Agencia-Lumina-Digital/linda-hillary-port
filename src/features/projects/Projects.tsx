@@ -7,6 +7,7 @@ import bgTopografico from '../../theme/assets/bg-topografico-claro.png';
 import logo from '../../theme/assets/logo-linda-claro.png';
 import loginBemolBg from '../../theme/assets/projects/loginBemolContent/background.png';
 import designSystemBg from '../../theme/assets/projects/DesignSystemBemolContent/background.png';
+import saudeBemolBg from '../../theme/assets/projects/SaudeBemolContent/background.png';
 
 const projectsData = [
   {
@@ -28,9 +29,10 @@ const projectsData = [
   {
     title: 'Bemol Saúde — Agendamento de Exames',
     description: 'Criação do fluxo de agendamento de exames laboratoriais domiciliares no app Bemol.',
-    tag: 'UX Research',
+    tag: 'UX Design',
     metric: '+67% conclusão',
     bannerBgColor: '#B6A38B',
+    headerBgImage: saudeBemolBg,
   },
   {
     title: 'Bemol Run — Redesign do Fluxo de Inscrição',
