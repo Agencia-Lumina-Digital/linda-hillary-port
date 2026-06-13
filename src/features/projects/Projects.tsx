@@ -8,6 +8,7 @@ import logo from '../../theme/assets/logo-linda-claro.png';
 import loginBemolBg from '../../theme/assets/projects/loginBemolContent/background.png';
 import designSystemBg from '../../theme/assets/projects/DesignSystemBemolContent/background.png';
 import saudeBemolBg from '../../theme/assets/projects/SaudeBemolContent/background.png';
+import bemolRunBg from '../../theme/assets/projects/BemolRunContent/background.png';
 
 const projectsData = [
   {
@@ -37,9 +38,10 @@ const projectsData = [
   {
     title: 'Bemol Run — Redesign do Fluxo de Inscrição',
     description: 'Redesign completo da experiência de inscrição em eventos de corrida no app Bemol.',
-    tag: 'UX Research',
+    tag: 'UX Design',
     metric: '+67% conclusão',
     bannerBgColor: '#93A993',
+    headerBgImage: bemolRunBg,
   },
 ];
 

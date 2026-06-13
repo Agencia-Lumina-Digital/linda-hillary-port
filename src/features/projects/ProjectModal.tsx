@@ -5,6 +5,7 @@ import { tokens } from '../../theme/tokens';
 import { LoginBemolContent } from './content/LoginBemolContent';
 import { DesignSystemBemolContent } from './content/DesignSystemBemolContent';
 import { SaudeBemolContent } from './content/SaudeBemolContent';
+import { BemolRunContent } from './content/BemolRunContent';
 
 interface Project {
   title: string;
@@ -34,6 +35,8 @@ const renderProjectContent = (title: string) => {
       return <DesignSystemBemolContent />;
     case 'Bemol Saúde — Agendamento de Exames':
       return <SaudeBemolContent />;
+    case 'Bemol Run — Redesign do Fluxo de Inscrição':
+      return <BemolRunContent />;
     default:
       return null;
   }
