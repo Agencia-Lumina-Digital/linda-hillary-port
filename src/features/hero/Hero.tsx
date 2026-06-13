@@ -5,6 +5,22 @@ import grafismoHero from '../../theme/assets/grafismo-rios-hero.png';
 import lindaImage from '../../theme/assets/linda-image.png';
 
 export const Hero = () => {
+  const handleOpenResume = () => {
+    window.open('/curriculo.pdf', '_blank');
+  };
+
+  const handleScrollToProjects = () => {
+    const element = document.getElementById('projects');
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <Box sx={{ position: 'relative', pt: 10 }}>
       <Grid container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 6, md: 8 }} alignItems="center">
@@ -39,6 +55,7 @@ export const Hero = () => {
             <Stack direction="row" spacing={3} sx={{ width: { xs: '100%', md: 'fit-content' } }}>
               <Button
                 variant="outlined"
+                onClick={handleOpenResume}
                 sx={{
                   flex: { xs: 1, md: 'initial' },
                 }}
@@ -47,6 +64,7 @@ export const Hero = () => {
               </Button>
               <Button
                 variant="primary"
+                onClick={handleScrollToProjects}
                 sx={{
                   flex: { xs: 1, md: 'initial' },
                 }}

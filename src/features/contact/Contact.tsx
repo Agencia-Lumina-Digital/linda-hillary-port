@@ -4,6 +4,14 @@ import { tokens } from '../../theme/tokens';
 import grafismoHero from '../../theme/assets/grafismo-rios-hero.png';
 
 export const Contact = () => {
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:linda.15brandao@gmail.com';
+  };
+
+  const handleLinkedinClick = () => {
+    window.open('https://www.linkedin.com/in/lindassouza/', '_blank');
+  };
+
   return (
     <Box 
       sx={{ 
@@ -114,6 +122,7 @@ export const Contact = () => {
           {/* Botão Enviar e-mail (Contorno claro) */}
           <Button
             variant="outlined"
+            onClick={handleEmailClick}
             sx={{
               borderColor: 'rgba(255, 255, 255, 0.3)',
               color: '#FFFFFF',
@@ -133,6 +142,7 @@ export const Contact = () => {
           {/* Botão LinkedIn (Fundo verde marca) */}
           <Button
             variant="primary"
+            onClick={handleLinkedinClick}
             sx={{
               backgroundColor: '#5C8C5A', // Verde semântico do design system
               color: '#FFFFFF',
