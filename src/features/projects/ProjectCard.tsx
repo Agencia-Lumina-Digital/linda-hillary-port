@@ -7,10 +7,11 @@ export interface ProjectCardProps {
   tag: string;
   metric: string;
   bannerBgColor: string;
+  headerBgImage?: string;
   onClick?: () => void;
 }
 
-export const ProjectCard = ({ title, description, tag, metric, bannerBgColor, onClick }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, tag, metric, bannerBgColor, headerBgImage, onClick }: ProjectCardProps) => {
   return (
     <Box
       onClick={onClick}
@@ -29,11 +30,15 @@ export const ProjectCard = ({ title, description, tag, metric, bannerBgColor, on
         },
       }}
     >
-      {/* Banner Superior com Cor Sólida Alternada */}
+      {/* Banner Superior com Cor Sólida Alternada ou Imagem de Fundo */}
       <Box
         sx={{
           height: { xs: '180px', md: '200px' },
           backgroundColor: bannerBgColor,
+          backgroundImage: headerBgImage ? `url(${headerBgImage})` : 'none',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
