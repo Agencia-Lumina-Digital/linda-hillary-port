@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { tokens } from '../../../theme/tokens';
 
@@ -5,7 +6,7 @@ interface ProjectContentBlockProps {
   title?: string;
   paragraphs?: string[];
   listTitle?: string;
-  listItems?: string[];
+  listItems?: React.ReactNode[];
 }
 
 export const ProjectContentBlock = ({

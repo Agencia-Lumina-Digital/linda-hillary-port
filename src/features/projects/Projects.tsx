@@ -6,6 +6,7 @@ import { ProjectModal } from './ProjectModal';
 import bgTopografico from '../../theme/assets/bg-topografico-claro.png';
 import logo from '../../theme/assets/logo-linda-claro.png';
 import loginBemolBg from '../../theme/assets/projects/loginBemolContent/background.png';
+import designSystemBg from '../../theme/assets/projects/DesignSystemBemolContent/background.png';
 
 const projectsData = [
   {
@@ -22,6 +23,7 @@ const projectsData = [
     tag: 'UX Research',
     metric: '+67% conclusão',
     bannerBgColor: '#93A993', // Muted sage green
+    headerBgImage: designSystemBg,
   },
   {
     title: 'Bemol Saúde — Agendamento de Exames',
