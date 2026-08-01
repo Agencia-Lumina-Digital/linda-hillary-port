@@ -5,6 +5,7 @@ import { Values } from './features/values/Values';
 import { Projects } from './features/projects/Projects';
 import { About } from './features/about/About';
 import { Contact } from './features/contact/Contact';
+import { Footer } from './components/organisms/Footer/Footer';
 import { tokens } from './theme/tokens';
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
           <Contact />
         </Box>
       </Container>
+      
+      {/* Rodapé Full Width */}
+      <Footer />
     </Box>
   )
 }
