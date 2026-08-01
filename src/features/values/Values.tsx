@@ -1,39 +1,57 @@
 import { Box, Grid, Typography } from '@mui/material';
 import { tokens } from '../../theme/tokens';
+import rect19 from '../../theme/assets/Rectangle 19.png';
+import rect21 from '../../theme/assets/Rectangle 21.png';
+import rect25 from '../../theme/assets/Rectangle 25.png';
 
 export const Values = () => {
   return (
     <Box 
       sx={{ 
-        py: 6, 
-        backgroundColor: tokens.colors.background.elevated,
-        borderTop: `1px solid ${tokens.colors.border.default}`,
-        borderBottom: `1px solid ${tokens.colors.border.default}`,
+        py: { xs: 8, md: 10 }, 
+        backgroundColor: tokens.colors.background.brandSubtle, // Cor verde bem clara de fundo
         mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Quebra o container para full-width
         px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Restaura padding interno perfeitamente alinhado
-        mt: { xs: 8, md: 0 } // Adicionando margin-top para descolar da section acima caso precise no mobile
       }}
     >
-      <Grid container columnSpacing={4} rowSpacing={{ xs: 4, md: 2 }}>
+      <Grid container columnSpacing={{ xs: 0, md: 6 }} rowSpacing={6}>
         {/* Feature 1 */}
-        <Grid item xs={4}>
-          <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: tokens.typography.fontSize[26] }}>01</Typography>
-          <Typography variant="h6" sx={{ color: tokens.colors.text.brand, fontWeight: tokens.typography.fontWeight.semibold, mb: 1, fontSize: tokens.typography.fontSize[15] }}>Problema antes de solução</Typography>
-          <Typography variant="body2" sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[12] }}>Não abro o Figma sem entender o contexto.</Typography>
+        <Grid item xs={12} md={4} sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
+          <Box component="img" src={rect19} alt="Ícone Discovery" sx={{ width: '41px', height: '41px', flexShrink: 0 }} />
+          <Box>
+            <Typography variant="h4" sx={{ color: tokens.colors.text.brand, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: { xs: '20px', md: '24px' }, fontWeight: 600, lineHeight: 1.4 }}>
+              Discovery e comportamento
+            </Typography>
+            <Typography variant="body1" sx={{ color: tokens.colors.text.secondary, fontFamily: tokens.typography.fontFamily.body, fontSize: '18px', fontWeight: 400, lineHeight: 1.6 }}>
+              Uso ferramentas de analytics e pesquisas para mapear o contexto real antes de desenhar.
+            </Typography>
+          </Box>
         </Grid>
         
         {/* Feature 2 */}
-        <Grid item xs={4}>
-          <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: tokens.typography.fontSize[26] }}>02</Typography>
-          <Typography variant="h6" sx={{ color: tokens.colors.text.brand, fontWeight: tokens.typography.fontWeight.semibold, mb: 1, fontSize: tokens.typography.fontSize[15] }}>Design é conversa</Typography>
-          <Typography variant="body2" sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[12] }}>Trabalho junto com produto e engenharia.</Typography>
+        <Grid item xs={12} md={4} sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
+          <Box component="img" src={rect21} alt="Ícone Design Systems" sx={{ width: '41px', height: '41px', flexShrink: 0 }} />
+          <Box>
+            <Typography variant="h4" sx={{ color: tokens.colors.text.brand, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: { xs: '20px', md: '24px' }, fontWeight: 600, lineHeight: 1.4 }}>
+              Design Systems escaláveis
+            </Typography>
+            <Typography variant="body1" sx={{ color: tokens.colors.text.secondary, fontFamily: tokens.typography.fontFamily.body, fontSize: '18px', fontWeight: 400, lineHeight: 1.6 }}>
+              Lidero a criação de tokens e componentes reutilizáveis, hoje mentorando outras designers nesse processo.
+            </Typography>
+          </Box>
         </Grid>
 
         {/* Feature 3 */}
-        <Grid item xs={4}>
-          <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: tokens.typography.fontSize[26] }}>03</Typography>
-          <Typography variant="h6" sx={{ color: tokens.colors.text.brand, fontWeight: tokens.typography.fontWeight.semibold, mb: 1, fontSize: tokens.typography.fontSize[15] }}>Entrego, meço, melhoro</Typography>
-          <Typography variant="body2" sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[12] }}>Lançamento não é o fim.</Typography>
+        <Grid item xs={12} md={4} sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
+          <Box component="img" src={rect25} alt="Ícone Acessibilidade" sx={{ width: '41px', height: '41px', flexShrink: 0 }} />
+          <Box>
+            <Typography variant="h4" sx={{ color: tokens.colors.text.brand, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: { xs: '20px', md: '24px' }, fontWeight: 600, lineHeight: 1.4 }}>
+              Acessibilidade e refinamento
+            </Typography>
+            <Typography variant="body1" sx={{ color: tokens.colors.text.secondary, fontFamily: tokens.typography.fontFamily.body, fontSize: '18px', fontWeight: 400, lineHeight: 1.6 }}>
+              Aplicação das diretrizes WCAG para criar produtos verdadeiramente inclusivos.
+            </Typography>
+          </Box>
         </Grid>
       </Grid>
     </Box>
