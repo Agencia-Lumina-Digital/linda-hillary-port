@@ -1,23 +1,24 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography, Button } from '@mui/material';
 import { tokens } from '../../theme/tokens';
 
 export interface ProjectCardProps {
   title: string;
   description: string;
   tag: string;
-  metric: string;
+  metric: string; // Will keep metric prop in interface just in case, but won't use it in UI
   bannerBgColor: string;
   headerBgImage?: string;
   onClick?: () => void;
 }
 
-export const ProjectCard = ({ title, description, tag, metric, bannerBgColor, headerBgImage, onClick }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, bannerBgColor, headerBgImage, onClick }: ProjectCardProps) => {
   return (
     <Box
       onClick={onClick}
       sx={{
-        backgroundColor: tokens.colors.background.canvas,
-        borderRadius: `${tokens.borderRadius.md}px`,
+        backgroundColor: tokens.colors.background.elevated,
+        borderRadius: `16px`,
+        boxShadow: '0px 4px 24px rgba(112, 144, 176, 0.1)',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
@@ -26,14 +27,14 @@ export const ProjectCard = ({ title, description, tag, metric, bannerBgColor, he
         transition: 'transform 0.3s ease, box-shadow 0.3s ease',
         '&:hover': {
           transform: 'translateY(-4px)',
-          boxShadow: '0 8px 24px rgba(44, 62, 53, 0.06)',
+          boxShadow: '0px 12px 32px rgba(112, 144, 176, 0.15)',
         },
       }}
     >
       {/* Banner Superior com Cor Sólida Alternada ou Imagem de Fundo */}
       <Box
         sx={{
-          height: { xs: '180px', md: '200px' },
+          height: { xs: '200px', md: '280px' },
           backgroundColor: bannerBgColor,
           backgroundImage: headerBgImage ? `url(${headerBgImage})` : 'none',
           backgroundSize: 'cover',
@@ -48,30 +49,23 @@ export const ProjectCard = ({ title, description, tag, metric, bannerBgColor, he
 
       {/* Conteúdo do Card */}
       <Stack
-        spacing={2}
+        spacing={{ xs: 2, md: 3 }}
         sx={{
-          p: '24px',
+          p: { xs: '24px 16px', md: '40px' },
           flexGrow: 1,
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
         }}
       >
-        <Stack spacing={1.5}>
+        <Stack spacing={2} sx={{ flexGrow: 1 }}>
           {/* Título do Projeto */}
           <Typography
-            variant="h3"
+            variant="h4"
             sx={{
               color: tokens.colors.text.brand,
-              fontSize: tokens.typography.fontSize[15],
-              fontWeight: tokens.typography.fontWeight.semibold,
+              fontSize: { xs: '16px', md: '22px' },
+              fontWeight: 600,
               lineHeight: 1.3,
-              // Garante altura mínima para alinhamento uniforme em desktop
-              minHeight: { md: '42px' },
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
             }}
           >
             {title}
@@ -79,81 +73,40 @@ export const ProjectCard = ({ title, description, tag, metric, bannerBgColor, he
 
           {/* Descrição */}
           <Typography
-            variant="body2"
+            variant="body1"
             sx={{
               color: tokens.colors.text.secondary,
-              fontSize: tokens.typography.fontSize[12],
-              lineHeight: 1.5,
-              display: '-webkit-box',
-              WebkitLineClamp: 3,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
-              minHeight: { md: '54px' },
+              fontSize: { xs: '14px', md: '18px' },
+              lineHeight: 1.6,
             }}
           >
             {description}
           </Typography>
         </Stack>
 
-        {/* Rodapé do Card */}
-        <Box
+        {/* Botão Ver Projeto */}
+        <Button
+          variant="outlined"
           sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            pt: '16px',
-            borderTop: `1px solid rgba(44, 62, 53, 0.06)`,
-            mt: 'auto',
+            mt: 1,
+            alignSelf: { xs: 'stretch', md: 'center' },
+            borderRadius: '100px',
+            borderColor: tokens.colors.text.accent,
+            color: tokens.colors.text.accent,
+            textTransform: 'none',
+            fontSize: '14px',
+            fontWeight: 500,
+            py: '8px',
+            px: '24px',
+            '&:hover': {
+              borderColor: tokens.colors.text.primary,
+              color: tokens.colors.text.primary,
+              backgroundColor: 'transparent',
+            }
           }}
         >
-          {/* Métrica de Sucesso */}
-          <Typography
-            sx={{
-              color: tokens.colors.text.accent,
-              fontSize: tokens.typography.fontSize[11],
-              fontWeight: tokens.typography.fontWeight.medium,
-            }}
-          >
-            {metric}
-          </Typography>
-
-          {/* Botão Ver Caso (Apenas visual com animação sutil no hover) */}
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px',
-              cursor: 'pointer',
-              color: tokens.colors.text.secondary,
-              transition: 'color 0.2s ease',
-              '&:hover': {
-                color: tokens.colors.text.primary,
-                '& .arrow': {
-                  transform: 'translateX(4px)',
-                },
-              },
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: tokens.typography.fontSize[11],
-                fontWeight: tokens.typography.fontWeight.medium,
-              }}
-            >
-              Ver caso
-            </Typography>
-            <Typography
-              className="arrow"
-              sx={{
-                fontSize: tokens.typography.fontSize[11],
-                fontWeight: tokens.typography.fontWeight.medium,
-                transition: 'transform 0.2s ease',
-              }}
-            >
-              →
-            </Typography>
-          </Box>
-        </Box>
+          Ver projeto
+        </Button>
       </Stack>
     </Box>
   );

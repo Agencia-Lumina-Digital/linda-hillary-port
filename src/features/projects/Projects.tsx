@@ -58,27 +58,15 @@ export const Projects = () => {
         px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Restaura padding interno perfeitamente alinhado
       }}
     >
-      <Stack spacing={{ xs: '8px', md: '10px' }}>
-        {/* Tagline / Eyebrow */}
-        <Typography
-          sx={{
-            color: tokens.colors.text.accent,
-            fontWeight: tokens.typography.fontWeight.medium,
-            fontSize: { xs: tokens.typography.fontSize[11], md: tokens.typography.fontSize[14] },
-            letterSpacing: '0.05em',
-          }}
-        >
-          — Trabalhos selecionados
-        </Typography>
-
+      <Stack spacing={{ xs: '8px', md: '16px' }} alignItems="center" textAlign="center">
         {/* Título da Seção */}
         <Typography
           variant="h2"
           sx={{
             fontFamily: tokens.typography.fontFamily.display,
             color: tokens.colors.text.brand,
-            fontSize: { xs: tokens.typography.fontSize[26], md: tokens.typography.fontSize[38] },
-            fontWeight: tokens.typography.fontWeight.medium,
+            fontSize: { xs: tokens.typography.fontSize[26], md: '36px' },
+            fontWeight: 600,
             lineHeight: 1.2
           }}
         >
@@ -90,7 +78,7 @@ export const Projects = () => {
           variant="body1"
           sx={{
             color: tokens.colors.text.secondary,
-            fontSize: { xs: tokens.typography.fontSize[14], md: tokens.typography.fontSize[16] },
+            fontSize: { xs: '14px', md: '18px' },
             maxWidth: '560px',
             lineHeight: 1.6
           }}
@@ -104,9 +92,9 @@ export const Projects = () => {
         sx={{
           display: 'flex',
           flexDirection: 'row',
-          flexWrap: { xs: 'wrap', md: 'nowrap' }, // Garante todos na mesma linha no desktop
+          flexWrap: 'wrap', // Agora quebra a linha no desktop para formar o grid 2x2
           gap: '24px', // Espaçamento igual e consistente entre todos os cards
-          mt: { xs: '32px', md: '40px' } // Espaçamento elegante superior (menor que 56px)
+          mt: { xs: '32px', md: '56px' }
         }}
       >
         {projectsData.map((project, index) => (
@@ -115,8 +103,7 @@ export const Projects = () => {
             sx={{
               width: {
                 xs: '100%',
-                sm: 'calc(50% - 12px)',
-                md: 'calc((100% - 72px) / 4)' // Divisão perfeita de 4 colunas com gap de 24px
+                md: 'calc(50% - 12px)' // Divisão perfeita de 2 colunas com gap de 24px
               },
               display: 'flex',
               flexDirection: 'column'
