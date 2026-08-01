@@ -1,6 +1,7 @@
 import { Box, Container, Typography } from '@mui/material';
 import { Navbar } from './components/organisms/Navbar/Navbar';
 import { Hero } from './features/hero/Hero';
+import { Values } from './features/values/Values';
 import { Projects } from './features/projects/Projects';
 import { About } from './features/about/About';
 import { Contact } from './features/contact/Contact';
@@ -25,6 +26,8 @@ function App() {
         <Box id="hero">
           <Hero />
         </Box>
+
+        <Values />
 
         <Box id="projects">
           <Projects />

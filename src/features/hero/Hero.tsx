@@ -1,7 +1,7 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
-import grafismoHero from '../../theme/assets/grafismo-rios-hero.png';
+
 import lindaImage from '../../theme/assets/linda-image.png';
 import heroBg from '../../theme/assets/Hero Section Bg.png';
 
@@ -23,7 +23,7 @@ export const Hero = () => {
   };
 
   return (
-    <Box sx={{ position: 'relative', pt: 10 }}>
+    <Box sx={{ position: 'relative', pt: { xs: 4, md: 6 } }}>
       {/* Imagem de Fundo (Hero Section Bg) - Exibida no Desktop e Mobile */}
       <Box
         component="img"
@@ -42,7 +42,7 @@ export const Hero = () => {
           display: 'block',
         }}
       />
-      <Grid container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 6, md: 8 }} alignItems="center" sx={{ position: 'relative', zIndex: 2 }}>
+      <Grid container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 4, md: 8 }} alignItems="center" sx={{ position: 'relative', zIndex: 2 }}>
         {/* Coluna Esquerda: Conteúdo */}
         <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1 }, height: { xs: 'auto', md: '440px' } }}>
           <Stack spacing={5} sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}>
@@ -111,33 +111,7 @@ export const Hero = () => {
               </Button>
             </Stack>
 
-            {/* Métricas */}
-            <Box sx={{ display: 'flex', gap: 6, pt: 3, borderTop: '.5px solid ' + tokens.colors.border.default, width: 'fit-content' }}>
-              <Box>
-                <Typography variant="h4" sx={{ color: tokens.colors.text.brand, fontFamily: tokens.typography.fontFamily.display, fontSize: tokens.typography.fontSize[26] }}>
-                  3+
-                </Typography>
-                <Typography sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[13] }}>
-                  Anos de exp.
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="h4" sx={{ color: tokens.colors.text.brand, fontFamily: tokens.typography.fontFamily.display, fontSize: tokens.typography.fontSize[26] }}>
-                  4+
-                </Typography>
-                <Typography sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[13] }}>
-                  Produtos lançados
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="h4" sx={{ color: tokens.colors.text.brand, fontFamily: tokens.typography.fontFamily.display, fontSize: tokens.typography.fontSize[26] }}>
-                  12+
-                </Typography>
-                <Typography sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[13] }}>
-                  Projetos entregues
-                </Typography>
-              </Box>
-            </Box>
+
           </Stack>
         </Grid>
 
@@ -145,23 +119,6 @@ export const Hero = () => {
         <Grid item xs={12} md={5} sx={{ position: 'relative', order: { xs: 1, md: 2 } }}>
           <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', width: { xs: '100%', md: '440px' }, mx: 'auto' }}>
 
-            {/* Grafismo de fundo (Posicionamento absoluto para ficar atrás) */}
-            <Box
-              component="img"
-              src={grafismoHero}
-              alt=""
-              sx={{
-                position: 'absolute',
-                top: '74%',
-                left: '50%',
-                transform: 'translate(-40%, -50%)', // Ajuste para centralizar visualmente
-                width: '150%', // Grafismo vaza para fora do container da imagem
-                maxWidth: 'none',
-                zIndex: 2,
-                pointerEvents: 'none',
-                clipPath: { xs: 'none', md: 'inset(0 27% 0 0)' }
-              }}
-            />
 
             {/* Imagem da Profissional */}
             <Box sx={{ position: 'relative', zIndex: 2, width: { xs: '100%', md: '400px' }, maxWidth: '420px' }}>
@@ -181,42 +138,6 @@ export const Hero = () => {
           </Box>
         </Grid>
       </Grid>
-
-      {/* Características / Valores (Bottom Section) */}
-      <Box 
-        sx={{ 
-          mt: { xs: 8, md: '88px' }, 
-          py: 6, 
-          backgroundColor: tokens.colors.background.elevated,
-          borderTop: `1px solid ${tokens.colors.border.default}`,
-          borderBottom: `1px solid ${tokens.colors.border.default}`,
-          mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Quebra o container para full-width
-          px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Restaura padding interno perfeitamente alinhado
-        }}
-      >
-        <Grid container columnSpacing={4} rowSpacing={{ xs: 4, md: 2, borderBottom: '1px solid ' + tokens.colors.border.default }}>
-          {/* Feature 1 */}
-          <Grid item xs={4}>
-            <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: tokens.typography.fontSize[26] }}>01</Typography>
-            <Typography variant="h6" sx={{ color: tokens.colors.text.brand, fontWeight: tokens.typography.fontWeight.semibold, mb: 1, fontSize: tokens.typography.fontSize[15] }}>Problema antes de solução</Typography>
-            <Typography variant="body2" sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[12] }}>Não abro o Figma sem entender o contexto.</Typography>
-          </Grid>
-          
-          {/* Feature 2 */}
-          <Grid item xs={4}>
-            <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: tokens.typography.fontSize[26] }}>02</Typography>
-            <Typography variant="h6" sx={{ color: tokens.colors.text.brand, fontWeight: tokens.typography.fontWeight.semibold, mb: 1, fontSize: tokens.typography.fontSize[15] }}>Design é conversa</Typography>
-            <Typography variant="body2" sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[12] }}>Trabalho junto com produto e engenharia.</Typography>
-          </Grid>
-
-          {/* Feature 3 */}
-          <Grid item xs={4}>
-            <Typography variant="h4" sx={{ color: tokens.colors.text.accent, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: tokens.typography.fontSize[26] }}>03</Typography>
-            <Typography variant="h6" sx={{ color: tokens.colors.text.brand, fontWeight: tokens.typography.fontWeight.semibold, mb: 1, fontSize: tokens.typography.fontSize[15] }}>Entrego, meço, melhoro</Typography>
-            <Typography variant="body2" sx={{ color: tokens.colors.text.secondary, fontSize: tokens.typography.fontSize[12] }}>Lançamento não é o fim.</Typography>
-          </Grid>
-        </Grid>
-      </Box>
     </Box>
   );
 };
