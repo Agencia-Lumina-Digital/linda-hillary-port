@@ -3,6 +3,7 @@ import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
 import grafismoHero from '../../theme/assets/grafismo-rios-hero.png';
 import lindaImage from '../../theme/assets/linda-image.png';
+import heroBg from '../../theme/assets/Hero Section Bg.png';
 
 export const Hero = () => {
   const handleOpenResume = () => {
@@ -23,31 +24,68 @@ export const Hero = () => {
 
   return (
     <Box sx={{ position: 'relative', pt: 10 }}>
-      <Grid container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 6, md: 8 }} alignItems="center">
+      {/* Imagem de Fundo (Hero Section Bg) - Exibida no Desktop e Mobile */}
+      <Box
+        component="img"
+        src={heroBg}
+        alt=""
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: { xs: '-24px', md: 'calc(-50vw + 50%)' },
+          width: { xs: 'calc(100% + 48px)', md: '100vw' },
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'left top',
+          zIndex: 0,
+          pointerEvents: 'none',
+          display: 'block',
+        }}
+      />
+      <Grid container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 6, md: 8 }} alignItems="center" sx={{ position: 'relative', zIndex: 2 }}>
         {/* Coluna Esquerda: Conteúdo */}
         <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1 }, height: { xs: 'auto', md: '440px' } }}>
           <Stack spacing={5} sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}>
             {/* Tagline / Eyebrow */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              <Box sx={{ width: 24, height: '1.5px', backgroundColor: tokens.colors.background.brand }} />
-              <Typography
-                sx={{
-                  color: tokens.colors.text.accent,
-                  fontWeight: tokens.typography.fontWeight.semibold,
-                  fontSize: { xs: tokens.typography.fontSize[11], md: tokens.typography.fontSize[14] }
-                }}
-              >
-                Product Designer · Manaus, Brasil
-              </Typography>
-            </Box>
+            <Typography
+              sx={{
+                fontFamily: tokens.typography.fontFamily.body,
+                color: tokens.colors.text.accent,
+                fontWeight: 600,
+                fontSize: { xs: '14px', md: '16px' },
+                lineHeight: 1,
+              }}
+            >
+              Product Designer
+            </Typography>
 
             {/* Título */}
-            <Typography variant="h1" sx={{ fontSize: { md: tokens.typography.fontSize[48] }, color: tokens.colors.text.brand, whiteSpace: 'pre-line' }}>
+            <Typography
+              variant="h1"
+              sx={{
+                fontFamily: tokens.typography.fontFamily.display,
+                fontSize: { xs: '38px', md: '64px' },
+                fontWeight: 600,
+                lineHeight: 1.2,
+                color: tokens.colors.text.brand,
+                whiteSpace: 'pre-line'
+              }}
+            >
               Olá, sou{'\n'}Linda Souza.
             </Typography>
 
             {/* Descrição */}
-            <Typography variant="body1" sx={{ color: tokens.colors.text.secondary, fontSize: { xs: tokens.typography.fontSize[16], md: tokens.typography.fontSize[14] }, maxWidth: '500px' }}>
+            <Typography
+              variant="body1"
+              sx={{
+                fontFamily: tokens.typography.fontFamily.body,
+                color: tokens.colors.text.secondary,
+                fontSize: { xs: '15px', md: '18px' },
+                fontWeight: 400,
+                lineHeight: 1.6,
+                maxWidth: '640px'
+              }}
+            >
               Começo pelo problema real. Trabalho de perto com times de produto, negócio e tecnologia — e entrego interfaces que as pessoas usam com naturalidade, e que geram resultados mensuráveis.
             </Typography>
 

@@ -8,7 +8,7 @@ import { tokens } from './theme/tokens';
 
 function App() {
   return (
-    <Box sx={{ minHeight: '100vh', backgroundColor: tokens.colors.background.canvas, overflowX: 'hidden' }}>
+    <Box sx={{ minHeight: '100vh', backgroundColor: tokens.colors.background.elevated, overflowX: 'hidden' }}>
       <Navbar />
       
       {/* Container Principal que limita a largura do conteúdo */}

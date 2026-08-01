@@ -33,7 +33,7 @@ export const tokens = {
     },
     // Semânticos (Light Mode)
     background: {
-      canvas: '#F5F0E8',
+      canvas: '#FFFFFF',
       surface: '#EDE8DF',
       elevated: '#FFFFFF',
       inverse: '#2C3E35',
@@ -74,8 +74,8 @@ export const tokens = {
   },
   typography: {
     fontFamily: {
-      display: '"Cormorant Garamond", serif',
-      body: '"DM Sans", sans-serif',
+      display: '"Epilogue", "Cormorant Garamond", serif',
+      body: '"Epilogue", "DM Sans", sans-serif',
       mono: '"JetBrains Mono", monospace',
     },
     fontSize: {
