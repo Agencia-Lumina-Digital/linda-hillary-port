@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Início', id: 'hero' },
   { label: 'Projetos', id: 'projects' },
   { label: 'Sobre', id: 'about' },
+  { label: 'Contato', id: 'contact' },
   { label: 'Currículo', id: 'resume' },
 ];
 
@@ -88,7 +89,8 @@ export const Navbar = () => {
       color="transparent"
       elevation={0}
       sx={{
-        backgroundColor: tokens.colors.background.canvas,
+        backgroundColor: tokens.colors.background.elevated,
+        borderBottom: `1px solid ${tokens.colors.border.default}`,
         zIndex: 10
       }}
     >
@@ -109,8 +111,8 @@ export const Navbar = () => {
             />
           </Box>
 
-          {/* Centro: Nav Items (Desktop) */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
+          {/* Lado Direito: Nav Items (Desktop) */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, alignItems: 'center' }}>
             {navItems.map((item) => {
               const isActive = activeItem === item.id;
 
@@ -120,12 +122,17 @@ export const Navbar = () => {
                   variant="ghost"
                   onClick={() => handleScroll(item.id)}
                   sx={{
-                    color: isActive ? tokens.colors.text.amber : tokens.colors.text.secondary,
-                    backgroundColor: isActive ? tokens.colors.background.elevated : 'transparent',
+                    color: isActive ? tokens.colors.text.onBrand : tokens.colors.text.brand,
+                    backgroundColor: isActive ? tokens.colors.background.inverse : 'transparent',
+                    borderRadius: `${tokens.borderRadius.lg}px`,
+                    px: '16px',
+                    py: '8px',
+                    fontWeight: tokens.typography.fontWeight.medium,
                     '&:hover': {
                       backgroundColor: isActive
-                        ? tokens.colors.background.elevated
+                        ? tokens.colors.background.inverse
                         : 'rgba(0,0,0,0.04)',
+                      color: isActive ? tokens.colors.text.onBrand : tokens.colors.text.brand,
                     }
                   }}
                 >
@@ -133,16 +140,6 @@ export const Navbar = () => {
                 </Button>
               );
             })}
-          </Box>
-
-          {/* Lado Direito: Botão Default (Desktop) */}
-          <Box sx={{ flexShrink: 0, display: { xs: 'none', md: 'block' } }}>
-            <Button
-              variant="primary"
-              onClick={() => handleScroll('contact')}
-            >
-              Contato
-            </Button>
           </Box>
 
           {/* Menu Mobile (Hamburger) */}
@@ -171,7 +168,7 @@ export const Navbar = () => {
           '& .MuiDrawer-paper': { 
             boxSizing: 'border-box', 
             width: '100%', // Tela cheia para um visual moderno e premium
-            backgroundColor: tokens.colors.background.canvas,
+            backgroundColor: tokens.colors.background.elevated,
             px: 4,
             py: 4
           },
@@ -192,7 +189,7 @@ export const Navbar = () => {
                 variant="ghost"
                 onClick={() => handleScroll(item.id)}
                 sx={{
-                  color: isActive ? tokens.colors.text.amber : tokens.colors.text.primary,
+                  color: isActive ? tokens.colors.text.brand : tokens.colors.text.primary,
                   fontSize: tokens.typography.fontSize[26], // Fonte grande para impacto
                   fontFamily: tokens.typography.fontFamily.display,
                 }}
@@ -201,18 +198,6 @@ export const Navbar = () => {
               </Button>
             );
           })}
-
-          <Button
-            variant="ghost"
-            onClick={() => handleScroll('contact')}
-            sx={{
-              color: activeItem === 'contact' ? tokens.colors.text.amber : tokens.colors.text.primary,
-              fontSize: tokens.typography.fontSize[26],
-              fontFamily: tokens.typography.fontFamily.display,
-            }}
-          >
-            Contato
-          </Button>
         </Stack>
       </Drawer>
     </AppBar>
