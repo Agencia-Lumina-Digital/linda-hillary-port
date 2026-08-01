@@ -1,163 +1,98 @@
 import { Box, Stack, Typography } from '@mui/material';
 import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
-import grafismoHero from '../../theme/assets/grafismo-rios-hero.png';
+import heroBg from '../../theme/assets/Hero Section Bg.png';
 
 export const Contact = () => {
   const handleEmailClick = () => {
     window.location.href = 'mailto:linda.15brandao@gmail.com';
   };
 
-  const handleLinkedinClick = () => {
-    window.open('https://www.linkedin.com/in/lindassouza/', '_blank');
-  };
-
   return (
     <Box 
       sx={{ 
         py: { xs: 10, md: 14 },
-        backgroundColor: tokens.colors.background.inverse, // Verde escuro (#2C3E35)
+        backgroundColor: tokens.colors.background.surface, // Fundo claro (#EDE8DF)
         mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Sangramento lateral total
         px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Alinhamento interno com o site
         position: 'relative',
         overflow: 'hidden', // Importante para não quebrar a tela com os grafismos
       }}
     >
-      {/* Círculo decorativo no canto inferior esquerdo - projeta-se mais para dentro em telas maiores */}
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: { xs: '-150px', sm: '-220px', md: '-320px', lg: '-420px' },
-          left: { xs: '-150px', sm: '-220px', md: '-320px', lg: '-420px' },
-          width: { xs: '300px', sm: '500px', md: '750px', lg: '950px' },
-          height: { xs: '300px', sm: '500px', md: '750px', lg: '950px' },
-          borderRadius: '50%',
-          backgroundColor: 'rgba(0, 0, 0, 0.12)', // Círculo escuro sutil sobre o fundo verde
-          zIndex: 1,
-          pointerEvents: 'none',
-        }}
-      />
-
-      {/* Grafismo decorativo claro no lado direito */}
+      {/* Imagem de Fundo (Hero Section Bg) */}
       <Box
         component="img"
-        src={grafismoHero}
+        src={heroBg}
         alt=""
         sx={{
           position: 'absolute',
-          top: '50%',
-          right: { xs: '-30%', sm: '-20%', md: '-10%' },
-          transform: 'translateY(-50%) scaleX(-1)', // Espelhado
-          width: { xs: '100%', sm: '70%', md: '50%' },
-          maxWidth: '600px',
-          zIndex: 1,
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          zIndex: 0,
           pointerEvents: 'none',
-          filter: 'brightness(0) invert(1) opacity(0.08)', // Transforma as linhas em branco bem suave
+          display: 'block',
         }}
       />
 
       {/* Conteúdo Central */}
       <Stack
-        spacing={4}
+        spacing={{ xs: '24px', md: '56px' }}
         alignItems="center"
         sx={{
           position: 'relative',
           zIndex: 2, // Garante que fica por cima dos grafismos
-          maxWidth: '640px',
+          maxWidth: '800px',
           mx: 'auto',
           textAlign: 'center',
         }}
       >
-        {/* Eyebrow / Tagline */}
-        <Typography
-          sx={{
-            color: tokens.colors.text.accent,
-            fontWeight: tokens.typography.fontWeight.medium,
-            fontSize: tokens.typography.fontSize[11],
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-          }}
-        >
-          — Vamos conversar —
-        </Typography>
-
-        {/* Título */}
-        <Typography
-          variant="h2"
-          sx={{
-            fontFamily: tokens.typography.fontFamily.display,
-            color: tokens.colors.text.onBrand,
-            fontSize: { xs: tokens.typography.fontSize[38], md: tokens.typography.fontSize[48] },
-            fontWeight: tokens.typography.fontWeight.light,
-            lineHeight: 1.2,
-          }}
-        >
-          Vamos construir algo que faça sentido?
-        </Typography>
-
-        {/* Descrição */}
-        <Typography
-          sx={{
-            fontFamily: tokens.typography.fontFamily.body,
-            color: 'rgba(255, 255, 255, 0.7)',
-            fontSize: { xs: tokens.typography.fontSize[14], md: tokens.typography.fontSize[16] },
-            lineHeight: 1.6,
-            fontWeight: tokens.typography.fontWeight.regular,
-            px: { xs: 2, md: 4 },
-          }}
-        >
-          Se você tem um problema de produto para resolver, quero ouvir sobre ele. Sinta-se à vontade para entrar em contato ou apenas dar um oi.
-        </Typography>
-
-        {/* Botões de Ação */}
-        <Stack 
-          direction="row" 
-          spacing={3} 
-          sx={{ 
-            mt: 2, 
-            width: { xs: '100%', md: 'auto' }, 
-            justifyContent: 'center' 
-          }}
-        >
-          {/* Botão Enviar e-mail (Contorno claro) */}
-          <Button
-            variant="outlined"
-            onClick={handleEmailClick}
+        <Stack spacing={{ xs: '24px', md: '16px' }} alignItems="center">
+          {/* Título */}
+          <Typography
+            variant="h2"
             sx={{
-              borderColor: 'rgba(255, 255, 255, 0.3)',
-              color: '#FFFFFF',
-              px: { xs: 3, md: 0 },
-              py: '12px',
-              width: { xs: '100%', md: '120px' },
-              flex: { xs: 1, md: 'none' },
-              '&:hover': {
-                borderColor: '#FFFFFF',
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-              },
+              fontFamily: tokens.typography.fontFamily.display,
+              color: tokens.colors.text.primary,
+              fontSize: { xs: '24px', md: '48px' }, // 48 no desktop
+              fontWeight: 600,
+              lineHeight: 1.4,
             }}
           >
-            Enviar e-mail
-          </Button>
+            Vamos construir algo que faça sentido?
+          </Typography>
 
-          {/* Botão LinkedIn (Fundo verde marca) */}
-          <Button
-            variant="primary"
-            onClick={handleLinkedinClick}
+          {/* Descrição */}
+          <Typography
             sx={{
-              backgroundColor: '#5C8C5A', // Verde semântico do design system
-              color: '#FFFFFF',
-              px: { xs: 3, md: 0 },
-              py: '12px',
-              width: { xs: '100%', md: '120px' },
-              flex: { xs: 1, md: 'none' },
-              '&:hover': {
-                backgroundColor: '#3D5548',
-              },
+              fontFamily: tokens.typography.fontFamily.display,
+              color: tokens.colors.text.secondary, // rgba(103, 113, 108, 1) mapeado para secondary
+              fontSize: { xs: '16px', md: '18px' }, // 18 no desktop
+              fontWeight: 400,
+              lineHeight: 1.6,
+              maxWidth: '800px',
             }}
           >
-            LinkedIn
-          </Button>
+            Se você tem um problema de produto para resolver, quero ouvir sobre ele. Sinta-se à vontade para entrar em contato ou apenas dar um oi.
+          </Typography>
         </Stack>
+
+        {/* Botão */}
+        <Button
+          variant="primary"
+          onClick={handleEmailClick}
+          sx={{
+            width: { xs: '100%', md: '250px' },
+            height: '56px',
+            fontSize: '18px',
+            fontWeight: 600,
+          }}
+        >
+          Entrar em contato
+        </Button>
       </Stack>
     </Box>
   );
