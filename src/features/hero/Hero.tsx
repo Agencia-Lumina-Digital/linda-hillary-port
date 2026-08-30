@@ -24,7 +24,7 @@ export const Hero = () => {
   };
 
   return (
-    <Box sx={{ position: 'relative', pt: { xs: 4, md: 6 }, pb: { xs: 8, md: 12 } }}>
+    <Box sx={{ position: 'relative', pt: { xs: 12, md: 20 }, pb: { xs: 12, md: 20 } }}>
       {/* Imagem de Fundo (Hero Section Bg) - Exibida no Desktop e Mobile */}
       <Box
         component="img"
