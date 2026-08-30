@@ -1,15 +1,12 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
+import 'hover.css/css/hover.css';
 
 import lindaImage from '../../theme/assets/linda-image.png';
 import heroBg from '../../theme/assets/Hero Section Bg.png';
 
 export const Hero = () => {
-  const handleOpenResume = () => {
-    window.open('/curriculo.pdf', '_blank');
-  };
-
   const handleScrollToProjects = () => {
     const element = document.getElementById('projects');
     if (element) {
@@ -45,73 +42,96 @@ export const Hero = () => {
       <Grid container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 4, md: 8 }} alignItems="center" sx={{ position: 'relative', zIndex: 2 }}>
         {/* Coluna Esquerda: Conteúdo */}
         <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1 }, height: { xs: 'auto', md: '440px' } }}>
-          <Stack spacing={5} sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}>
-            {/* Tagline / Eyebrow */}
-            <Typography
-              sx={{
-                fontFamily: tokens.typography.fontFamily.body,
-                color: tokens.colors.text.accent,
-                fontWeight: 600,
-                fontSize: { xs: '14px', md: '16px' },
-                lineHeight: 1,
-              }}
-            >
-              Product Designer
-            </Typography>
-
-            {/* Título */}
-            <Typography
-              variant="h1"
-              sx={{
-                fontFamily: tokens.typography.fontFamily.display,
-                fontSize: { xs: '38px', md: '64px' },
-                fontWeight: 600,
-                lineHeight: 1.2,
-                color: tokens.colors.text.brand,
-                whiteSpace: 'pre-line'
-              }}
-            >
-              Olá, sou{'\n'}Linda Souza.
-            </Typography>
-
-            {/* Descrição */}
-            <Typography
-              variant="body1"
-              sx={{
-                fontFamily: tokens.typography.fontFamily.body,
-                color: tokens.colors.text.secondary,
-                fontSize: { xs: '15px', md: '18px' },
-                fontWeight: 400,
-                lineHeight: 1.6,
-                maxWidth: '640px'
-              }}
-            >
-              Começo pelo problema real. Trabalho de perto com times de produto, negócio e tecnologia — e entrego interfaces que as pessoas usam com naturalidade, e que geram resultados mensuráveis.
-            </Typography>
-
-            {/* Ações */}
-            <Stack direction="row" spacing={3} sx={{ width: { xs: '100%', md: 'fit-content' } }}>
-              <Button
-                variant="outlined"
-                onClick={handleOpenResume}
+          <Stack spacing="48px" sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}>
+            <Box>
+              {/* Título */}
+              <Typography
+                variant="h1"
                 sx={{
-                  flex: { xs: 1, md: 'initial' },
+                  fontFamily: tokens.typography.fontFamily.display,
+                  fontSize: { xs: '38px', md: '64px' },
+                  fontWeight: 600,
+                  lineHeight: 1.2,
+                  color: 'rgba(15, 91, 82, 1)',
+                  whiteSpace: 'pre-line',
+                  mb: '32px', // Espaçamento entre Título e Parágrafo
                 }}
               >
-                Ver currículo
-              </Button>
+                Olá, eu sou a{'\n'}Linda Souza.
+              </Typography>
+
+              {/* Descrição */}
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: tokens.typography.fontFamily.display,
+                  color: 'rgba(74, 79, 78, 1)',
+                  fontSize: { xs: '15px', md: '18px' },
+                  fontWeight: 400,
+                  lineHeight: 1.6,
+                  maxWidth: '995px'
+                }}
+              >
+                Meu objetivo é transformar desafios em soluções criativas. Trabalho em colaboração com equipes multidisciplinares para desenvolver interfaces que não apenas encantam, mas também geram resultados significativos.
+              </Typography>
+            </Box>
+
+            {/* Ações */}
+            <Stack direction="row" spacing="12px" sx={{ width: { xs: '100%', md: 'fit-content' } }}>
               <Button
                 variant="primary"
                 onClick={handleScrollToProjects}
+                className="hvr-grow"
                 sx={{
                   flex: { xs: 1, md: 'initial' },
+                  backgroundColor: 'rgba(15, 91, 82, 1)',
+                  color: '#FFFFFF',
+                  borderRadius: '50px',
+                  px: '24px',
+                  height: '52px',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  fontFamily: tokens.typography.fontFamily.display,
+                  textTransform: 'none',
+                  '&:hover': {
+                    backgroundColor: 'rgba(15, 91, 82, 1)',
+                  }
                 }}
               >
                 Ver projetos
               </Button>
+              <Button
+                variant="outlined"
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    const offset = 80;
+                    window.scrollTo({ top: element.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+                  }
+                }}
+                className="hvr-grow"
+                sx={{
+                  flex: { xs: 1, md: 'initial' },
+                  borderColor: 'rgba(15, 91, 82, 1)',
+                  color: 'rgba(15, 91, 82, 1)',
+                  borderRadius: '50px',
+                  px: '24px',
+                  height: '52px',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  fontFamily: tokens.typography.fontFamily.display,
+                  textTransform: 'none',
+                  borderWidth: '1px',
+                  '&:hover': {
+                    borderColor: 'rgba(15, 91, 82, 1)',
+                    borderWidth: '1px',
+                    backgroundColor: 'transparent',
+                  }
+                }}
+              >
+                Falar comigo
+              </Button>
             </Stack>
-
-
           </Stack>
         </Grid>
 
