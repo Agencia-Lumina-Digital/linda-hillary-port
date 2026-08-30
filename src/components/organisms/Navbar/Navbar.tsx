@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { AppBar, Box, Container, Toolbar, Typography, IconButton, Drawer, Stack, Avatar } from '@mui/material';
 import { Button } from '../../atoms/Button/Button';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -18,6 +18,8 @@ const navItems = [
 export const Navbar = () => {
   const [activeItem, setActiveItem] = useState('hero');
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const sectionIds = ['hero', 'projects', 'about', 'contact'];
@@ -29,6 +31,8 @@ export const Navbar = () => {
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      if (isScrollingRef.current) return;
+      
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveItem(entry.target.id);
@@ -67,7 +71,13 @@ export const Navbar = () => {
       return;
     }
 
+    // Bloqueia atualizações do observer enquanto rola
+    isScrollingRef.current = true;
     setActiveItem(id);
+
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
 
     if (id === 'hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -82,6 +92,11 @@ export const Navbar = () => {
         });
       }
     }
+
+    // Libera o observer após 1 segundo (tempo estimado do scroll suave)
+    scrollTimeoutRef.current = window.setTimeout(() => {
+      isScrollingRef.current = false;
+    }, 1000);
   };
 
   return (
