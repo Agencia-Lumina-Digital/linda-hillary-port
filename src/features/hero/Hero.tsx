@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography, keyframes } from '@mui/material';
 import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
 import 'hover.css/css/hover.css';
@@ -9,6 +9,18 @@ import heroVectorVerde from '../../theme/assets/hero-vector-verde.svg';
 import heroUnionDiagonal from '../../theme/assets/hero-union-diagonal.svg';
 import heroUnionHorizontal from '../../theme/assets/hero-union-horizontal.svg';
 import heroBg from '../../theme/assets/Hero Section Bg.png';
+
+const floatUpDown = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0px); }
+`;
+
+const floatDownUp = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(30px); }
+  100% { transform: translateY(0px); }
+`;
 
 export const Hero = () => {
   const handleScrollToProjects = () => {
@@ -160,8 +172,32 @@ export const Hero = () => {
             <Box sx={{ position: 'relative', width: { xs: '261px', md: '360px' }, height: { xs: '350px', md: '480px' }, mt: { xs: 4, md: 0 } }}>
               
               {/* Elementos SVG decorativos */}
-              <Box component="img" src={heroVectorLaranja} alt="" sx={{ position: 'absolute', top: { xs: -10, md: -10 }, right: { xs: -15, md: -20 }, zIndex: 3, width: { xs: '60px', md: '80px' } }} />
-              <Box component="img" src={heroVectorVerde} alt="" sx={{ position: 'absolute', bottom: { xs: 20, md: 30 }, left: { xs: -20, md: -30 }, zIndex: 3, width: { xs: '60px', md: '80px' } }} />
+              <Box 
+                component="img" 
+                src={heroVectorLaranja} 
+                alt="" 
+                sx={{ 
+                  position: 'absolute', 
+                  top: { xs: -10, md: -10 }, 
+                  right: { xs: -15, md: -20 }, 
+                  zIndex: 3, 
+                  width: { xs: '60px', md: '80px' },
+                  animation: `${floatUpDown} 4s ease-in-out infinite`
+                }} 
+              />
+              <Box 
+                component="img" 
+                src={heroVectorVerde} 
+                alt="" 
+                sx={{ 
+                  position: 'absolute', 
+                  bottom: { xs: 20, md: 30 }, 
+                  left: { xs: -20, md: -30 }, 
+                  zIndex: 3, 
+                  width: { xs: '60px', md: '80px' },
+                  animation: `${floatDownUp} 4s ease-in-out infinite`
+                }} 
+              />
               <Box component="img" src={heroUnionDiagonal} alt="" sx={{ position: 'absolute', top: 50, left: -20, zIndex: 3, width: { xs: '40px', md: '50px' } }} />
               <Box component="img" src={heroUnionHorizontal} alt="" sx={{ position: 'absolute', bottom: 50, right: { xs: -40, md: -50 }, zIndex: 3, width: { xs: '60px', md: '80px' } }} />
 
