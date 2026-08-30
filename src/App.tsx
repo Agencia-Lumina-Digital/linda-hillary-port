@@ -1,4 +1,7 @@
 import { Box, Container, Typography } from '@mui/material';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Navbar } from './components/organisms/Navbar/Navbar';
 import { Hero } from './features/hero/Hero';
 import { Values } from './features/values/Values';
@@ -9,6 +12,12 @@ import { Footer } from './components/organisms/Footer/Footer';
 import { tokens } from './theme/tokens';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  }, []);
+
   return (
     <Box sx={{ minHeight: '100vh', backgroundColor: tokens.colors.background.elevated, overflowX: 'hidden' }}>
       <Navbar />

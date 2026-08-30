@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
-import { AppBar, Box, Container, Toolbar, Typography, IconButton, Drawer, Stack } from '@mui/material';
+import { useState, useEffect, useRef } from 'react';
+import { AppBar, Box, Container, Toolbar, Typography, IconButton, Drawer, Stack, Avatar } from '@mui/material';
 import { Button } from '../../atoms/Button/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { tokens } from '../../../theme/tokens';
 import logo from '../../../theme/assets/logo-linda-claro.png';
+import resumePdf from '../../../archives/Linda_Souza_Product_Designer.pdf';
 
 const navItems = [
   { label: 'Início', id: 'hero' },
@@ -17,6 +18,8 @@ const navItems = [
 export const Navbar = () => {
   const [activeItem, setActiveItem] = useState('hero');
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const sectionIds = ['hero', 'projects', 'about', 'contact'];
@@ -28,6 +31,8 @@ export const Navbar = () => {
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      if (isScrollingRef.current) return;
+      
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveItem(entry.target.id);
@@ -62,11 +67,17 @@ export const Navbar = () => {
     setMobileOpen(false); // Fecha o menu mobile se estiver aberto
 
     if (id === 'resume') {
-      window.open('/curriculo.pdf', '_blank');
+      window.open(resumePdf, '_blank');
       return;
     }
 
+    // Bloqueia atualizações do observer enquanto rola
+    isScrollingRef.current = true;
     setActiveItem(id);
+
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
 
     if (id === 'hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -81,6 +92,11 @@ export const Navbar = () => {
         });
       }
     }
+
+    // Libera o observer após 1 segundo (tempo estimado do scroll suave)
+    scrollTimeoutRef.current = window.setTimeout(() => {
+      isScrollingRef.current = false;
+    }, 1000);
   };
 
   return (
@@ -117,27 +133,40 @@ export const Navbar = () => {
               const isActive = activeItem === item.id;
 
               return (
-                <Button
+                <Box
                   key={item.id}
-                  variant="ghost"
                   onClick={() => handleScroll(item.id)}
                   sx={{
-                    color: isActive ? tokens.colors.text.onBrand : tokens.colors.text.brand,
-                    backgroundColor: isActive ? tokens.colors.background.inverse : 'transparent',
-                    borderRadius: `${tokens.borderRadius.lg}px`,
+                    position: 'relative',
+                    cursor: 'pointer',
                     px: '16px',
-                    py: '8px',
-                    fontWeight: tokens.typography.fontWeight.medium,
+                    py: '12px',
+                    color: isActive ? 'rgba(15, 91, 82, 1)' : 'rgba(74, 79, 78, 1)',
+                    fontFamily: tokens.typography.fontFamily.display, // Epilogue
+                    fontWeight: 600, // SemiBold
+                    fontSize: '16px',
+                    transition: 'color 0.3s ease',
+                    '&::after': {
+                      content: '""',
+                      position: 'absolute',
+                      width: isActive ? '100%' : '0%',
+                      height: '2px',
+                      bottom: '4px', // Espaçamento logo abaixo do texto
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      backgroundColor: 'rgba(15, 91, 82, 1)',
+                      transition: 'width 0.3s ease-in-out',
+                    },
                     '&:hover': {
-                      backgroundColor: isActive
-                        ? tokens.colors.background.inverse
-                        : 'rgba(0,0,0,0.04)',
-                      color: isActive ? tokens.colors.text.onBrand : tokens.colors.text.brand,
+                      color: 'rgba(15, 91, 82, 1)',
+                      '&::after': {
+                        width: '100%',
+                      }
                     }
                   }}
                 >
                   {item.label}
-                </Button>
+                </Box>
               );
             })}
           </Box>
