@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { tokens } from '../../../theme/tokens';
 import logo from '../../../theme/assets/logo-linda-claro.png';
+import resumePdf from '../../../archives/Linda_Souza_Product_Designer.pdf';
 
 const navItems = [
   { label: 'Início', id: 'hero' },
@@ -62,7 +63,7 @@ export const Navbar = () => {
     setMobileOpen(false); // Fecha o menu mobile se estiver aberto
 
     if (id === 'resume') {
-      window.open('/curriculo.pdf', '_blank');
+      window.open(resumePdf, '_blank');
       return;
     }
 
