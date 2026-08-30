@@ -43,10 +43,15 @@ export const Hero = () => {
           display: 'block',
         }}
       />
-      <Grid container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 4, md: 8 }} alignItems="center" sx={{ position: 'relative', zIndex: 2 }}>
+      <Grid id="example-anchor" container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 4, md: 8 }} alignItems="center" sx={{ position: 'relative', zIndex: 2 }}>
         {/* Coluna Esquerda: Conteúdo */}
         <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1 }, height: { xs: 'auto', md: '440px' } }}>
-          <Stack spacing={{ xs: '32px', md: '48px' }} sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}>
+          <Stack 
+            spacing={{ xs: '32px', md: '48px' }} 
+            sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
             <Box>
               {/* Título */}
               <Typography
@@ -140,7 +145,16 @@ export const Hero = () => {
         </Grid>
 
         {/* Coluna Direita: Visual / Apresentação */}
-        <Grid item xs={12} md={5} sx={{ position: 'relative', order: { xs: 1, md: 2 } }}>
+        <Grid 
+          item 
+          xs={12} 
+          md={5} 
+          sx={{ position: 'relative', order: { xs: 1, md: 2 } }}
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+        >
           <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', width: '100%', mx: 'auto' }}>
             
             <Box sx={{ position: 'relative', width: { xs: '261px', md: '360px' }, height: { xs: '350px', md: '480px' }, mt: { xs: 4, md: 0 } }}>
