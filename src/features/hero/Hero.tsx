@@ -3,7 +3,11 @@ import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
 import 'hover.css/css/hover.css';
 
-import lindaImage from '../../theme/assets/linda-image.png';
+import heroImagem from '../../theme/assets/hero-imagem.png';
+import heroVectorLaranja from '../../theme/assets/hero-vector-laranja.svg';
+import heroVectorVerde from '../../theme/assets/hero-vector-verde.svg';
+import heroUnionDiagonal from '../../theme/assets/hero-union-diagonal.svg';
+import heroUnionHorizontal from '../../theme/assets/hero-union-horizontal.svg';
 import heroBg from '../../theme/assets/Hero Section Bg.png';
 
 export const Hero = () => {
@@ -137,24 +141,34 @@ export const Hero = () => {
 
         {/* Coluna Direita: Visual / Apresentação */}
         <Grid item xs={12} md={5} sx={{ position: 'relative', order: { xs: 1, md: 2 } }}>
-          <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', width: { xs: '100%', md: '440px' }, mx: 'auto' }}>
+          <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', width: '100%', mx: 'auto' }}>
+            
+            <Box sx={{ position: 'relative', width: { xs: '261px', md: '360px' }, height: { xs: '350px', md: '480px' }, mt: { xs: 4, md: 0 } }}>
+              
+              {/* Elementos SVG decorativos */}
+              <Box component="img" src={heroVectorLaranja} alt="" sx={{ position: 'absolute', top: { xs: -10, md: -10 }, right: { xs: -15, md: -20 }, zIndex: 3, width: { xs: '60px', md: '80px' } }} />
+              <Box component="img" src={heroVectorVerde} alt="" sx={{ position: 'absolute', bottom: { xs: 20, md: 30 }, left: { xs: -20, md: -30 }, zIndex: 3, width: { xs: '60px', md: '80px' } }} />
+              <Box component="img" src={heroUnionDiagonal} alt="" sx={{ position: 'absolute', top: 50, left: -20, zIndex: 3, width: { xs: '40px', md: '50px' } }} />
+              <Box component="img" src={heroUnionHorizontal} alt="" sx={{ position: 'absolute', bottom: 50, right: { xs: -40, md: -50 }, zIndex: 3, width: { xs: '60px', md: '80px' } }} />
 
-
-            {/* Imagem da Profissional */}
-            <Box sx={{ position: 'relative', zIndex: 2, width: { xs: '100%', md: '400px' }, maxWidth: '420px' }}>
+              {/* Imagem da Profissional (com shape em arco) */}
               <Box
                 component="img"
-                src={lindaImage}
+                src={heroImagem}
                 alt="Linda Souza"
                 sx={{
+                  position: 'relative',
+                  zIndex: 2,
                   width: '100%',
-                  height: { xs: 'auto', md: '440px' },
+                  height: '100%',
                   objectFit: 'cover',
                   display: 'block',
-                  borderRadius: `${tokens.borderRadius.md}px`,
+                  borderRadius: '999px 999px 0 0', // Borda arredondada no topo
+                  transform: 'scaleX(-1)', // Corrige a imagem que estava invertida
                 }}
               />
             </Box>
+
           </Box>
         </Grid>
       </Grid>
