@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AppBar, Box, Container, Toolbar, Typography, IconButton, Drawer, Stack } from '@mui/material';
+import { AppBar, Box, Container, Toolbar, Typography, IconButton, Drawer, Stack, Avatar } from '@mui/material';
 import { Button } from '../../atoms/Button/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -117,27 +117,40 @@ export const Navbar = () => {
               const isActive = activeItem === item.id;
 
               return (
-                <Button
+                <Box
                   key={item.id}
-                  variant="ghost"
                   onClick={() => handleScroll(item.id)}
                   sx={{
-                    color: isActive ? tokens.colors.text.onBrand : tokens.colors.text.brand,
-                    backgroundColor: isActive ? tokens.colors.background.inverse : 'transparent',
-                    borderRadius: `${tokens.borderRadius.lg}px`,
+                    position: 'relative',
+                    cursor: 'pointer',
                     px: '16px',
-                    py: '8px',
-                    fontWeight: tokens.typography.fontWeight.medium,
+                    py: '12px',
+                    color: isActive ? 'rgba(15, 91, 82, 1)' : 'rgba(74, 79, 78, 1)',
+                    fontFamily: tokens.typography.fontFamily.display, // Epilogue
+                    fontWeight: 600, // SemiBold
+                    fontSize: '16px',
+                    transition: 'color 0.3s ease',
+                    '&::after': {
+                      content: '""',
+                      position: 'absolute',
+                      width: isActive ? '100%' : '0%',
+                      height: '2px',
+                      bottom: '4px', // Espaçamento logo abaixo do texto
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      backgroundColor: 'rgba(15, 91, 82, 1)',
+                      transition: 'width 0.3s ease-in-out',
+                    },
                     '&:hover': {
-                      backgroundColor: isActive
-                        ? tokens.colors.background.inverse
-                        : 'rgba(0,0,0,0.04)',
-                      color: isActive ? tokens.colors.text.onBrand : tokens.colors.text.brand,
+                      color: 'rgba(15, 91, 82, 1)',
+                      '&::after': {
+                        width: '100%',
+                      }
                     }
                   }}
                 >
                   {item.label}
-                </Button>
+                </Box>
               );
             })}
           </Box>
