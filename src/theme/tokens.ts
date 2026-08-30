@@ -127,6 +127,6 @@ export const tokens = {
     desktopXl: 1440,
   },
   layout: {
-    maxWidth: 1080,
+    maxWidth: 1440,
   }
 };
