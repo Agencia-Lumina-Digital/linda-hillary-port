@@ -42,19 +42,19 @@ export const Hero = () => {
       <Grid container columnSpacing={{ xs: 0, md: 8 }} rowSpacing={{ xs: 4, md: 8 }} alignItems="center" sx={{ position: 'relative', zIndex: 2 }}>
         {/* Coluna Esquerda: Conteúdo */}
         <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 1 }, height: { xs: 'auto', md: '440px' } }}>
-          <Stack spacing="48px" sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}>
+          <Stack spacing={{ xs: '32px', md: '48px' }} sx={{ display: 'flex', justifyContent: 'center', height: { xs: 'auto', md: '440px' } }}>
             <Box>
               {/* Título */}
               <Typography
                 variant="h1"
                 sx={{
                   fontFamily: tokens.typography.fontFamily.display,
-                  fontSize: { xs: '38px', md: '64px' },
+                  fontSize: { xs: '36px', md: '64px' },
                   fontWeight: 600,
-                  lineHeight: 1.2,
+                  lineHeight: { xs: 1.4, md: 1.2 },
                   color: 'rgba(15, 91, 82, 1)',
                   whiteSpace: 'pre-line',
-                  mb: '32px', // Espaçamento entre Título e Parágrafo
+                  mb: { xs: '24px', md: '32px' }, // Espaçamento entre Título e Parágrafo
                 }}
               >
                 Olá, eu sou a{'\n'}Linda Souza.
@@ -66,9 +66,9 @@ export const Hero = () => {
                 sx={{
                   fontFamily: tokens.typography.fontFamily.display,
                   color: 'rgba(74, 79, 78, 1)',
-                  fontSize: { xs: '15px', md: '18px' },
+                  fontSize: { xs: '16px', md: '18px' },
                   fontWeight: 400,
-                  lineHeight: 1.6,
+                  lineHeight: { xs: 1.4, md: 1.6 },
                   maxWidth: '995px'
                 }}
               >
