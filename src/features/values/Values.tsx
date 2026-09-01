@@ -8,13 +8,13 @@ export const Values = () => {
   return (
     <Box 
       sx={{ 
-        py: { xs: 8, md: 8 }, 
-        backgroundColor: 'rgba(7, 44, 37, 1)', // Fundo verde escuro
+        py: { xs: '40px', md: '64px' }, 
+        backgroundColor: 'rgba(15, 91, 82, 1)', // Fundo verde escuro
         mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, 
         px: { xs: '24px', md: 'calc(50vw - 50%)' }, 
       }}
     >
-      <Grid container columnSpacing="40px" rowSpacing="40px">
+      <Grid container columnSpacing={{ xs: '16px', md: '40px' }} rowSpacing={{ xs: '16px', md: '40px' }}>
         {/* Card 1 */}
         <Grid 
           item 
@@ -34,10 +34,10 @@ export const Values = () => {
             <Stack spacing="24px">
               <Box component="img" src={rect19} alt="Ícone" sx={{ width: '32px', height: '32px' }} />
               <Stack spacing="16px">
-                <Typography variant="h6" sx={{ color: 'rgba(15, 91, 82, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '18px', fontWeight: 600, lineHeight: 1.4 }}>
+                <Typography variant="h6" sx={{ color: 'rgba(15, 91, 82, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: { xs: '16px', md: '18px' }, fontWeight: 600, lineHeight: 1.4 }}>
                   Análise estratégica
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'rgba(74, 79, 78, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '16px', fontWeight: 400, lineHeight: 1.4 }}>
+                <Typography variant="body1" sx={{ color: 'rgba(74, 79, 78, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: { xs: '14px', md: '16px' }, fontWeight: 400, lineHeight: 1.4 }}>
                   Interpreto dados para orientar decisões e otimizar experiências.
                 </Typography>
               </Stack>
@@ -65,10 +65,10 @@ export const Values = () => {
             <Stack spacing="24px">
               <Box component="img" src={rect21} alt="Ícone" sx={{ width: '32px', height: '32px' }} />
               <Stack spacing="16px">
-                <Typography variant="h6" sx={{ color: 'rgba(15, 91, 82, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '18px', fontWeight: 600, lineHeight: 1.4 }}>
+                <Typography variant="h6" sx={{ color: 'rgba(15, 91, 82, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: { xs: '16px', md: '18px' }, fontWeight: 600, lineHeight: 1.4 }}>
                   Componentes modulares
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'rgba(74, 79, 78, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '16px', fontWeight: 400, lineHeight: 1.4 }}>
+                <Typography variant="body1" sx={{ color: 'rgba(74, 79, 78, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: { xs: '14px', md: '16px' }, fontWeight: 400, lineHeight: 1.4 }}>
                   Desenvolvo sistemas flexíveis que garantem consistência e agilidade.
                 </Typography>
               </Stack>
@@ -96,10 +96,10 @@ export const Values = () => {
             <Stack spacing="24px">
               <Box component="img" src={rect25} alt="Ícone" sx={{ width: '32px', height: '32px' }} />
               <Stack spacing="16px">
-                <Typography variant="h6" sx={{ color: 'rgba(15, 91, 82, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '18px', fontWeight: 600, lineHeight: 1.4 }}>
+                <Typography variant="h6" sx={{ color: 'rgba(15, 91, 82, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: { xs: '16px', md: '18px' }, fontWeight: 600, lineHeight: 1.4 }}>
                   Design inclusivo
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'rgba(74, 79, 78, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '16px', fontWeight: 400, lineHeight: 1.4 }}>
+                <Typography variant="body1" sx={{ color: 'rgba(74, 79, 78, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: { xs: '14px', md: '16px' }, fontWeight: 400, lineHeight: 1.4 }}>
                   Garantindo acesso e usabilidade para todos os perfis.
                 </Typography>
               </Stack>
