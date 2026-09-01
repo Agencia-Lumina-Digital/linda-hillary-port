@@ -163,9 +163,7 @@ export const Hero = () => {
           md={5} 
           sx={{ position: 'relative', order: { xs: 1, md: 2 } }}
           data-aos="fade-left"
-          data-aos-anchor="#example-anchor"
-          data-aos-offset="500"
-          data-aos-duration="500"
+          data-aos-duration="3000"
         >
           <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', width: '100%', mx: 'auto' }}>
             
