@@ -16,7 +16,13 @@ export const Values = () => {
     >
       <Grid container columnSpacing="40px" rowSpacing="40px">
         {/* Card 1 */}
-        <Grid item xs={12} md={4}>
+        <Grid 
+          item 
+          xs={12} 
+          md={4}
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
           <Box 
             sx={{ 
               backgroundColor: '#FFFFFF', 
@@ -40,7 +46,14 @@ export const Values = () => {
         </Grid>
         
         {/* Card 2 */}
-        <Grid item xs={12} md={4}>
+        <Grid 
+          item 
+          xs={12} 
+          md={4}
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          data-aos-delay="200" // Um pequeno atraso para dar efeito cascata
+        >
           <Box 
             sx={{ 
               backgroundColor: '#FFFFFF', 
@@ -64,7 +77,14 @@ export const Values = () => {
         </Grid>
 
         {/* Card 3 */}
-        <Grid item xs={12} md={4}>
+        <Grid 
+          item 
+          xs={12} 
+          md={4}
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          data-aos-delay="400"
+        >
           <Box 
             sx={{ 
               backgroundColor: '#FFFFFF', 
