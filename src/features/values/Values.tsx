@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography } from '@mui/material';
 import { tokens } from '../../theme/tokens';
 import rect19 from '../../theme/assets/Rectangle 19.png';
 import rect21 from '../../theme/assets/Rectangle 21.png';
@@ -8,49 +8,82 @@ export const Values = () => {
   return (
     <Box 
       sx={{ 
-        py: { xs: 8, md: 10 }, 
-        backgroundColor: tokens.colors.background.brandSubtle, // Cor verde bem clara de fundo
-        mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Quebra o container para full-width
-        px: { xs: '24px', md: 'calc(50vw - 50%)' }, // Restaura padding interno perfeitamente alinhado
+        py: { xs: 8, md: 8 }, 
+        backgroundColor: 'rgba(7, 44, 37, 1)', // Fundo verde escuro
+        mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, 
+        px: { xs: '24px', md: 'calc(50vw - 50%)' }, 
       }}
     >
-      <Grid container columnSpacing={{ xs: 0, md: 6 }} rowSpacing={6}>
-        {/* Feature 1 */}
-        <Grid item xs={12} md={4} sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
-          <Box component="img" src={rect19} alt="Ícone Discovery" sx={{ width: '41px', height: '41px', flexShrink: 0 }} />
-          <Box>
-            <Typography variant="h4" sx={{ color: tokens.colors.text.brand, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: { xs: '16px', md: '24px' }, fontWeight: 600, lineHeight: 1.4 }}>
-              Discovery e comportamento
-            </Typography>
-            <Typography variant="body1" sx={{ color: tokens.colors.text.secondary, fontFamily: tokens.typography.fontFamily.body, fontSize: { xs: '14px', md: '18px' }, fontWeight: 400, lineHeight: 1.6 }}>
-              Uso ferramentas de analytics e pesquisas para mapear o contexto real antes de desenhar.
-            </Typography>
+      <Grid container columnSpacing="40px" rowSpacing="40px">
+        {/* Card 1 */}
+        <Grid item xs={12} md={4}>
+          <Box 
+            sx={{ 
+              backgroundColor: '#FFFFFF', 
+              borderRadius: '8px', 
+              p: '16px', 
+              height: '100%' 
+            }}
+          >
+            <Stack spacing="24px">
+              <Box component="img" src={rect19} alt="Ícone" sx={{ width: '32px', height: '32px' }} />
+              <Stack spacing="16px">
+                <Typography variant="h6" sx={{ color: 'rgba(15, 91, 82, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '18px', fontWeight: 600, lineHeight: 1.4 }}>
+                  Análise estratégica
+                </Typography>
+                <Typography variant="body1" sx={{ color: 'rgba(74, 79, 78, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '16px', fontWeight: 400, lineHeight: 1.4 }}>
+                  Interpreto dados para orientar decisões e otimizar experiências.
+                </Typography>
+              </Stack>
+            </Stack>
           </Box>
         </Grid>
         
-        {/* Feature 2 */}
-        <Grid item xs={12} md={4} sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
-          <Box component="img" src={rect21} alt="Ícone Design Systems" sx={{ width: '41px', height: '41px', flexShrink: 0 }} />
-          <Box>
-            <Typography variant="h4" sx={{ color: tokens.colors.text.brand, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: { xs: '16px', md: '24px' }, fontWeight: 600, lineHeight: 1.4 }}>
-              Design Systems escaláveis
-            </Typography>
-            <Typography variant="body1" sx={{ color: tokens.colors.text.secondary, fontFamily: tokens.typography.fontFamily.body, fontSize: { xs: '14px', md: '18px' }, fontWeight: 400, lineHeight: 1.6 }}>
-              Lidero a criação de tokens e componentes reutilizáveis, hoje mentorando outras designers nesse processo.
-            </Typography>
+        {/* Card 2 */}
+        <Grid item xs={12} md={4}>
+          <Box 
+            sx={{ 
+              backgroundColor: '#FFFFFF', 
+              borderRadius: '8px', 
+              p: '16px', 
+              height: '100%' 
+            }}
+          >
+            <Stack spacing="24px">
+              <Box component="img" src={rect21} alt="Ícone" sx={{ width: '32px', height: '32px' }} />
+              <Stack spacing="16px">
+                <Typography variant="h6" sx={{ color: 'rgba(15, 91, 82, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '18px', fontWeight: 600, lineHeight: 1.4 }}>
+                  Componentes modulares
+                </Typography>
+                <Typography variant="body1" sx={{ color: 'rgba(74, 79, 78, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '16px', fontWeight: 400, lineHeight: 1.4 }}>
+                  Desenvolvo sistemas flexíveis que garantem consistência e agilidade.
+                </Typography>
+              </Stack>
+            </Stack>
           </Box>
         </Grid>
 
-        {/* Feature 3 */}
-        <Grid item xs={12} md={4} sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
-          <Box component="img" src={rect25} alt="Ícone Acessibilidade" sx={{ width: '41px', height: '41px', flexShrink: 0 }} />
-          <Box>
-            <Typography variant="h4" sx={{ color: tokens.colors.text.brand, fontFamily: tokens.typography.fontFamily.display, mb: 1, fontSize: { xs: '16px', md: '24px' }, fontWeight: 600, lineHeight: 1.4 }}>
-              Acessibilidade e refinamento
-            </Typography>
-            <Typography variant="body1" sx={{ color: tokens.colors.text.secondary, fontFamily: tokens.typography.fontFamily.body, fontSize: { xs: '14px', md: '18px' }, fontWeight: 400, lineHeight: 1.6 }}>
-              Aplicação das diretrizes WCAG para criar produtos verdadeiramente inclusivos.
-            </Typography>
+        {/* Card 3 */}
+        <Grid item xs={12} md={4}>
+          <Box 
+            sx={{ 
+              backgroundColor: '#FFFFFF', 
+              borderRadius: '8px', 
+              p: '16px', 
+              height: '100%' 
+            }}
+          >
+            <Stack spacing="24px">
+              <Box component="img" src={rect25} alt="Ícone" sx={{ width: '32px', height: '32px' }} />
+              <Stack spacing="16px">
+                <Typography variant="h6" sx={{ color: 'rgba(15, 91, 82, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '18px', fontWeight: 600, lineHeight: 1.4 }}>
+                  Design inclusivo
+                </Typography>
+                <Typography variant="body1" sx={{ color: 'rgba(74, 79, 78, 1)', fontFamily: tokens.typography.fontFamily.display, fontSize: '16px', fontWeight: 400, lineHeight: 1.4 }}>
+                  Garantindo acesso e usabilidade para todos os perfis.
+                </Typography>
+              </Stack>
+            </Stack>
           </Box>
         </Grid>
       </Grid>
