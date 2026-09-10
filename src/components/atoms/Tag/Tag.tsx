@@ -12,20 +12,20 @@ export const Tag = ({ label }: TagProps) => {
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: tokens.colors.background.brand,
+        backgroundColor: 'rgba(209, 224, 221, 1)',
         borderRadius: '100px',
-        px: '14px',
-        py: '6px',
+        px: '12px',
+        py: '8px',
         userSelect: 'none',
       }}
     >
       <Typography
         sx={{
-          color: tokens.colors.text.onBrand,
-          fontFamily: tokens.typography.fontFamily.body,
-          fontSize: '11px', // Fixo conforme instrução do usuário para ambos os formatos de tela
-          fontWeight: tokens.typography.fontWeight.medium,
-          lineHeight: 1.2,
+          color: 'rgba(24, 27, 26, 1)',
+          fontFamily: tokens.typography.fontFamily.display,
+          fontSize: '14px',
+          fontWeight: 400,
+          lineHeight: 1.4,
         }}
       >
         {label}

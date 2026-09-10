@@ -81,44 +81,17 @@ export const ProjectModal = ({
       <Box
         sx={{
           height: { xs: '250px', md: '300px' },
-          backgroundColor: '#5C8C5A', // Verde semântico do tema
           position: 'relative',
           display: 'flex',
           alignItems: 'flex-start',
-          justifyContent: 'space-between', // Alinha a tag à esquerda e o fechar à direita
+          justifyContent: 'flex-end', // Alinha apenas o botão de fechar à direita
           p: { xs: '16px', md: '24px' },
-          backgroundImage: project.modalBgImage ? `url(${project.modalBgImage})` : (project.headerBgImage ? `url(${project.headerBgImage})` : 'none'),
+          backgroundImage: project.modalBgImage ? `url(${project.modalBgImage}), linear-gradient(180deg, rgba(61, 92, 77, 1) 0%, rgba(102, 148, 122, 1) 100%)` : 'linear-gradient(180deg, rgba(61, 92, 77, 1) 0%, rgba(102, 148, 122, 1) 100%)',
           backgroundSize: 'cover',
           backgroundPosition: { xs: 'center bottom -24px', md: 'center bottom -56px' },
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Badge / Tag no topo esquerdo */}
-        <Box
-          sx={{
-            backgroundColor: '#FFFFFF',
-            borderRadius: tokens.borderRadius.pill,
-            px: { xs: '16px', md: '20px' },
-            py: { xs: '6px', md: '8px' },
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
-            userSelect: 'none',
-          }}
-        >
-          <Typography
-            sx={{
-              color: tokens.colors.text.brand,
-              fontFamily: tokens.typography.fontFamily.body,
-              fontSize: '11px',
-              fontWeight: tokens.typography.fontWeight.semibold,
-              lineHeight: 1.2,
-            }}
-          >
-            {project.tag}
-          </Typography>
-        </Box>
 
         {/* Botão de Fechar Modal da Direita */}
         <IconButton
