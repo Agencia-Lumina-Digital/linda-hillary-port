@@ -6,6 +6,7 @@ import { LoginBemolContent } from './content/LoginBemolContent';
 import { DesignSystemBemolContent } from './content/DesignSystemBemolContent';
 import { SaudeBemolContent } from './content/SaudeBemolContent';
 import { BemolRunContent } from './content/BemolRunContent';
+import { CheckoutBemolContent } from './content/CheckoutBemolContent';
 
 interface Project {
   title: string;
@@ -30,9 +31,11 @@ interface ProjectModalProps {
 
 const renderProjectContent = (title: string) => {
   switch (title) {
+    case 'Quebra de Pacotes – Checkout Bemol':
+      return <CheckoutBemolContent />;
     case 'Redesign do Login — App Bemol':
       return <LoginBemolContent />;
-    case 'Fundamentos do Design System — Bemol Varejo':
+    case 'Fundamentos do Norte Design System — Bemol Varejo':
       return <DesignSystemBemolContent />;
     case 'Bemol Saúde — Agendamento de Exames':
       return <SaudeBemolContent />;

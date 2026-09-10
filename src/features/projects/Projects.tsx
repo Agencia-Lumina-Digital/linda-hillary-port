@@ -14,6 +14,8 @@ import loginBemolModalBg from '../../theme/assets/projects/loginBemolContent/bac
 import designSystemModalBg from '../../theme/assets/projects/DesignSystemBemolContent/background.png';
 import saudeBemolModalBg from '../../theme/assets/projects/SaudeBemolContent/background.png';
 import bemolRunModalBg from '../../theme/assets/projects/BemolRunContent/background.png';
+import checkoutBemolBg from '../../theme/assets/projects/CheckoutBemolContent/bg-card.png';
+import checkoutBemolModalBg from '../../theme/assets/projects/CheckoutBemolContent/checkout.png';
 
 const projectsData = [
   {
@@ -51,6 +53,15 @@ const projectsData = [
     bannerBgColor: '#93A993',
     headerBgImage: designSystemBg,
     modalBgImage: designSystemModalBg,
+  },
+  {
+    title: 'Quebra de Pacotes – Checkout Bemol',
+    description: 'Tornar visível, no checkout, uma complexidade logística que o backend já resolvia – múltiplas origens de expedição (Centro de Distribuição, lojas físicas, embarcações) – sem transformar essa complexidade em ansiedade para o cliente.',
+    tag: 'UX Design',
+    metric: '+67% conclusão',
+    bannerBgColor: '#EBE3D0', // Beige tone from the image background roughly
+    headerBgImage: checkoutBemolBg,
+    modalBgImage: checkoutBemolModalBg,
   },
 ];
 
