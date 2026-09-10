@@ -70,6 +70,8 @@ export const Projects = () => {
 
   return (
     <Box
+      data-aos="fade-up"
+      data-aos-duration="3000"
       sx={{
         pt: { xs: '40px', md: '88px' },
         pb: { xs: 8, md: 12 },

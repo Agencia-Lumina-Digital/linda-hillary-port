@@ -26,8 +26,11 @@ export const ProjectCard = ({ title, description, bannerBgColor, headerBgImage, 
         cursor: onClick ? 'pointer' : 'default',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease',
         '&:hover': {
-          transform: 'translateY(-4px)',
-          boxShadow: '0px 12px 32px rgba(112, 144, 176, 0.15)',
+          transform: 'scale(1.02)',
+          boxShadow: '0px 16px 40px rgba(112, 144, 176, 0.2)',
+          '& .arrow-icon': {
+            transform: 'translateX(6px)',
+          }
         },
       }}
     >
@@ -98,7 +101,7 @@ export const ProjectCard = ({ title, description, bannerBgColor, headerBgImage, 
             gap: '8px'
           }}
         >
-          Ver projeto &rarr;
+          Ver projeto <Box component="span" className="arrow-icon" sx={{ transition: 'transform 0.3s ease', display: 'inline-block' }}>&rarr;</Box>
         </Typography>
       </Stack>
     </Box>
