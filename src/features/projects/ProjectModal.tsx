@@ -86,10 +86,14 @@ export const ProjectModal = ({
           alignItems: 'flex-start',
           justifyContent: 'flex-end', // Alinha apenas o botão de fechar à direita
           p: { xs: '16px', md: '24px' },
-          backgroundImage: project.modalBgImage ? `url(${project.modalBgImage}), linear-gradient(180deg, rgba(61, 92, 77, 1) 0%, rgba(102, 148, 122, 1) 100%)` : 'linear-gradient(180deg, rgba(61, 92, 77, 1) 0%, rgba(102, 148, 122, 1) 100%)',
-          backgroundSize: 'cover',
-          backgroundPosition: { xs: 'center bottom -24px', md: 'center bottom -56px' },
-          backgroundRepeat: 'no-repeat',
+          backgroundImage: project.modalBgImage 
+            ? `url(${project.modalBgImage}), linear-gradient(180deg, rgba(61, 92, 77, 1) 0%, rgba(102, 148, 122, 1) 100%)` 
+            : 'linear-gradient(180deg, rgba(61, 92, 77, 1) 0%, rgba(102, 148, 122, 1) 100%)',
+          backgroundSize: project.modalBgImage ? 'cover, 100% 100%' : '100% 100%',
+          backgroundPosition: project.modalBgImage
+            ? { xs: 'center bottom -24px, center top', md: 'center bottom -56px, center top' }
+            : 'center top',
+          backgroundRepeat: 'no-repeat, no-repeat',
         }}
       >
 

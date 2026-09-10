@@ -9,11 +9,11 @@ export const ProjectDescription = ({ text }: ProjectDescriptionProps) => {
   return (
     <Typography
       sx={{
-        fontFamily: tokens.typography.fontFamily.body,
-        color: tokens.colors.text.secondary,
-        fontWeight: tokens.typography.fontWeight.regular,
-        fontSize: { xs: '14px', md: '16px' },
-        lineHeight: 1.6,
+        fontFamily: tokens.typography.fontFamily.display,
+        color: 'rgba(74, 79, 78, 1)',
+        fontWeight: 400,
+        fontSize: { xs: '16px', md: '18px' },
+        lineHeight: { xs: 1.4, md: 1.6 },
       }}
     >
       {text}
