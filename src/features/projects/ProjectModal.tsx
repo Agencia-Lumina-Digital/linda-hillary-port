@@ -14,6 +14,7 @@ interface Project {
   metric: string;
   bannerBgColor: string;
   headerBgImage?: string;
+  modalBgImage?: string;
 }
 
 interface ProjectModalProps {
@@ -83,7 +84,7 @@ export const ProjectModal = ({
           alignItems: 'flex-start',
           justifyContent: 'space-between', // Alinha a tag à esquerda e o fechar à direita
           p: { xs: '16px', md: '24px' },
-          backgroundImage: project.headerBgImage ? `url(${project.headerBgImage})` : 'none',
+          backgroundImage: project.modalBgImage ? `url(${project.modalBgImage})` : (project.headerBgImage ? `url(${project.headerBgImage})` : 'none'),
           backgroundSize: 'cover',
           backgroundPosition: { xs: 'center bottom -24px', md: 'center bottom -56px' },
           backgroundRepeat: 'no-repeat',
