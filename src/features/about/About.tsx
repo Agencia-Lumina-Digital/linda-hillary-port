@@ -103,7 +103,8 @@ export const About = () => {
             sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
             data-aos="fade-up"
             data-aos-anchor="#about-anchor"
-            data-aos-duration="1000"
+            data-aos-offset="500"
+            data-aos-duration="500"
           >
             {/* Título */}
             <Typography
@@ -146,7 +147,6 @@ export const About = () => {
                     window.scrollTo({ top: element.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
                   }
                 }}
-                className="hvr-grow"
                 sx={{
                   flex: { xs: 1, md: 'initial' },
                   backgroundColor: 'rgba(15, 91, 82, 1)',
@@ -159,8 +159,10 @@ export const About = () => {
                   fontFamily: tokens.typography.fontFamily.display,
                   textTransform: 'none',
                   lineHeight: 1.4,
+                  transition: 'transform 0.2s',
                   '&:hover': {
                     backgroundColor: 'rgba(15, 91, 82, 1)',
+                    transform: 'scale(1.05)',
                   }
                 }}
               >
@@ -171,7 +173,6 @@ export const About = () => {
                 onClick={() => {
                   window.open('/Linda_Souza_Product_Designer.pdf', '_blank');
                 }}
-                className="hvr-grow"
                 sx={{
                   flex: { xs: 1, md: 'initial' },
                   borderColor: 'rgba(15, 91, 82, 1)',
@@ -185,10 +186,12 @@ export const About = () => {
                   textTransform: 'none',
                   borderWidth: '1px',
                   lineHeight: 1.4,
+                  transition: 'transform 0.2s',
                   '&:hover': {
                     borderColor: 'rgba(15, 91, 82, 1)',
                     borderWidth: '1px',
                     backgroundColor: 'transparent',
+                    transform: 'scale(1.05)',
                   }
                 }}
               >
