@@ -11,10 +11,10 @@ export const ProjectSectionTitle = ({ title }: ProjectSectionTitleProps) => {
       variant="h3"
       sx={{
         fontFamily: tokens.typography.fontFamily.display,
-        fontWeight: tokens.typography.fontWeight.regular, // regular (400)
-        fontSize: `${tokens.typography.fontSize[26]}px`, // 26px para ambos os formatos
-        color: tokens.colors.text.brand,
-        lineHeight: 1.2,
+        fontWeight: 600,
+        fontSize: { xs: '18px', md: '24px' },
+        color: 'rgba(24, 27, 26, 1)',
+        lineHeight: 1.4,
       }}
     >
       {title}

@@ -12,8 +12,8 @@ export const ProjectDescription = ({ text }: ProjectDescriptionProps) => {
         fontFamily: tokens.typography.fontFamily.display,
         color: 'rgba(74, 79, 78, 1)',
         fontWeight: 400,
-        fontSize: { xs: '16px', md: '18px' },
-        lineHeight: { xs: 1.4, md: 1.6 },
+        fontSize: '16px',
+        lineHeight: 1.4,
       }}
     >
       {text}
