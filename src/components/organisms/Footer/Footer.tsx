@@ -9,7 +9,7 @@ export const Footer = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: tokens.colors.background.inverse, // Fundo verde escuro
+        backgroundColor: 'rgba(7, 44, 37, 1)', // Fundo verde escuro
         px: { xs: '16px', md: '64px' },
         py: { xs: '20px', md: '18px' },
         display: 'flex',
@@ -40,7 +40,7 @@ export const Footer = () => {
             lineHeight: 1, // Fix para alinhamento vertical
           }}
         >
-          © 2025 Linda Souza · UI Design
+          © 2026 - Linda Souza
         </Typography>
       </Stack>
 
