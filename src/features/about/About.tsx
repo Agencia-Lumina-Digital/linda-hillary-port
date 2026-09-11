@@ -28,7 +28,7 @@ export const About = () => {
         id="about-anchor" 
         container 
         columnSpacing={{ xs: 0, md: 8 }} 
-        rowSpacing={{ xs: 4, md: 8 }} 
+        rowSpacing={{ xs: '20px', md: '64px' }} 
         alignItems="center" 
         sx={{ position: 'relative', zIndex: 2, justifyContent: 'center' }}
       >
@@ -99,43 +99,41 @@ export const About = () => {
 
         {/* Coluna Direita: Conteúdo de Texto */}
         <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 2 } }}>
-          <Stack 
-            spacing={{ xs: '24px', md: '32px' }} 
-            sx={{ display: 'flex', justifyContent: 'center' }}
+          <Box 
+            sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
             data-aos="fade-up"
             data-aos-anchor="#about-anchor"
             data-aos-duration="1000"
           >
-            <Box>
-              {/* Título */}
-              <Typography
-                variant="h2"
-                sx={{
-                  fontFamily: tokens.typography.fontFamily.display,
-                  fontSize: { xs: '24px', md: '36px' },
-                  fontWeight: 600,
-                  lineHeight: { xs: 1.4, md: 1.2 },
-                  color: 'rgba(15, 91, 82, 1)',
-                  mb: { xs: '16px', md: '24px' },
-                }}
-              >
-                Designer de Produtos focada em experiências digitais inovadoras.
-              </Typography>
+            {/* Título */}
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: tokens.typography.fontFamily.display,
+                fontSize: { xs: '24px', md: '36px' },
+                fontWeight: 600,
+                lineHeight: 1.4,
+                color: 'rgba(15, 91, 82, 1)',
+                mb: { xs: '24px', md: '56px' },
+              }}
+            >
+              Designer de Produtos focada em experiências digitais inovadoras.
+            </Typography>
 
-              {/* Descrição */}
-              <Typography
-                variant="body1"
-                sx={{
-                  fontFamily: tokens.typography.fontFamily.display,
-                  color: 'rgba(74, 79, 78, 1)',
-                  fontSize: { xs: '16px', md: '16px' },
-                  fontWeight: 400,
-                  lineHeight: { xs: 1.6, md: 1.6 },
-                }}
-              >
-                Sou Linda Hillary Brandão Souza, uma Product Designer apaixonada por criar experiências digitais impactantes. Com mais de 3 anos de experiência, tenho liderado a construção e a governança do Norte Design System na Bemol Digital. Minha abordagem é centrada em dados, utilizando IA (Claude) para otimizar processos e mentorando outros designers na equipe. Recentemente, fui reconhecida com o Prêmio Japiim de Prata por um projeto inovador que automatizou fluxos de trabalho, reduzindo o tempo de tarefas operacionais em até 95%. Estou sempre em busca de novas maneiras de integrar tecnologia e design para melhorar a acessibilidade e a usabilidade dos produtos.
-              </Typography>
-            </Box>
+            {/* Descrição */}
+            <Typography
+              variant="body1"
+              sx={{
+                fontFamily: tokens.typography.fontFamily.display,
+                color: 'rgba(74, 79, 78, 1)',
+                fontSize: { xs: '16px', md: '18px' },
+                fontWeight: 400,
+                lineHeight: { xs: 1.4, md: 1.6 },
+                mb: { xs: '32px', md: '56px' },
+              }}
+            >
+              Sou Linda Hillary Brandão Souza, uma Product Designer apaixonada por criar experiências digitais impactantes. Com mais de 3 anos de experiência, tenho liderado a construção e a governança do Norte Design System na Bemol Digital. Minha abordagem é centrada em dados, utilizando IA (Claude) para otimizar processos e mentorando outros designers na equipe. Recentemente, fui reconhecida com o Prêmio Japiim de Prata por um projeto inovador que automatizou fluxos de trabalho, reduzindo o tempo de tarefas operacionais em até 95%. Estou sempre em busca de novas maneiras de integrar tecnologia e design para melhorar a acessibilidade e a usabilidade dos produtos.
+            </Typography>
 
             {/* Ações */}
             <Stack direction="row" spacing="12px" sx={{ width: { xs: '100%', md: 'fit-content' } }}>
@@ -155,11 +153,12 @@ export const About = () => {
                   color: '#FFFFFF',
                   borderRadius: '50px',
                   px: '24px',
-                  height: '52px',
+                  py: { xs: '16px', md: '20px' },
                   fontSize: '16px',
                   fontWeight: 600,
                   fontFamily: tokens.typography.fontFamily.display,
                   textTransform: 'none',
+                  lineHeight: 1.4,
                   '&:hover': {
                     backgroundColor: 'rgba(15, 91, 82, 1)',
                   }
@@ -179,12 +178,13 @@ export const About = () => {
                   color: 'rgba(15, 91, 82, 1)',
                   borderRadius: '50px',
                   px: '24px',
-                  height: '52px',
+                  py: { xs: '16px', md: '20px' },
                   fontSize: '16px',
                   fontWeight: 600,
                   fontFamily: tokens.typography.fontFamily.display,
                   textTransform: 'none',
                   borderWidth: '1px',
+                  lineHeight: 1.4,
                   '&:hover': {
                     borderColor: 'rgba(15, 91, 82, 1)',
                     borderWidth: '1px',
@@ -195,7 +195,7 @@ export const About = () => {
                 Ver currículo
               </Button>
             </Stack>
-          </Stack>
+          </Box>
         </Grid>
       </Grid>
     </Box>
