@@ -139,64 +139,82 @@ export const ProjectModal = ({
       {/* 3. Rodapé do Modal (Ações de Navegação e Contato) */}
       <Box
         sx={{
-          p: '20px 24px',
-          borderTop: `1px solid rgba(44, 62, 53, 0.08)`,
-          backgroundColor: '#FFFFFF',
+          p: { xs: '16px 24px', md: '20px 48px' },
+          borderTop: `0.5px solid rgba(44, 62, 53, 0.12)`,
+          backgroundColor: 'rgba(7, 44, 37, 1)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
         }}
       >
         {/* Lado Esquerdo: Projeto Anterior */}
-        <Box sx={{ width: { xs: '80px', sm: '150px' }, display: 'flex', justifyContent: 'flex-start' }}>
+        <Box sx={{ width: { xs: 'auto', sm: '200px' }, display: 'flex', justifyContent: 'flex-start' }}>
           {hasPrev && (
             <Button
               variant="ghost"
               onClick={onPrev}
               sx={{
-                fontSize: tokens.typography.fontSize[12],
-                px: { xs: 0.5, sm: 1.5 },
-                py: 1,
+                fontSize: '16px',
+                fontWeight: 600,
+                color: '#FFFFFF',
+                p: 0,
+                transition: 'transform 0.2s ease-in-out, opacity 0.2s ease-in-out',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  opacity: 0.8,
+                  transform: 'scale(1.05)',
+                },
               }}
             >
-              {isMobile ? 'Anterior' : '← Projeto anterior'}
+              {isMobile ? '← Anterior' : '← Projeto anterior'}
             </Button>
           )}
         </Box>
 
-        {/* Centro: Entrar em contato */}
+        {/* Centro: Entrar em contato (Some no mobile) */}
         <Button
-          variant="primary"
+          variant="outlined"
           onClick={onContactClick}
           sx={{
-            fontSize: tokens.typography.fontSize[13],
-            px: { xs: 1.5, sm: 3 },
-            py: '10px',
-            backgroundColor: tokens.colors.background.inverse,
+            display: { xs: 'none', md: 'flex' },
+            fontSize: '16px',
+            fontWeight: 600,
+            padding: '12px 24px', // Adjusted to match visually, total height 44px
+            border: '1.5px solid #FFFFFF',
+            borderRadius: '50px',
+            backgroundColor: 'transparent',
             color: '#FFFFFF',
-            width: { xs: 'auto', sm: '150px' }, // Flexível no mobile, 150px no desktop
-            flexGrow: { xs: 1, sm: 0 },
+            transition: 'all 0.2s ease-in-out',
             '&:hover': {
-              backgroundColor: tokens.colors.background.inverseSoft,
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              border: '1.5px solid #FFFFFF',
+              transform: 'scale(1.05)',
             },
           }}
         >
-          {isMobile ? 'Contato' : 'Entrar em contato'}
+          Entrar em contato
         </Button>
 
         {/* Lado Direito: Próximo Projeto */}
-        <Box sx={{ width: { xs: '80px', sm: '150px' }, display: 'flex', justifyContent: 'flex-end' }}>
+        <Box sx={{ width: { xs: 'auto', sm: '200px' }, display: 'flex', justifyContent: 'flex-end' }}>
           {hasNext && (
             <Button
               variant="ghost"
               onClick={onNext}
               sx={{
-                fontSize: tokens.typography.fontSize[12],
-                px: { xs: 0.5, sm: 1.5 },
-                py: 1,
+                fontSize: '16px',
+                fontWeight: 600,
+                color: '#FFFFFF',
+                p: 0,
+                transition: 'transform 0.2s ease-in-out, opacity 0.2s ease-in-out',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  opacity: 0.8,
+                  transform: 'scale(1.05)',
+                },
               }}
             >
-              {isMobile ? 'Próximo' : 'Próximo projeto →'}
+              {isMobile ? 'Próximo →' : 'Próximo projeto →'}
             </Button>
           )}
         </Box>
