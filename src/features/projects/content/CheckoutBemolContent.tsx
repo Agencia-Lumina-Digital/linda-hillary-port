@@ -8,14 +8,14 @@ import { ProjectSectionTitle } from '../../../components/atoms/ProjectSectionTit
 import { ProjectContentBlock } from '../../../components/atoms/ProjectContentBlock/ProjectContentBlock';
 
 // Importação das imagens do projeto
-import imgMapeamentoDesktop from '../../../theme/assets/projects/checkoutBemolContent/mapeamento-desktop.png';
-import imgMapeamentoMobile from '../../../theme/assets/projects/checkoutBemolContent/mapeamento-mobile.png';
-import imgSegundoMapeamentoDesktop from '../../../theme/assets/projects/checkoutBemolContent/segundo-mapeamento-desktop.png';
-import imgSegundoMapeamentoMobile from '../../../theme/assets/projects/checkoutBemolContent/segundo-mapeamento-mobile.png';
-import imgCenarioEntregaDesktop from '../../../theme/assets/projects/checkoutBemolContent/cenario-entrega-desktop.png';
-import imgCenarioEntregaMobile from '../../../theme/assets/projects/checkoutBemolContent/cenario-entrega-mobile.png';
-import imgCenarioRetiradaDesktop from '../../../theme/assets/projects/checkoutBemolContent/cenario-retirada-desktop.png';
-import imgCenarioRetiradaMobile from '../../../theme/assets/projects/checkoutBemolContent/cenario-retirada-mobile.png';
+import imgMapeamentoDesktop from '../../../theme/assets/projects/CheckoutBemolContent/mapeamento-desktop.png';
+import imgMapeamentoMobile from '../../../theme/assets/projects/CheckoutBemolContent/mapeamento-mobile.png';
+import imgSegundoMapeamentoDesktop from '../../../theme/assets/projects/CheckoutBemolContent/segundo-mapeamento-desktop.png';
+import imgSegundoMapeamentoMobile from '../../../theme/assets/projects/CheckoutBemolContent/segundo-mapeamento-mobile.png';
+import imgCenarioEntregaDesktop from '../../../theme/assets/projects/CheckoutBemolContent/cenario-entrega-desktop.png';
+import imgCenarioEntregaMobile from '../../../theme/assets/projects/CheckoutBemolContent/cenario-entrega-mobile.png';
+import imgCenarioRetiradaDesktop from '../../../theme/assets/projects/CheckoutBemolContent/cenario-retirada-desktop.png';
+import imgCenarioRetiradaMobile from '../../../theme/assets/projects/CheckoutBemolContent/cenario-retirada-mobile.png';
 
 export const CheckoutBemolContent = () => {
   return (
