@@ -55,16 +55,16 @@ export const BemolRunContent = () => {
         }}
       >
         <ProjectInfoCard
-          title="54,1% de abandono"
-          text="Taxa identificada via funil no UXCam — principal evidência que orientou o redesign"
+          title="1"
+          text="54,1% de abandono identificado via funil no UXCam – principal evidência que orientou o redesign"
         />
         <ProjectInfoCard
-          title="8 falhas críticas"
-          text="Problemas reais relatados pelo suporte: duplicidade, status incorreto, falhas de estoque e desconto"
+          title="2"
+          text="8 falhas críticas reais relatadas pelo suporte, endereçadas uma a uma no redesign"
         />
         <ProjectInfoCard
-          title="Fluxo pronto"
-          text="Redesign completo entregue e documentado, aguardando priorização"
+          title="3"
+          text="Fluxo completo redesenhado e documentado, pronto para priorização"
         />
       </Box>
 
@@ -76,7 +76,7 @@ export const BemolRunContent = () => {
 
       {/* Espaçamento de 12px seguido do conteúdo do desafio */}
       <Box sx={{ mt: '12px' }}>
-        <ProjectDescription text="A Bemol Run acumulava problemas estruturais que comprometiam a confiança do atleta em um momento crítico: a inscrição. A edição de 2025 expôs falhas que iam além da interface — inconsistências de status pós-pagamento, duplicidade de inscrição, erro no desconto automático para idosos, falhas no estoque de camisas e informações incompletas na confirmação. As reclamações chegavam ao suporte em volume, sinalizando que a experiência falhava em pilares fundamentais: comunicação, operação e confiança." />
+        <ProjectDescription text="A Bemol Run acumulava problemas estruturais que comprometiam a confiança do atleta justamente no momento mais crítico: a inscrição. A edição de 2025 expôs falhas que iam muito além da interface – inconsistências de status pós-pagamento, duplicidade de inscrição, erro no desconto automático para idosos, falhas no controle de estoque de camisas e informações incompletas na confirmação. As reclamações chegavam ao suporte (CAB) em volume, sinalizando que a experiência falhava em pilares fundamentais: comunicação, operação e confiança – não só estética." />
       </Box>
 
       {/* Divisória no final do desafio */}
@@ -90,58 +90,52 @@ export const BemolRunContent = () => {
         <ProjectContentBlock
           title="1. Mapeamento da jornada atual"
           paragraphs={[
-            'Conduzi sessões com PO, desenvolvedor e QA para revisar cada tela do fluxo existente. O objetivo foi construir um diagnóstico preciso — falhas de clareza, inconsistências visuais e lacunas na arquitetura da informação. O resultado foi um "De x Para" que guiou todas as decisões do redesign.',
+            'Conduzi sessões junto com PO, desenvolvedor e QA para revisar cada tela do fluxo existente. O objetivo era construir um diagnóstico preciso – falhas de clareza, inconsistências visuais e lacunas na arquitetura da informação. O resultado foi um "De x Para" que guiou todas as decisões do redesign.',
           ]}
         />
 
         <ProjectContentBlock
           title="2. Análise de dados no UXCam"
           paragraphs={[
-            'Criei um funil dentro do UXCam para mapear o comportamento real dos usuários na jornada de inscrição. O dado mais crítico: 54,1% de abandono entre quem iniciava o fluxo. A instrumentação original registrava todas as etapas como uma única tela, impedindo identificar o ponto exato de saída — o que reforçou duas entregas do projeto: redesign da experiência e especificação de instrumentação correta para a próxima versão.',
+            'Criei um funil dentro do UXCam para mapear o comportamento real dos usuários na jornada de inscrição. O dado mais crítico: 54,1% de abandono entre quem iniciava o fluxo. Mas a análise também revelou um problema por trás do problema: a instrumentação original registrava toda a jornada como uma única tela, o que impedia identificar em qual etapa exata (dados pessoais, percurso, camisa, pagamento ou resumo) o usuário desistia. Isso reforçou duas entregas do projeto, não uma: o redesenho da experiência e a especificação de instrumentação correta para a próxima versão – sem isso, o time continuaria "voando às cegas" mesmo depois do redesign.',
           ]}
         />
 
         <ProjectContentBlock
           title="3. Reclamações do suporte como bússola"
           paragraphs={[
-            'Utilizei os registros do CAB (suporte) como diretriz de redesign. Cada reclamação recorrente virou um requisito de melhoria:',
-          ]}
-          listItems={[
-            'Status travado em "Em processamento" após pagamento confirmado',
-            'Ausência de validação contra duplicidade de inscrição',
-            'Divergências de dados entre etapas',
-            'Falha na trava de estoque de camisas',
-            'Erro na identificação automática de idosos para desconto',
-            'Campo de personalização de número de peito ausente',
-            'Informações incompletas na tela de confirmação',
+            'Usei os registros do CAB como diretriz direta de redesign – cada reclamação recorrente virou um requisito de melhoria: status travado em "em processamento" mesmo após pagamento confirmado, ausência de validação contra duplicidade de inscrição, divergências de dados entre etapas, falha na trava de estoque de camisas, erro na identificação automática de idosos para desconto, ausência de campo para personalização do número de peito e informações incompletas na tela de confirmação.',
           ]}
         />
 
         <ProjectContentBlock
           title="4. Alinhamento com marketing"
           paragraphs={[
-            'Revisei todas as copys do fluxo junto ao time de marketing — regulamento, instruções de preparo, avisos e narrativa visual do evento. Em inscrições esportivas, precisão na comunicação é requisito de confiança, não detalhe.',
+            'Revisei todas as copys do fluxo junto ao time de marketing – regulamento, instruções de preparo, avisos e narrativa visual do evento. Em inscrições esportivas, precisão na comunicação não é detalhe: é requisito de confiança, já que envolve regras formais de participação.',
           ]}
         />
 
         <ProjectContentBlock
           title="5. Design Critique interno"
           paragraphs={[
-            'Apresentei a primeira versão do redesign para critique com o time de design. Os insights refinaram decisões de hierarquia visual, densidade de conteúdo e clareza de instruções — garantindo que a experiência comunicasse responsabilidade e segurança.',
+            'Apresentei a primeira versão do redesign em critique com o time de design. Os insights desse encontro refinaram decisões de hierarquia visual, densidade de conteúdo e clareza das instruções – garantindo que a experiência final comunicasse responsabilidade e segurança, não só organização visual.',
           ]}
         />
 
         <ProjectContentBlock
           title="6. Reconstrução do fluxo"
           paragraphs={[
-            'Redesenhei a jornada completa com base em todos os insumos:',
+            'Redesenhei a jornada completa com base em todos os insumos anteriores: página inicial e listagem de eventos reorganizadas com hierarquia clara, detalhes do evento estruturados em seções expansíveis (reduzindo fadiga cognitiva em conteúdo denso), fluxo de inscrição dividido em etapas claras (dados pessoais, percurso, camisa, pagamento, resumo e confirmação), padronizado com o fluxo de pagamento do Bemol Saúde – já validado – e reconstruído visualmente com o Norte Design System.',
           ]}
+        />
+
+        <ProjectContentBlock
+          paragraphs={['Entregas:']}
           listItems={[
-            'Página inicial e listagem de eventos — reorganizadas com hierarquia clara',
-            'Detalhes do evento — conteúdo estruturado em seções expansíveis, reduzindo fadiga cognitiva',
-            'Fluxo de inscrição — dividido em etapas claras: dados pessoais, percurso, camisa, pagamento, resumo e confirmação',
-            'Padronização com o fluxo de pagamento do Bemol Saúde — já validado em produção',
-            'Reconstrução visual completa com o Design System Bemol',
+            'Fluxo completo de inscrição redesenhado, do zero até a confirmação',
+            '"De x Para" documentando cada falha corrigida',
+            'Especificação de instrumentação granular para medir abandono por etapa',
+            'Copys revisadas e validadas com marketing e regulamento oficial',
           ]}
         />
       </Stack>
@@ -206,7 +200,7 @@ export const BemolRunContent = () => {
 
       {/* Espaçamento de 12px seguido do conteúdo do resultado */}
       <Box sx={{ mt: '12px' }}>
-        <ProjectDescription text="Por não ter sido priorizado para desenvolvimento, o projeto não gerou métricas reais. Mas a partir de todas as evidências levantadas, foram estabelecidas hipóteses sólidas para orientar a evolução da funcionalidade:" />
+        <ProjectDescription text="O projeto não foi priorizado para desenvolvimento, então não gerou métricas reais – mas as evidências levantadas sustentam hipóteses sólidas para quando a funcionalidade voltar ao roadmap:" />
         
         <Box
           component="ul"
@@ -224,7 +218,7 @@ export const BemolRunContent = () => {
             '✓ 54,1% de abandono mapeado e endereçado com fluxo mais claro e padronizado',
             '✓ 8 falhas críticas do suporte corrigidas no redesign',
             '✓ Instrumentação especificada para medir abandono por etapa na próxima versão',
-            '✓ Fluxo unificado ao Design System Bemol e padronizado com outros fluxos do app',
+            '✓ Fluxo unificado ao Norte Design System e padronizado com outros fluxos do app (Bemol Saúde)',
             '✓ Comunicação revisada e alinhada ao regulamento oficial do evento',
           ].map((item, idx) => (
             <Box
