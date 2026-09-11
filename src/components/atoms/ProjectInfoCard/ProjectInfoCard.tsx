@@ -11,24 +11,24 @@ export const ProjectInfoCard = ({ title, text }: ProjectInfoCardProps) => {
     <Box
       sx={{
         backgroundColor: '#FFFFFF',
-        borderRadius: `${tokens.borderRadius.xl}px`,
-        border: `1px solid ${tokens.colors.border.default}`,
-        p: { xs: '8px 12px', md: '20px 24px' },
+        borderRadius: '16px',
+        boxShadow: '0px 0px 5px rgba(15, 91, 82, 0.4)',
+        p: '16px',
         display: 'flex',
         flexDirection: 'column',
+        gap: '12px',
         flex: 1,
         minWidth: 0,
       }}
     >
-      {/* Título: Peso 300, Itálico, Tamanho 20px (mobile) / 24px (desktop), Cor brand */}
+      {/* Título (Número) */}
       <Typography
         sx={{
           fontFamily: tokens.typography.fontFamily.display,
-          fontWeight: tokens.typography.fontWeight.light, // 300
-          fontStyle: 'italic',
-          fontSize: { xs: '20px', md: '24px' },
-          color: tokens.colors.text.brand,
-          lineHeight: 1.1,
+          fontWeight: 600,
+          fontSize: { xs: '16px', md: '18px' },
+          color: 'rgba(15, 91, 82, 1)',
+          lineHeight: 1.4,
           overflowWrap: 'break-word',
           wordBreak: 'break-word',
         }}
@@ -36,14 +36,13 @@ export const ProjectInfoCard = ({ title, text }: ProjectInfoCardProps) => {
         {title}
       </Typography>
 
-      {/* Texto: Peso medium (500), Tamanho 11px, Cor secondary, Espaçamento de 6px do título */}
+      {/* Texto */}
       <Typography
         sx={{
-          fontFamily: tokens.typography.fontFamily.body,
-          fontWeight: tokens.typography.fontWeight.medium, // 500
-          fontSize: '11px',
-          color: tokens.colors.text.secondary,
-          mt: '6px',
+          fontFamily: tokens.typography.fontFamily.display,
+          fontWeight: 400,
+          fontSize: { xs: '14px', md: '16px' },
+          color: 'rgba(74, 79, 78, 1)',
           lineHeight: 1.4,
           overflowWrap: 'break-word',
           wordBreak: 'break-word',
