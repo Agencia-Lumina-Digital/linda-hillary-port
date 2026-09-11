@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useRef } from 'react';
 import { Box, Grid, Stack, Typography, keyframes } from '@mui/material';
 import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
@@ -21,9 +22,47 @@ const floatDownUp = keyframes`
   100% { transform: translateY(0px); }
 `;
 
+const AnimatedCounter = ({ end, duration = 2000, suffix = '' }: { end: number; duration?: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setHasStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      setCount(Math.floor(easeProgress * end));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [hasStarted, end, duration]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
+
+
 export const About = () => {
   return (
-    <Box sx={{ position: 'relative', pt: { xs: 8, md: 16 }, pb: { xs: 8, md: 16 } }}>
+    <Box sx={{ position: 'relative', pt: { xs: 8, md: 16 }, pb: 0 }}>
       <Grid 
         id="about-anchor" 
         container 
@@ -201,6 +240,109 @@ export const About = () => {
           </Box>
         </Grid>
       </Grid>
+
+      {/* Bloco de Métricas */}
+      <Box
+        sx={{
+          mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Rompe o container para ficar full width
+          px: { xs: '24px', md: 'calc(50vw - 50%)' },
+          backgroundColor: 'rgba(7, 44, 37, 1)', // Verde escuro
+          py: { xs: '40px', md: '80px' },
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          mt: { xs: '64px', md: '128px' }, // Espaçamento entre o conteúdo About e a barra verde
+        }}
+        data-aos="fade-up"
+        data-aos-duration="3000"
+      >
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          sx={{ width: '100%', maxWidth: tokens.layout.maxWidth, gap: { xs: '8px', md: '56px' } }}
+        >
+          {/* Métrica 1 */}
+          <Stack spacing="16px" alignItems="center" sx={{ flex: 1 }}>
+            <Typography
+              sx={{
+                fontFamily: tokens.typography.fontFamily.display,
+                fontSize: { xs: '36px', md: '64px' },
+                fontWeight: 600,
+                color: 'rgba(140, 186, 137, 1)',
+                lineHeight: { xs: 1.4, md: 1.2 },
+              }}
+            >
+              <AnimatedCounter end={3} suffix="+" />
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: tokens.typography.fontFamily.display,
+                fontSize: '16px',
+                fontWeight: 400,
+                color: '#FFFFFF',
+                lineHeight: 1.4,
+                textAlign: 'center',
+              }}
+            >
+              Anos de experiência
+            </Typography>
+          </Stack>
+
+          {/* Métrica 2 */}
+          <Stack spacing="16px" alignItems="center" sx={{ flex: 1 }}>
+            <Typography
+              sx={{
+                fontFamily: tokens.typography.fontFamily.display,
+                fontSize: { xs: '36px', md: '64px' },
+                fontWeight: 600,
+                color: 'rgba(140, 186, 137, 1)',
+                lineHeight: { xs: 1.4, md: 1.2 },
+              }}
+            >
+              <AnimatedCounter end={8} suffix="+" />
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: tokens.typography.fontFamily.display,
+                fontSize: '16px',
+                fontWeight: 400,
+                color: '#FFFFFF',
+                lineHeight: 1.4,
+                textAlign: 'center',
+              }}
+            >
+              Funcionalidades entregues
+            </Typography>
+          </Stack>
+
+          {/* Métrica 3 */}
+          <Stack spacing="16px" alignItems="center" sx={{ flex: 1 }}>
+            <Typography
+              sx={{
+                fontFamily: tokens.typography.fontFamily.display,
+                fontSize: { xs: '36px', md: '64px' },
+                fontWeight: 600,
+                color: 'rgba(140, 186, 137, 1)',
+                lineHeight: { xs: 1.4, md: 1.2 },
+              }}
+            >
+              <AnimatedCounter end={4} />
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: tokens.typography.fontFamily.display,
+                fontSize: '16px',
+                fontWeight: 400,
+                color: '#FFFFFF',
+                lineHeight: 1.4,
+                textAlign: 'center',
+              }}
+            >
+              Projetos entregues
+            </Typography>
+          </Stack>
+        </Stack>
+      </Box>
     </Box>
   );
 };
