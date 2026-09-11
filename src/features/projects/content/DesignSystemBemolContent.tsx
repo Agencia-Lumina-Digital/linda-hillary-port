@@ -36,7 +36,7 @@ export const DesignSystemBemolContent = () => {
 
       {/* Espaçamento de 8px (mobile) e 10px (desktop) seguido do título */}
       <Box sx={{ mt: { xs: '8px', md: '10px' } }}>
-        <ProjectTitle title="Fundamentos do Design System — Bemol Varejo" />
+        <ProjectTitle title="Fundamentos do Design System – Bemol Varejo" />
       </Box>
 
       {/* Espaçamento de 8px (mobile) e 10px (desktop) seguido da descrição */}
@@ -158,14 +158,14 @@ export const DesignSystemBemolContent = () => {
         <ProjectContentBlock
           title="1. Diagnóstico interno e alinhamento estratégico"
           paragraphs={[
-            'Conduzi uma análise do cenário atual dos produtos digitais, mapeando inconsistências visuais por categoria: cores, tipografia, espaçamento, bordas e iconografia. Em paralelo, alinhei com marketing o novo Brandbook — o ponto de partida para redefinição de toda a paleta institucional. Esse alinhamento foi crítico para garantir que os Fundamentos traduzissem a identidade de marca para o ambiente digital sem distorções.',
+            'Conduzi uma análise do cenário atual dos produtos digitais, mapeando inconsistências visuais por categoria: cores, tipografia, espaçamento, bordas e iconografia. Em paralelo, alinhei com marketing o novo Brandbook – o ponto de partida para redefinição de toda a paleta institucional. Esse alinhamento foi crítico para garantir que os Fundamentos traduzissem a identidade de marca para o ambiente digital sem distorções.',
           ]}
         />
 
         <ProjectContentBlock
           title="2. Benchmark de Design Systems"
           paragraphs={[
-            'Analisei a estrutura de sistemas como Material Design 3 e referências do mercado para embasar decisões arquiteturais — especialmente na criação de tokens primitivos e semânticos e na definição de escalas modulares.',
+            'Analisei a estrutura de sistemas como Material Design 3 e referências do mercado para embasar decisões arquiteturais – especialmente na criação de tokens primitivos e semânticos e na definição de escalas modulares.',
           ]}
         />
 
@@ -174,31 +174,31 @@ export const DesignSystemBemolContent = () => {
           paragraphs={['Estruturei os fundamentos em camadas:']}
           listItems={[
             <>
-              <strong>Colors</strong> — Tokens primitivos (cores base) e semânticos (estados e contextos). Cor da marca reservada exclusivamente para ações primárias. Regras para cinzas, estados interativos e acessibilidade validada com o plugin Stark.
+              <strong>Colors</strong> – Tokens primitivos (cores base) e semânticos (estados e contextos). Cor da marca reservada exclusivamente para ações primárias. Regras para cinzas, estados interativos e acessibilidade validada com o plugin Stark.
             </>,
             <>
-              <strong>Typography</strong> — Refatoração completa da hierarquia. Tokens primitivos e semânticos (title-l, body-s, button-m). Substituição do uso indiscriminado de bold por pesos contextuais e corretos.
+              <strong>Typography</strong> – Refatoração completa da hierarquia. Tokens primitivos e semânticos (title-l, body-s, button-m). Substituição do uso indiscriminado de bold por pesos contextuais e corretos.
             </>,
             <>
-              <strong>Spacing</strong> — Escala modular baseada em 4px. Tokens aplicáveis em padding, margin e gap — base para composição consistente entre produtos.
+              <strong>Spacing</strong> – Escala modular baseada em 4px. Tokens aplicáveis em padding, margin e gap – base para composição consistente entre produtos.
             </>,
             <>
-              <strong>Border (Radius e Stroke)</strong> — Tokens padronizados de curva e espessura para botões, cards, inputs e containers.
+              <strong>Border (Radius e Stroke)</strong> – Tokens padronizados de curva e espessura para botões, cards, inputs e containers.
             </>,
             <>
-              <strong>Shadow</strong> — Escala de sombras com diretrizes de uso seguro em superfícies elevadas e modais.
+              <strong>Shadow</strong> – Escala de sombras com diretrizes de uso seguro em superfícies elevadas e modais.
             </>,
             <>
-              <strong>Size</strong> — Tokens para alturas, larguras e ícones. Base para grids e responsividade.
+              <strong>Size</strong> – Tokens para alturas, larguras e ícones. Base para grids e responsividade.
             </>,
             <>
-              <strong>Layout Grid</strong> — Grids específicos por breakpoint: 4 colunas (mobile), 8 (tablet), 12 (desktop). Sistema baseado em 8pt.
+              <strong>Layout Grid</strong> – Grids específicos por breakpoint: 4 colunas (mobile), 8 (tablet), 12 (desktop). Sistema baseado em 8pt.
             </>,
             <>
-              <strong>Iconography</strong> — Padronização com base no Material Design 3. Criação da biblioteca própria &ldquo;BemolVerso&rdquo; para necessidades específicas da marca. Regras de tamanho, área de toque e uso semântico.
+              <strong>Iconography</strong> – Padronização com base no Material Design 3. Criação da biblioteca própria "BemolVerso" para necessidades específicas da marca. Regras de tamanho, área de toque e uso semântico.
             </>,
             <>
-              <strong>Illustrations, Images & Brand</strong> — Diretrizes de estilo, proporções e alinhamento com a identidade institucional.
+              <strong>Illustrations, Images & Brand</strong> – Diretrizes de estilo, proporções e alinhamento com a identidade institucional.
             </>,
           ]}
         />
@@ -206,7 +206,7 @@ export const DesignSystemBemolContent = () => {
         <ProjectContentBlock
           title="4. Documentação e handoff"
           paragraphs={[
-            'Todos os fundamentos foram documentados no Figma com arquivos organizados por categoria — exemplos visuais, boas práticas, instruções de implementação e anotações para desenvolvedores. O objetivo foi eliminar ambiguidade: qualquer designer ou dev deveria conseguir aplicar os fundamentos sem depender de explicação verbal.',
+            'Todos os fundamentos foram documentados no Figma com arquivos organizados por categoria – exemplos visuais, boas práticas, instruções de implementação e anotações para desenvolvedores. O objetivo foi eliminar ambiguidade: qualquer designer ou dev deveria conseguir aplicar os fundamentos sem depender de explicação verbal.',
           ]}
         />
       </Stack>
@@ -256,6 +256,7 @@ export const DesignSystemBemolContent = () => {
           sx={{
             m: 0,
             pl: '20px',
+            mt: '8px',
             color: tokens.colors.text.secondary,
             fontFamily: tokens.typography.fontFamily.body,
             fontSize: { xs: '14px', md: '16px' },
@@ -266,7 +267,7 @@ export const DesignSystemBemolContent = () => {
             '✓ 5 produtos digitais unificados sob os mesmos Fundamentos',
             '✓ Paleta reduzida de 20+ tons arbitrários para sistema semântico com função definida',
             '✓ Tokens primitivos e semânticos implementados em design e código',
-            '✓ Referência compartilhada entre design, engenharia e marketing — menos retrabalho, mais previsibilidade',
+            '✓ Referência compartilhada entre design, engenharia e marketing – menos retrabalho, mais previsibilidade',
             '✓ Base estruturada para criação dos primeiros componentes reutilizáveis',
           ].map((item, idx) => (
             <Box
