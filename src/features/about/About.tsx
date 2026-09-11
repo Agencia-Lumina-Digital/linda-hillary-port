@@ -1,145 +1,203 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography, keyframes } from '@mui/material';
+import { Button } from '../../components/atoms/Button/Button';
 import { tokens } from '../../theme/tokens';
+import 'hover.css/css/hover.css';
+
+import aboutImagem from '../../theme/assets/about-imagem.png';
+import heroVectorLaranja from '../../theme/assets/hero-vector-laranja.svg';
+import heroVectorVerde from '../../theme/assets/hero-vector-verde.svg';
+import heroUnionDiagonal from '../../theme/assets/hero-union-diagonal.svg';
+import heroUnionHorizontal from '../../theme/assets/hero-union-horizontal.svg';
+
+const floatUpDown = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0px); }
+`;
+
+const floatDownUp = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(30px); }
+  100% { transform: translateY(0px); }
+`;
 
 export const About = () => {
   return (
-    <Box
-      sx={{
-        mx: { xs: '-24px', md: 'calc(-50vw + 50%)' }, // Rompe o container pai
-        px: { xs: '24px', md: 'calc(50vw - 50%)' },
-        mt: { xs: '48px', md: '80px' },
-        py: { xs: '64px', md: '88px' }, // Espaçamento generoso
-        backgroundColor: tokens.colors.background.inverse, // Fundo escuro (verde)
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-      }}
-    >
-      <Stack
-        spacing={{ xs: '24px', md: '56px' }}
-        alignItems="center"
-        sx={{
-          maxWidth: '800px',
-          width: '100%',
-          textAlign: 'center',
-        }}
+    <Box sx={{ position: 'relative', pt: { xs: 8, md: 16 }, pb: { xs: 8, md: 16 } }}>
+      <Grid 
+        id="about-anchor" 
+        container 
+        columnSpacing={{ xs: 0, md: 8 }} 
+        rowSpacing={{ xs: 4, md: 8 }} 
+        alignItems="center" 
+        sx={{ position: 'relative', zIndex: 2, justifyContent: 'center' }}
       >
-        {/* Título e Texto */}
-        <Stack spacing={{ xs: '20px', md: '16px' }} alignItems="center">
-          <Typography
-            variant="h3"
-            sx={{
-              fontFamily: tokens.typography.fontFamily.display,
-              fontSize: { xs: '24px', md: '36px' },
-              fontWeight: 600,
-              color: tokens.colors.text.onBrand,
-            }}
-          >
-            Sobre mim
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              fontFamily: tokens.typography.fontFamily.display, // Epilogue shown in Figma
-              fontSize: { xs: '18px', md: '18px' },
-              fontWeight: 400,
-              lineHeight: 1.6,
-              color: tokens.colors.text.onBrand,
-            }}
-          >
-            Product Designer com mais de 2 anos liderando a evolução do Design System da Bemol Digital. Atuo com uma abordagem orientada a dados e, mais recentemente, uso IA (Claude) para automatizar processos do time, com um projeto premiado internamente (Prêmio Japiim de Prata).
-          </Typography>
-        </Stack>
-
-        {/* Grid de Métricas */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'row', // No mobile continua em linha
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            width: '100%',
-            gap: { xs: '16px', sm: '24px' },
-          }}
+        {/* Coluna Esquerda: Imagem */}
+        <Grid 
+          item 
+          xs={12} 
+          md={5} 
+          sx={{ position: 'relative', order: { xs: 1, md: 1 } }}
+          data-aos="fade-right"
+          data-aos-anchor="#about-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
         >
-          {/* Métrica 1 */}
-          <Stack spacing={1} alignItems="center" sx={{ flex: 1 }}>
-            <Typography
-              sx={{
-                fontFamily: { xs: tokens.typography.fontFamily.display, md: "'Montserrat', sans-serif" },
-                fontSize: { xs: '36px', md: '64px' },
-                fontWeight: { xs: 600, md: 700 },
-                color: 'rgba(140, 186, 137, 1)', // green/300 do figma
-                lineHeight: 1,
-              }}
-            >
-              3+
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: tokens.typography.fontFamily.display, // Epilogue shown in Figma
-                fontSize: { xs: '14px', md: '16px' },
-                fontWeight: 400,
-                color: tokens.colors.text.onBrand,
-              }}
-            >
-              Anos de experiência
-            </Typography>
-          </Stack>
+          <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', width: '100%', mx: 'auto' }}>
+            
+            <Box sx={{ position: 'relative', width: { xs: '261px', md: '360px' }, height: { xs: '350px', md: '480px' }, mt: { xs: 0, md: 0 } }}>
+              
+              {/* Elementos SVG decorativos */}
+              <Box 
+                component="img" 
+                src={heroVectorLaranja} 
+                alt="" 
+                sx={{ 
+                  position: 'absolute', 
+                  top: { xs: -10, md: -10 }, 
+                  right: { xs: -15, md: -20 }, 
+                  zIndex: 3, 
+                  width: { xs: '60px', md: '80px' },
+                  animation: `${floatUpDown} 4s ease-in-out infinite`
+                }} 
+              />
+              <Box 
+                component="img" 
+                src={heroVectorVerde} 
+                alt="" 
+                sx={{ 
+                  position: 'absolute', 
+                  bottom: { xs: 20, md: 30 }, 
+                  left: { xs: -20, md: -30 }, 
+                  zIndex: 3, 
+                  width: { xs: '60px', md: '80px' },
+                  animation: `${floatDownUp} 4s ease-in-out infinite`
+                }} 
+              />
+              <Box component="img" src={heroUnionDiagonal} alt="" sx={{ position: 'absolute', top: 50, left: -20, zIndex: 3, width: { xs: '40px', md: '50px' } }} />
+              <Box component="img" src={heroUnionHorizontal} alt="" sx={{ position: 'absolute', bottom: 50, right: { xs: -40, md: -50 }, zIndex: 3, width: { xs: '60px', md: '80px' } }} />
 
-          {/* Métrica 2 */}
-          <Stack spacing={1} alignItems="center" sx={{ flex: 1 }}>
-            <Typography
-              sx={{
-                fontFamily: { xs: tokens.typography.fontFamily.display, md: "'Montserrat', sans-serif" },
-                fontSize: { xs: '36px', md: '64px' },
-                fontWeight: { xs: 600, md: 700 },
-                color: 'rgba(140, 186, 137, 1)', // green/300
-                lineHeight: 1,
-              }}
-            >
-              8+
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: tokens.typography.fontFamily.display,
-                fontSize: { xs: '14px', md: '16px' },
-                fontWeight: 400,
-                color: tokens.colors.text.onBrand,
-              }}
-            >
-              Funcionalidades entregues
-            </Typography>
-          </Stack>
+              {/* Imagem principal da seção About */}
+              <Box
+                component="img"
+                src={aboutImagem}
+                alt="Linda Hillary Brandão Souza"
+                sx={{
+                  position: 'relative',
+                  zIndex: 2,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                  borderRadius: '999px 999px 0 0', // Borda arredondada no topo
+                }}
+              />
+            </Box>
 
-          {/* Métrica 3 */}
-          <Stack spacing={1} alignItems="center" sx={{ flex: 1 }}>
-            <Typography
-              sx={{
-                fontFamily: { xs: tokens.typography.fontFamily.display, md: "'Montserrat', sans-serif" },
-                fontSize: { xs: '36px', md: '64px' },
-                fontWeight: { xs: 600, md: 700 },
-                color: 'rgba(140, 186, 137, 1)', // green/300
-                lineHeight: 1,
-              }}
-            >
-              4
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: tokens.typography.fontFamily.display,
-                fontSize: { xs: '14px', md: '16px' },
-                fontWeight: 400,
-                color: tokens.colors.text.onBrand,
-              }}
-            >
-              Projetos entregues
-            </Typography>
+          </Box>
+        </Grid>
+
+        {/* Coluna Direita: Conteúdo de Texto */}
+        <Grid item xs={12} md={7} sx={{ order: { xs: 2, md: 2 } }}>
+          <Stack 
+            spacing={{ xs: '24px', md: '32px' }} 
+            sx={{ display: 'flex', justifyContent: 'center' }}
+            data-aos="fade-up"
+            data-aos-anchor="#about-anchor"
+            data-aos-duration="1000"
+          >
+            <Box>
+              {/* Título */}
+              <Typography
+                variant="h2"
+                sx={{
+                  fontFamily: tokens.typography.fontFamily.display,
+                  fontSize: { xs: '24px', md: '36px' },
+                  fontWeight: 600,
+                  lineHeight: { xs: 1.4, md: 1.2 },
+                  color: 'rgba(15, 91, 82, 1)',
+                  mb: { xs: '16px', md: '24px' },
+                }}
+              >
+                Designer de Produtos focada em experiências digitais inovadoras.
+              </Typography>
+
+              {/* Descrição */}
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: tokens.typography.fontFamily.display,
+                  color: 'rgba(74, 79, 78, 1)',
+                  fontSize: { xs: '16px', md: '16px' },
+                  fontWeight: 400,
+                  lineHeight: { xs: 1.6, md: 1.6 },
+                }}
+              >
+                Sou Linda Hillary Brandão Souza, uma Product Designer apaixonada por criar experiências digitais impactantes. Com mais de 3 anos de experiência, tenho liderado a construção e a governança do Norte Design System na Bemol Digital. Minha abordagem é centrada em dados, utilizando IA (Claude) para otimizar processos e mentorando outros designers na equipe. Recentemente, fui reconhecida com o Prêmio Japiim de Prata por um projeto inovador que automatizou fluxos de trabalho, reduzindo o tempo de tarefas operacionais em até 95%. Estou sempre em busca de novas maneiras de integrar tecnologia e design para melhorar a acessibilidade e a usabilidade dos produtos.
+              </Typography>
+            </Box>
+
+            {/* Ações */}
+            <Stack direction="row" spacing="12px" sx={{ width: { xs: '100%', md: 'fit-content' } }}>
+              <Button
+                variant="primary"
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    const offset = 80;
+                    window.scrollTo({ top: element.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+                  }
+                }}
+                className="hvr-grow"
+                sx={{
+                  flex: { xs: 1, md: 'initial' },
+                  backgroundColor: 'rgba(15, 91, 82, 1)',
+                  color: '#FFFFFF',
+                  borderRadius: '50px',
+                  px: '24px',
+                  height: '52px',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  fontFamily: tokens.typography.fontFamily.display,
+                  textTransform: 'none',
+                  '&:hover': {
+                    backgroundColor: 'rgba(15, 91, 82, 1)',
+                  }
+                }}
+              >
+                Falar comigo
+              </Button>
+              <Button
+                variant="outlined"
+                onClick={() => {
+                  window.open('/Linda_Souza_Product_Designer.pdf', '_blank');
+                }}
+                className="hvr-grow"
+                sx={{
+                  flex: { xs: 1, md: 'initial' },
+                  borderColor: 'rgba(15, 91, 82, 1)',
+                  color: 'rgba(15, 91, 82, 1)',
+                  borderRadius: '50px',
+                  px: '24px',
+                  height: '52px',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  fontFamily: tokens.typography.fontFamily.display,
+                  textTransform: 'none',
+                  borderWidth: '1px',
+                  '&:hover': {
+                    borderColor: 'rgba(15, 91, 82, 1)',
+                    borderWidth: '1px',
+                    backgroundColor: 'transparent',
+                  }
+                }}
+              >
+                Ver currículo
+              </Button>
+            </Stack>
           </Stack>
-        </Box>
-      </Stack>
+        </Grid>
+      </Grid>
     </Box>
   );
 };
