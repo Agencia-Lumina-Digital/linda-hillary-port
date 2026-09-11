@@ -53,16 +53,16 @@ export const SaudeBemolContent = () => {
         }}
       >
         <ProjectInfoCard
-          title="Nova frente estratégica"
-          text="Primeiro serviço de saúde digital da Bemol, dentro do app principal"
+          title="1"
+          text="Primeira frente de saúde digital da Bemol, dentro do app principal"
         />
         <ProjectInfoCard
-          title="Complexidade mascarada"
-          text="Buffers logísticos, elegibilidade e regras médicas invisíveis ao usuário final"
+          title="2"
+          text="Complexidade logística (buffers, elegibilidade, roteirização) totalmente invisível ao usuário"
         />
         <ProjectInfoCard
-          title="Metas definidas"
-          text="75–80% de taxa de conclusão e NPS +50 como critérios de sucesso pós-lançamento"
+          title="3"
+          text="Metas definidas: 75-80% de taxa de conclusão e NPS +50 como critérios de sucesso pós-lançamento"
         />
       </Box>
 
@@ -74,43 +74,7 @@ export const SaudeBemolContent = () => {
 
       {/* Espaçamento de 12px seguido do conteúdo do desafio */}
       <Box sx={{ mt: '12px' }}>
-        <ProjectDescription text="A Bemol Farma opera mais de 42 unidades físicas e já oferecia exames laboratoriais e vacinação com presença consolidada na região. O desafio era levar essa confiança para o digital — sem simplificar a complexidade operacional do modelo domiciliar." />
-      </Box>
-
-      <Box sx={{ mt: '16px' }}>
-        <ProjectDescription text="Restrições que o design precisava absorver:" />
-      </Box>
-
-      <Box
-        component="ul"
-        sx={{
-          m: 0,
-          pl: '20px',
-          mt: '8px',
-          color: tokens.colors.text.secondary,
-          fontFamily: tokens.typography.fontFamily.body,
-          fontSize: { xs: '14px', md: '16px' },
-          fontWeight: tokens.typography.fontWeight.regular,
-        }}
-      >
-        {[
-          'Agendamento exclusivo para maiores de idade',
-          'Atendimento 100% domiciliar — sem opção presencial',
-          'Equipes móveis com deslocamento via Uber',
-          'Buffers obrigatórios de 60 minutos entre atendimentos',
-          'Toda essa lógica deveria ser invisível para o usuário',
-        ].map((item, idx) => (
-          <Box
-            component="li"
-            key={idx}
-            sx={{
-              lineHeight: 1.6,
-              mb: '4px',
-            }}
-          >
-            {item}
-          </Box>
-        ))}
+        <ProjectDescription text="A Bemol Farma opera mais de 42 unidades físicas e já tinha presença consolidada em exames laboratoriais e vacinação – o próximo passo natural era levar essa confiança para o digital. O desafio não era só desenhar uma boa interface: era absorver, no design, um modelo operacional cheio de restrições invisíveis ao usuário – agendamento restrito a maiores de idade, atendimento 100% domiciliar (sem opção presencial), equipes móveis com deslocamento via Uber e buffers obrigatórios de 60 minutos entre atendimentos. Toda essa complexidade precisava desaparecer na experiência final, sem comprometer a confiança que a marca já tinha construído fisicamente." />
       </Box>
 
       {/* Divisória no final */}
@@ -118,54 +82,50 @@ export const SaudeBemolContent = () => {
 
       {/* Título da Seção: "O processo" */}
       <ProjectSectionTitle title="O processo" />
+      
+      {/* Subtítulo / Descrição inicial do processo */}
+      <Box sx={{ mt: '4px' }}>
+        <ProjectDescription text="(projeto conduzido em dupla com um designer sênior do time, com apoio da liderança – as etapas abaixo deixam claro onde cada contribuição específica entrou)" />
+      </Box>
 
       {/* Conteúdo da seção do processo com margem superior de 12px */}
       <Stack spacing="24px" sx={{ mt: '12px', width: '100%' }}>
         <ProjectContentBlock
           title="1. Organização dos insumos de pesquisa"
           paragraphs={[
-            'Estruturei os materiais de entrada e saída do cliente oculto conduzido pela liderança de design — que percorreu a jornada real de agendamento presencial, do primeiro contato via WhatsApp até o recebimento do laudo. Organizei os achados em padrões acionáveis: fricções, expectativas críticas e momentos de confiança. Esse mapeamento foi a base para todas as decisões de fluxo e microcopy.',
+            'A liderança de design conduziu um cliente oculto completo, percorrendo a jornada real de quem hoje agenda um exame presencialmente – do primeiro contato via WhatsApp até o recebimento do laudo. Dei apoio ao designer sênior do time na estruturação desse material bruto, organizando os achados em padrões acionáveis: fricções, expectativas críticas e momentos de confiança. Esse mapeamento se tornou a base para as decisões de fluxo e microcopy que vieram depois.',
           ]}
         />
 
         <ProjectContentBlock
           title="2. Benchmarking estratégico"
           paragraphs={[
-            'Em dupla com o designer sênior da equipe, analisei apps de laboratórios, clínicas digitais e serviços domiciliares de saúde. Foco em: organização de informações sensíveis, apresentação de preparo de exames, exibição de disponibilidade de horários e padrões de comunicação que transmitem confiança em contexto de saúde.',
+            'Em dupla com o designer sênior da equipe, analisei aplicativos de laboratórios, clínicas digitais e serviços domiciliares de saúde – com foco em como esses produtos organizam informações sensíveis, apresentam preparo de exames, exibem disponibilidade de horários e constroem confiança num contexto onde o erro tem consequência real.',
           ]}
         />
 
         <ProjectContentBlock
           title="3. Alinhamentos com produto, negócio e operação"
           paragraphs={[
-            'Participei dos ciclos de refinamento com produto e área de saúde para traduzir regras médicas e operacionais em decisões de design — elegibilidade, preparo, descrição dos exames e comportamento esperado em cada etapa. Cada decisão de interface tinha uma regra de negócio correspondente validada.',
+            'Participei dos ciclos de refinamento com produto e a área de saúde para traduzir regras médicas e operacionais em decisões de design – elegibilidade, preparo de exame, descrição de procedimentos e comportamento esperado em cada etapa. Cada decisão de interface tinha uma regra de negócio validada por trás; nada foi definido só "porque parecia certo".',
           ]}
         />
 
         <ProjectContentBlock
           title="4. Construção do fluxo e UI"
-          paragraphs={['Desenvolvemos em dupla o fluxo completo de agendamento:']}
-          listItems={[
-            'Seleção de exames — categorias organizadas, objetivas e escaneáveis',
-            'Detalhes do exame — o que é, como funciona e preparo necessário',
-            'Agendamento — apenas horários válidos após cálculo logístico completo',
-            'Endereço — confirmação do local para atendimento domiciliar',
-            'Pagamento — fechamento seguro e transparente',
+          paragraphs={[
+            'Desenvolvemos, em dupla, o fluxo completo de agendamento: seleção de exames (categorias organizadas e escaneáveis), detalhes do exame (o que é, como funciona, preparo necessário), agendamento (exibindo apenas horários já validados pelo cálculo logístico completo), endereço (confirmação do local de atendimento domiciliar) e pagamento (fechamento seguro e transparente). Todos os componentes foram construídos dentro do Norte Design System – incluindo um novo componente de agendamento, que passou a integrar o sistema como peça reutilizável para futuras features baseadas em serviço.',
           ]}
         />
 
-        <Typography
-          sx={{
-            fontFamily: tokens.typography.fontFamily.body,
-            fontWeight: tokens.typography.fontWeight.regular,
-            fontSize: '14px',
-            color: tokens.colors.text.secondary,
-            lineHeight: 1.6,
-            mt: '4px', // Alinhado ao topo
-          }}
-        >
-          Todos os componentes construídos dentro do Design System Bemol. Foco em transmitir confiança, previsibilidade e humanização — requisitos não negociáveis em serviços de saúde.
-        </Typography>
+        <ProjectContentBlock
+          paragraphs={['Entregas:']}
+          listItems={[
+            'Fluxo completo de agendamento domiciliar, ponta a ponta',
+            'Novo componente de agendamento incorporado ao Design System Bemol',
+            'Documentação de regras de elegibilidade e lógica logística traduzidas para decisões de interface',
+          ]}
+        />
       </Stack>
 
       {/* Imagens do projeto: uma acima da outra no mobile e web, margem do topo de 12px e gap de 16px */}
@@ -208,7 +168,7 @@ export const SaudeBemolContent = () => {
 
       {/* Espaçamento de 12px seguido do conteúdo do resultado */}
       <Box sx={{ mt: '12px' }}>
-        <ProjectDescription text="Projeto entregue para desenvolvimento, ainda não lançado. Os resultados serão medidos pós-lançamento com base nas metas definidas:" />
+        <ProjectDescription text="Projeto entregue para desenvolvimento, ainda não lançado – os resultados reais serão medidos pós-lançamento. As metas que definem sucesso:" />
         
         <Box
           component="ul"
@@ -223,11 +183,12 @@ export const SaudeBemolContent = () => {
           }}
         >
           {[
-            '✓ Fluxo de agendamento domiciliar 100% digital — inédito no ecossistema Bemol',
-            '✓ Complexidade operacional abstraída sem comprometer clareza para o usuário',
-            '✓ Interface alinhada ao Design System Bemol',
-            '✓ Meta: 75–80% de taxa de conclusão de agendamento',
-            '✓ Meta: NPS +50 no serviço',
+            '✓ Fluxo de agendamento domiciliar 100% digital – inédito no ecossistema Bemol',
+            '✓ Complexidade operacional (buffers, elegibilidade, roteirização) abstraída sem comprometer clareza para o usuário',
+            '✓ Interface 100% alinhada ao Design System Bemol, com novo componente reutilizável',
+            '→ Meta: 75-80% de taxa de conclusão de agendamento',
+            '→ Meta: NPS +50 no serviço',
+            '→ Meta: 25-35% de adoção do atendimento domiciliar',
           ].map((item, idx) => (
             <Box
               component="li"
