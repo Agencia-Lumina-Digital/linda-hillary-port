@@ -26,8 +26,11 @@ export const ProjectCard = ({ title, description, bannerBgColor, headerBgImage, 
         cursor: onClick ? 'pointer' : 'default',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease',
         '&:hover': {
-          transform: 'translateY(-4px)',
-          boxShadow: '0px 12px 32px rgba(112, 144, 176, 0.15)',
+          transform: 'scale(1.02)',
+          boxShadow: '0px 16px 40px rgba(112, 144, 176, 0.2)',
+          '& .arrow-icon': {
+            transform: 'translateX(6px)',
+          }
         },
       }}
     >
@@ -49,7 +52,7 @@ export const ProjectCard = ({ title, description, bannerBgColor, headerBgImage, 
 
       {/* Conteúdo do Card */}
       <Stack
-        spacing={{ xs: 2, md: 3 }}
+        spacing="24px"
         sx={{
           p: { xs: '24px 16px', md: '40px' },
           flexGrow: 1,
@@ -85,28 +88,21 @@ export const ProjectCard = ({ title, description, bannerBgColor, headerBgImage, 
         </Stack>
 
         {/* Botão Ver Projeto */}
-        <Button
-          variant="outlined"
+        <Typography
           sx={{
-            mt: 1,
-            alignSelf: { xs: 'stretch', md: 'center' },
-            borderRadius: '100px',
-            borderColor: tokens.colors.text.accent,
-            color: tokens.colors.text.accent,
-            textTransform: 'none',
-            fontSize: '14px',
-            fontWeight: 500,
-            py: '8px',
-            px: '24px',
-            '&:hover': {
-              borderColor: tokens.colors.text.primary,
-              color: tokens.colors.text.primary,
-              backgroundColor: 'transparent',
-            }
+            fontFamily: tokens.typography.fontFamily.display,
+            fontSize: '18px',
+            fontWeight: 600,
+            color: 'rgba(15, 91, 82, 1)',
+            lineHeight: 1.4,
+            alignSelf: 'flex-start',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px'
           }}
         >
-          Ver projeto
-        </Button>
+          Ver projeto <Box component="span" className="arrow-icon" sx={{ transition: 'transform 0.3s ease', display: 'inline-block' }}>&rarr;</Box>
+        </Typography>
       </Stack>
     </Box>
   );

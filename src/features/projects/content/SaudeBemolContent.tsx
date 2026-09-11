@@ -46,7 +46,7 @@ export const SaudeBemolContent = () => {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: { xs: 'column', md: 'row' },
           gap: { xs: '12px', md: '16px' },
           mt: { xs: '16px', md: '32px' },
           width: '100%',

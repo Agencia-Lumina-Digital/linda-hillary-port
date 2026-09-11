@@ -6,6 +6,7 @@ import { LoginBemolContent } from './content/LoginBemolContent';
 import { DesignSystemBemolContent } from './content/DesignSystemBemolContent';
 import { SaudeBemolContent } from './content/SaudeBemolContent';
 import { BemolRunContent } from './content/BemolRunContent';
+import { CheckoutBemolContent } from './content/CheckoutBemolContent';
 
 interface Project {
   title: string;
@@ -14,6 +15,7 @@ interface Project {
   metric: string;
   bannerBgColor: string;
   headerBgImage?: string;
+  modalBgImage?: string;
 }
 
 interface ProjectModalProps {
@@ -29,9 +31,11 @@ interface ProjectModalProps {
 
 const renderProjectContent = (title: string) => {
   switch (title) {
+    case 'Quebra de Pacotes – Checkout Bemol':
+      return <CheckoutBemolContent />;
     case 'Redesign do Login — App Bemol':
       return <LoginBemolContent />;
-    case 'Fundamentos do Design System — Bemol Varejo':
+    case 'Fundamentos do Norte Design System — Bemol Varejo':
       return <DesignSystemBemolContent />;
     case 'Bemol Saúde — Agendamento de Exames':
       return <SaudeBemolContent />;
@@ -77,44 +81,21 @@ export const ProjectModal = ({
       <Box
         sx={{
           height: { xs: '250px', md: '300px' },
-          backgroundColor: '#5C8C5A', // Verde semântico do tema
           position: 'relative',
           display: 'flex',
           alignItems: 'flex-start',
-          justifyContent: 'space-between', // Alinha a tag à esquerda e o fechar à direita
+          justifyContent: 'flex-end', // Alinha apenas o botão de fechar à direita
           p: { xs: '16px', md: '24px' },
-          backgroundImage: project.headerBgImage ? `url(${project.headerBgImage})` : 'none',
-          backgroundSize: 'cover',
-          backgroundPosition: { xs: 'center bottom -24px', md: 'center bottom -56px' },
-          backgroundRepeat: 'no-repeat',
+          backgroundImage: project.modalBgImage 
+            ? `url(${project.modalBgImage}), linear-gradient(180deg, rgba(61, 92, 77, 1) 0%, rgba(102, 148, 122, 1) 100%)` 
+            : 'linear-gradient(180deg, rgba(61, 92, 77, 1) 0%, rgba(102, 148, 122, 1) 100%)',
+          backgroundSize: project.modalBgImage ? 'cover, 100% 100%' : '100% 100%',
+          backgroundPosition: project.modalBgImage
+            ? { xs: 'center bottom -24px, center top', md: 'center bottom -56px, center top' }
+            : 'center top',
+          backgroundRepeat: 'no-repeat, no-repeat',
         }}
       >
-        {/* Badge / Tag no topo esquerdo */}
-        <Box
-          sx={{
-            backgroundColor: '#FFFFFF',
-            borderRadius: tokens.borderRadius.pill,
-            px: { xs: '16px', md: '20px' },
-            py: { xs: '6px', md: '8px' },
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
-            userSelect: 'none',
-          }}
-        >
-          <Typography
-            sx={{
-              color: tokens.colors.text.brand,
-              fontFamily: tokens.typography.fontFamily.body,
-              fontSize: '11px',
-              fontWeight: tokens.typography.fontWeight.semibold,
-              lineHeight: 1.2,
-            }}
-          >
-            {project.tag}
-          </Typography>
-        </Box>
 
         {/* Botão de Fechar Modal da Direita */}
         <IconButton

@@ -17,64 +17,64 @@ export const ProjectContentBlock = ({
 }: ProjectContentBlockProps) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-      {/* Título: peso bold, tamanho 14px, cor secondary */}
+      {/* Título: peso bold */}
       {title && (
         <Typography
           sx={{
-            fontFamily: tokens.typography.fontFamily.body,
-            fontWeight: 'bold', // 700/bold conforme solicitado
-            fontSize: '14px',
-            color: tokens.colors.text.secondary,
+            fontFamily: tokens.typography.fontFamily.display,
+            fontWeight: 'bold', // ou 700
+            fontSize: { xs: '14px', md: '16px' },
+            color: 'rgba(74, 79, 78, 1)',
             mb: '8px',
-            lineHeight: 1.3,
+            lineHeight: 1.4,
           }}
         >
           {title}
         </Typography>
       )}
 
-      {/* Conteúdo: peso regular, tamanho 14px, cor secondary */}
+      {/* Conteúdo: peso regular */}
       {paragraphs &&
         paragraphs.map((p, idx) => (
           <Typography
             key={idx}
             sx={{
-              fontFamily: tokens.typography.fontFamily.body,
-              fontWeight: tokens.typography.fontWeight.regular, // regular (400)
-              fontSize: '14px',
-              color: tokens.colors.text.secondary,
-              lineHeight: 1.6,
-              mb: idx === paragraphs.length - 1 && !listTitle && !listItems ? 0 : '12px',
+              fontFamily: tokens.typography.fontFamily.display,
+              fontWeight: 400,
+              fontSize: { xs: '14px', md: '16px' },
+              color: 'rgba(74, 79, 78, 1)',
+              lineHeight: 1.4,
+              mb: idx === paragraphs.length - 1 && !listTitle && !listItems ? 0 : '8px',
             }}
           >
             {p}
           </Typography>
         ))}
 
-      {/* Título de lista (ex: Achados principais): peso regular, tamanho 14px, cor secondary */}
+      {/* Título de lista (ex: Achados principais) */}
       {listTitle && (
         <Typography
           sx={{
-            fontFamily: tokens.typography.fontFamily.body,
-            fontWeight: tokens.typography.fontWeight.regular,
-            fontSize: '14px',
-            color: tokens.colors.text.secondary,
-            lineHeight: 1.6,
-            mb: '6px',
+            fontFamily: tokens.typography.fontFamily.display,
+            fontWeight: 400,
+            fontSize: { xs: '14px', md: '16px' },
+            color: 'rgba(74, 79, 78, 1)',
+            lineHeight: 1.4,
+            mb: '8px',
           }}
         >
           {listTitle}
         </Typography>
       )}
 
-      {/* Itens pontuados: peso regular, tamanho 14px, cor secondary */}
+      {/* Itens pontuados */}
       {listItems && (
         <Box
           component="ul"
           sx={{
             m: 0,
-            pl: '20px',
-            color: tokens.colors.text.secondary,
+            pl: '24px',
+            color: 'rgba(74, 79, 78, 1)',
           }}
         >
           {listItems.map((item, idx) => (
@@ -82,11 +82,11 @@ export const ProjectContentBlock = ({
               component="li"
               key={idx}
               sx={{
-                fontFamily: tokens.typography.fontFamily.body,
-                fontWeight: tokens.typography.fontWeight.regular,
-                fontSize: '14px',
-                color: tokens.colors.text.secondary,
-                lineHeight: 1.6,
+                fontFamily: tokens.typography.fontFamily.display,
+                fontWeight: 400,
+                fontSize: { xs: '14px', md: '16px' },
+                color: 'rgba(74, 79, 78, 1)',
+                lineHeight: 1.4,
                 mb: idx === listItems.length - 1 ? 0 : '4px',
               }}
             >

@@ -11,10 +11,10 @@ export const ProjectTitle = ({ title }: ProjectTitleProps) => {
       variant="h2"
       sx={{
         fontFamily: tokens.typography.fontFamily.display,
-        color: tokens.colors.text.brand,
-        fontSize: { xs: tokens.typography.fontSize[26], md: tokens.typography.fontSize[38] },
-        fontWeight: tokens.typography.fontWeight.medium,
-        lineHeight: 1.2,
+        color: 'rgba(15, 91, 82, 1)',
+        fontSize: { xs: '24px', md: '36px' },
+        fontWeight: 600,
+        lineHeight: 1.4,
       }}
     >
       {title}
