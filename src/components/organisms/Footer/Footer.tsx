@@ -54,8 +54,10 @@ export const Footer = () => {
           sx={{
             color: '#FFFFFF', // icon/on-inverse
             p: 0, // Remover padding padrão do IconButton
+            transition: 'transform 0.2s',
             '&:hover': {
               color: tokens.colors.text.accent,
+              transform: 'scale(1.1)',
             },
           }}
         >
@@ -69,8 +71,10 @@ export const Footer = () => {
           sx={{
             color: '#FFFFFF', // icon/on-inverse
             p: 0,
+            transition: 'transform 0.2s',
             '&:hover': {
               color: tokens.colors.text.accent,
+              transform: 'scale(1.1)',
             },
           }}
         >
