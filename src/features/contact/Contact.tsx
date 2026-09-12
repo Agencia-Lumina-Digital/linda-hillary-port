@@ -118,7 +118,7 @@ export const Contact = () => {
             <Stack direction="row" spacing="24px">
               <Box 
                 component="a"
-                href="https://instagram.com/linda_hillary"
+                href="https://instagram.com/lindassouza"
                 target="_blank"
                 sx={{
                   color: 'rgba(15, 91, 82, 1)',
@@ -137,7 +137,7 @@ export const Contact = () => {
               </Box>
               <Box 
                 component="a"
-                href="https://linkedin.com/in/linda-brandao"
+                href="https://www.linkedin.com/in/lindassouza/"
                 target="_blank"
                 sx={{
                   color: 'rgba(15, 91, 82, 1)',
